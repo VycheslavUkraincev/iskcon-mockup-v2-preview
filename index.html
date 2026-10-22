@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-  <base href="/iskcon-mockup-v2-preview/">
+  <base href="/iskcon-cv-ua/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ІСККОН Чернівці — Центр ведичної культури</title>
 <meta name="description" content="Центр ведичної культури ІСККОН у Чернівцях: недільні програми, лекції з філософії, курси, благодійність «Їжа життя», підтримка храму.">
@@ -23,6 +23,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" type="image/webp" fetchpriority="high"
+  imagesrcset="assets/temple/hero-640.webp 640w, assets/temple/hero-960.webp 960w, assets/temple/hero-1280.webp 1280w, assets/temple/hero-1920.webp 1920w, assets/temple/hero-2560.webp 2560w"
+  imagesizes="(max-width:700px) 130vw, 100vw">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/avatar.css">
 <link rel="icon" href="assets/logo.jpg">
@@ -53,13 +56,13 @@
 <link rel="canonical" href="https://iskcon.cv.ua/">
 <meta property="og:url" content="https://iskcon.cv.ua/">
 </head>
-<body>
+<body class="page-home">
 <a class="skip-link" href="#main">Перейти до вмісту</a>
 
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="./"><img src="assets/logo.jpg" alt="ІСККОН Чернівці"><b>ІСККОН ЧЕРНІВЦІ</b></a>
-    <button class="nav-toggle" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" aria-label="Меню" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
     <nav class="nav" id="mainNav">
       <a href="./" class="active">Головна</a>
       <a href="courses">Навчання</a>
@@ -74,19 +77,24 @@
   </div>
 </header>
 
-<div class="hero hero-photo" style="background-image:url('assets/temple/temple-1.jpg')">
-  <div class="hero-inner">
-    <span class="hero-kicker">Чернівці · ІСККОН</span>
-    <h1>Простір внутрішнього спокою</h1>
-    <p class="lede">Центр ведичної культури: недільні фестивалі, лекції з філософії,
-      мантра-медитація, курси кулінарії та музики, благодійні обіди «Їжа життя».
-      Приходьте — тут вам завжди раді.</p>
-    <div>
-      <a class="btn btn-primary" href="#schedule">Розклад програм</a>
-      <a class="btn btn-ghost" href="donation">🙏 Підтримати храм</a>
+<section class="hero-home" aria-labelledby="hero-title">
+  <img class="hero-home__img" src="assets/temple/hero-1280.webp"
+    srcset="assets/temple/hero-640.webp 640w, assets/temple/hero-960.webp 960w, assets/temple/hero-1280.webp 1280w, assets/temple/hero-1920.webp 1920w, assets/temple/hero-2560.webp 2560w"
+    sizes="(max-width:700px) 130vw, 100vw" width="2560" height="1703" alt="" fetchpriority="high" decoding="async">
+  <div class="hero-home__inner">
+    <div class="hero-home__text">
+      <span class="hero-home__kicker">Чернівці · ІСККОН</span>
+      <h1 id="hero-title">Простір внутрішнього спокою</h1>
+      <p class="hero-home__lede">Центр ведичної культури: недільні фестивалі, лекції з філософії,
+        мантра-медитація, курси кулінарії та музики, благодійні обіди «Їжа життя».
+        Приходьте — тут вам завжди раді.</p>
+      <div class="hero-home__cta">
+        <a class="btn btn-primary" href="#schedule">Розклад програм</a>
+        <a class="btn btn-ghost" href="donation">🙏 Підтримати храм</a>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <div class="wrap">
 

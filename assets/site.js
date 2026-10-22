@@ -11,19 +11,30 @@
   var navToggle = document.querySelector(".nav-toggle"),
       mainNav = document.getElementById("mainNav");
   if(navToggle && mainNav){
-    navToggle.addEventListener("click", function(){
-      var isOpen = mainNav.classList.toggle("open");
+    if(!navToggle.hasAttribute("aria-controls")) navToggle.setAttribute("aria-controls", "mainNav");
+    function setMenu(isOpen){
+      mainNav.classList.toggle("open", isOpen);
       navToggle.classList.toggle("open", isOpen);
       navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
+    }
+    navToggle.addEventListener("click", function(){ setMenu(!mainNav.classList.contains("open")); });
     /* закрити меню при кліку на посилання */
     mainNav.querySelectorAll("a").forEach(function(a){
-      a.addEventListener("click", function(){
-        mainNav.classList.remove("open");
-        navToggle.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-      });
+      a.addEventListener("click", function(){ setMenu(false); });
     });
+    /* Esc закриває меню; фокус повертається на кнопку, якщо був усередині меню */
+    document.addEventListener("keydown", function(ev){
+      if(ev.key !== "Escape" || !mainNav.classList.contains("open")) return;
+      var inside = mainNav.contains(document.activeElement);
+      setMenu(false);
+      if(inside || document.activeElement === document.body) navToggle.focus();
+    });
+    /* клік поза шапкою закриває меню */
+    document.addEventListener("click", function(ev){
+      if(mainNav.classList.contains("open") && !ev.target.closest(".site-header")) setMenu(false);
+    });
+    /* перехід на широкий екран скидає стан */
+    window.addEventListener("resize", function(){ if(window.innerWidth > 640) setMenu(false); });
   }
 
   /* Поява блоків при скролі */

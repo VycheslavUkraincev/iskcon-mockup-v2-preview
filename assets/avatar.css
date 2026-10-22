@@ -146,4 +146,5 @@
   .avatar-char.idle .av-eyes,
   .avatar-char.idle .av-shadow{animation:none}
   .avatar-char{transition:none}
+  .avatar-char,.avatar-char *,.avatar-bubble,.avatar-zzz,.avatar-card,.avatar-msg.typing::after{animation:none!important;transition:none!important}
 }

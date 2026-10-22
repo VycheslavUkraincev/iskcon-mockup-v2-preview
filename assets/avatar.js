@@ -37,8 +37,12 @@ var SCENE = (function(){
   return "main";
 })();
 var POSTER = "assets/avatar-" + SCENE + "-poster.png";
+var REDUCED = !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+var SAVE_DATA = !!(navigator.connection && navigator.connection.saveData);
+var STATIC_AVATAR = REDUCED || SAVE_DATA;
+var videoOk = false; /* відео стартує лише після load + паузи, щоб не конкурувати з LCP */
 var SVG =
-'<video class="avatar-video" autoplay muted loop playsinline preload="auto" '+
+'<video class="avatar-video" muted loop playsinline preload="none" '+
 'poster="' + POSTER + '" aria-hidden="true">'+
   '<source src="assets/avatar-' + SCENE + '.webm" type="video/webm">'+
 '</video>';
@@ -72,7 +76,7 @@ document.body.appendChild(card);
 var charEl   = widget.querySelector("#avatarChar");
 var videoEl  = charEl.querySelector("video");
 /* Браузер без WebM-альфи (Safari): статичний прозорий PNG замість відео */
-if(videoEl && !videoEl.canPlayType("video/webm")){
+if(videoEl && (STATIC_AVATAR || !videoEl.canPlayType("video/webm"))){
   var pimg = document.createElement("img");
   pimg.src = POSTER; pimg.className = "avatar-video"; pimg.alt = "";
   videoEl.replaceWith(pimg); videoEl = null;
@@ -88,7 +92,7 @@ function setState(s){
   /* idle завжди активний як базовий */
   if(!charEl.classList.contains("idle")) charEl.classList.add("idle");
   /* відео: сон — пауза, інші стани — грає */
-  if(videoEl){
+  if(videoEl && videoOk){
     if(s==="sleeping"){ videoEl.pause(); }
     else if(videoEl.paused){ var pr = videoEl.play(); if(pr && pr.catch) pr.catch(function(){}); }
   }
@@ -111,8 +115,20 @@ function restartSleepTimer(){
   }, 60000); /* засинає за хвилину бездіяльності */
 }
 
-/* Мантра в хмарці */
-setInterval(function(){
+/* Старт відео: після load і короткої паузи; не при reduced-motion / Save-Data */
+function startVideo(){
+  if(!videoEl) return;
+  videoOk = true;
+  if(charEl.classList.contains("sleeping")) return;
+  var pr = videoEl.play(); if(pr && pr.catch) pr.catch(function(){});
+}
+if(videoEl){
+  if(document.readyState === "complete") setTimeout(startVideo, 1200);
+  else window.addEventListener("load", function(){ setTimeout(startVideo, 1200); });
+}
+
+/* Мантра в хмарці (при reduced-motion текст не змінюється) */
+if(!REDUCED) setInterval(function(){
   if(open || charEl.classList.contains("sleeping")) return;
   mi = (mi+1) % MANTRA.length;
   bubbleEl.style.opacity = 0;
@@ -201,7 +217,7 @@ function answer(i){
 }
 
 /* Привітальне махання при першому завантаженні */
-setTimeout(function(){
+if(!REDUCED) setTimeout(function(){
   if(!open && !charEl.classList.contains("sleeping")){
     setState("waving");
     setTimeout(function(){ if(!open) setState(null); }, 2800);
