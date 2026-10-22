@@ -58,6 +58,7 @@
   var lb = document.createElement("div");
   lb.className = "lightbox";
   lb.setAttribute("role","dialog");
+  lb.setAttribute("aria-modal","true");
   lb.setAttribute("aria-label","Перегляд фото");
   lb.innerHTML =
     '<button class="lb-close" aria-label="Закрити">×</button>' +
@@ -74,8 +75,16 @@
     img.src = a.href; img.alt = im ? (im.alt || "") : "";
     cap.textContent = (im && im.alt ? im.alt + " · " : "") + (idx+1) + " / " + links.length;
   }
-  function open(i){ show(i); lb.classList.add("open"); document.body.style.overflow = "hidden"; }
-  function close(){ lb.classList.remove("open"); document.body.style.overflow = ""; }
+  var lastFocus = null, closeBtn = lb.querySelector(".lb-close");
+  function open(i){
+    lastFocus = document.activeElement;
+    show(i); lb.classList.add("open"); document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  }
+  function close(){
+    lb.classList.remove("open"); document.body.style.overflow = "";
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
 
   links.forEach(function(a, i){
     a.removeAttribute("target");
@@ -90,5 +99,13 @@
     if(ev.key === "Escape") close();
     if(ev.key === "ArrowLeft") show(idx-1);
     if(ev.key === "ArrowRight") show(idx+1);
+    /* фокус не виходить за межі лайтбокса */
+    if(ev.key === "Tab"){
+      var f = lb.querySelectorAll("button");
+      var first = f[0], last = f[f.length-1];
+      if(ev.shiftKey && document.activeElement === first){ ev.preventDefault(); last.focus(); }
+      else if(!ev.shiftKey && document.activeElement === last){ ev.preventDefault(); first.focus(); }
+      else if(!lb.contains(document.activeElement)){ ev.preventDefault(); first.focus(); }
+    }
   });
 })();

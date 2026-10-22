@@ -486,6 +486,18 @@ ro: {
 "На цих номерах: Telegram, Viber, WhatsApp": "La aceste numere: Telegram, Viber, WhatsApp",
 "← Назад до питань": "← Înapoi la întrebări",
 "Скануйте щоб написати в Telegram": "Scanați pentru a ne scrie pe Telegram",
+/* ---- slice 2: ключі без емодзі (іконки замість емодзі) ---- */
+"Прийдіть у неділю": "Vino duminică",
+"Візьміть книгу": "Ia o carte",
+"Спробуйте мантру": "Încearcă mantra",
+"Лекції з філософії": "Prelegeri de filosofie",
+"Мантра-йога": "Mantra-yoga",
+"Бгаґавад-Ґіта як вона є": "Bhagavad-gita așa cum este",
+"Наука самопізнання": "Știința realizării de sine",
+"Прокласти маршрут": "Indicații de orientare",
+"Відгуки відвідувачів": "Recenziile vizitatorilor",
+"Часті питання": "Întrebări frecvente",
+"Підтримати храм": "Susțineți templul",
 },
 en: {
 /* ---- nav / header ---- */
@@ -968,5 +980,17 @@ en: {
 "Наступне фото": "Next photo",
 "Попереднє фото": "Previous photo",
 "Перегляд фото": "Photo viewer",
+/* ---- slice 2: ключі без емодзі (іконки замість емодзі) ---- */
+"Прийдіть у неділю": "Come on Sunday",
+"Візьміть книгу": "Take a book",
+"Спробуйте мантру": "Try the mantra",
+"Лекції з філософії": "Philosophy lectures",
+"Мантра-йога": "Mantra-yoga",
+"Бгаґавад-Ґіта як вона є": "Bhagavad-gita As It Is",
+"Наука самопізнання": "The Science of Self-Realization",
+"Прокласти маршрут": "Get directions",
+"Відгуки відвідувачів": "Visitor reviews",
+"Часті питання": "Frequently asked questions",
+"Підтримати храм": "Support the temple",
 }
 };

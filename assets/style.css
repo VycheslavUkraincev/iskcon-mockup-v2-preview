@@ -366,3 +366,156 @@ footer nav a:hover{text-decoration:underline}
   .hero-home__lede{font-size:1rem}
   .hero-home__cta .btn{flex:1 1 100%;text-align:center}
 }
+
+/* ============ Срез 2: главная целиком (scope: body.page-home) ============ */
+body.page-home{--cream:#FBF6ED;--card:#FFFCF5;--ink:#2B2117;--line:#E8DCC4;--muted:#645441;
+  --saffron-dark:#96570C;--sec-gap:clamp(64px,10vw,128px);
+  font-family:Onest,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:1.0625rem;line-height:1.65}
+.page-home h1,.page-home h2,.page-home h3,.page-home .brand b{font-family:Spectral,Georgia,"Times New Roman",serif;font-weight:600;letter-spacing:0}
+.page-home a{color:var(--saffron-text)}
+.page-home .btn{border-radius:999px;font-weight:600;transition:transform 250ms var(--ease-out),background-color 250ms var(--ease-out)}
+.page-home .btn-primary,.page-home .btn-primary:hover{color:#fff}
+.page-home .btn:not(.btn-primary):not(.btn-ghost){background:var(--ink);color:var(--paper)}
+.page-home .btn-ghost{background:transparent;color:var(--saffron-text);border:2px solid var(--saffron-text)}
+.page-home .btn-ghost:hover{background:#F6E9D2}
+.page-home .hero-home .btn-ghost{color:var(--paper);border-color:rgba(251,246,237,.8);background:rgba(251,246,237,.08)}
+.page-home .hero-home .btn-ghost:hover{background:rgba(251,246,237,.2);color:#fff}
+.page-home a:focus-visible,.page-home button:focus-visible,.page-home summary:focus-visible{outline:2px solid var(--saffron-text);outline-offset:3px}
+.page-home .card{border-radius:10px}
+
+/* иконки (маска из assets/icons/ui) */
+.ico{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:.45em;flex:0 0 auto;
+  background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+.ico-calendar{--i:url(icons/ui/calendar.svg)}.ico-book{--i:url(icons/ui/book.svg)}.ico-beads{--i:url(icons/ui/beads.svg)}
+.ico-bowl{--i:url(icons/ui/bowl.svg)}.ico-pin{--i:url(icons/ui/pin.svg)}.ico-phone{--i:url(icons/ui/phone.svg)}
+.ico-star{--i:url(icons/ui/star.svg)}.ico-help{--i:url(icons/ui/help.svg)}.ico-lotus{--i:url(icons/ui/lotus.svg)}
+.ico-route{--i:url(icons/ui/route.svg)}
+
+/* сетка и ритм */
+.container{max-width:1200px;margin:0 auto;padding:0 18px}
+.container--narrow{max-width:720px}
+.sec{padding:var(--sec-gap) 0}
+.sec--welcome{padding-bottom:clamp(24px,4vw,40px)}
+.sec--schedule{padding-top:clamp(24px,4vw,40px)}
+.sec__title{font-size:clamp(1.75rem,3.2vw,2.5rem);line-height:1.15;margin:0 0 .5em;text-align:center}
+.sec__sub{max-width:720px;margin:-.2em auto 2em;text-align:center;color:var(--muted)}
+.page-home .note{max-width:720px;margin:2em auto 0;color:var(--muted);font-size:.95rem}
+.lead{max-width:720px;margin:0 auto;text-align:center;font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.55;color:var(--ink)}
+.page-home .day{background:none;border:0;border-radius:0;padding:0}
+
+/* расписание */
+.schedule-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:24px;align-items:start}
+.page-home .card--main{padding:clamp(20px,3vw,36px)}
+.page-home .card--side{padding:clamp(20px,3vw,28px);background:transparent}
+.card--side h3{margin:0 0 .6em;font-size:1.3rem;color:var(--ink)}
+.page-home .day .ev{display:grid;grid-template-columns:5.2rem 1fr;gap:12px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
+.page-home .day .ev:last-child{border-bottom:0}
+.page-home .day .t{font-family:Spectral,Georgia,serif;font-size:1.5rem;font-weight:600;color:var(--saffron-text);flex:none}
+.card--side .day .t{font-size:1.2rem}
+@media(max-width:860px){.schedule-grid{grid-template-columns:1fr}}
+
+/* для кого */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px)}
+.who-col>p{font-family:Spectral,Georgia,serif;font-size:1.35rem;font-weight:600;margin:0 0 .6em}
+.page-home ul.tick li{padding:8px 0 8px 32px}
+.page-home ul.tick li::before{content:"";left:2px;top:.95em;width:14px;height:8px;border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg) translateY(-4px);background:none}
+.who-close{max-width:720px;margin:2.2em auto 0;text-align:center;font-family:Spectral,Georgia,serif;font-style:italic;font-size:clamp(1.3rem,2.4vw,1.75rem);line-height:1.45}
+@media(max-width:860px){.who-grid{grid-template-columns:1fr}}
+
+/* первые шаги */
+.sec--steps{background:#F4EBDA}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
+.step{counter-increment:step;position:relative;padding:28px 24px 24px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.step::before{content:counter(step);position:absolute;top:18px;right:20px;font-family:Spectral,Georgia,serif;font-size:3rem;line-height:1;color:#E5D3B1}
+.step .ico{width:2rem;height:2rem;margin:0 0 14px;color:var(--saffron-text)}
+.step h3{margin:0 0 .4em;font-size:1.35rem}
+.step p{margin:0}
+@media(max-width:860px){.steps{grid-template-columns:1fr}}
+
+/* философия — тёмная сцена */
+.sec--dark{background:var(--scene);color:var(--paper)}
+.sec--dark .sec__title{color:var(--paper)}
+.sec--dark a{color:var(--gold)}
+.phil-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,6vw,80px);align-items:start}
+.phil-col h3{font-size:1.5rem;margin:0 0 .6em;color:var(--paper)}
+.phil-col .ico{color:var(--gold)}
+.phil-col p{max-width:720px}
+.phil-col .more{display:inline-block;margin-top:.6em;font-weight:600}
+.phil-col--mantra{border-left:1px solid rgba(201,162,75,.4);padding-left:clamp(24px,4vw,56px)}
+.mantra{font-family:Spectral,Georgia,serif;font-style:italic;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.5;color:var(--gold)}
+@media(max-width:860px){.phil-grid{grid-template-columns:1fr}.phil-col--mantra{border-left:0;border-top:1px solid rgba(201,162,75,.4);padding:32px 0 0}}
+
+/* направления */
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.path{position:relative;padding:clamp(24px,4vw,40px);background:var(--card);border:1px solid var(--line);border-radius:10px;
+  transition:border-color 250ms var(--ease-out),transform 450ms var(--ease-out)}
+.path:hover{border-color:var(--saffron-text);transform:translateY(-3px)}
+.path h3{font-size:1.6rem;margin:0 0 .4em}
+.path h3 .ico{color:var(--saffron-text)}
+.path a{font-weight:600}
+.path a::after{content:"";position:absolute;inset:0;border-radius:10px}
+@media(max-width:700px){.paths{grid-template-columns:1fr}}
+
+/* галерея */
+.page-home .gallery{grid-template-columns:repeat(3,1fr);gap:12px}
+.page-home .gallery a{border:0;border-radius:6px;background:#E8DCC4}
+.page-home .gallery img{height:auto;aspect-ratio:3/2;transition:transform 800ms var(--ease-out)}
+.page-home .gallery a:hover img{transform:scale(1.04)}
+.page-home .gallery a:first-child{grid-column:span 2;grid-row:span 2}
+.page-home .gallery a:first-child img{height:100%;aspect-ratio:auto}
+@media(max-width:640px){.page-home .gallery{grid-template-columns:repeat(2,1fr);gap:8px}.page-home .gallery a:first-child{grid-column:span 2;grid-row:auto}.page-home .gallery a:first-child img{aspect-ratio:3/2;height:auto}}
+
+/* основатель и книги */
+.founder{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,56px);align-items:center;max-width:900px;margin:0 auto}
+.founder__img{width:clamp(160px,22vw,240px);aspect-ratio:3/4;object-fit:cover;object-position:50% 20%;border-radius:999px 999px 6px 6px}
+.founder__text p{margin:0 0 .8em;max-width:720px}
+.books-intro{margin-top:clamp(40px,6vw,72px)}
+.books{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.book{padding:24px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.book .ico{width:1.75rem;height:1.75rem;margin:0 0 10px;color:var(--saffron-text)}
+.book h3{font-size:1.25rem;margin:0 0 .4em}
+.book p{margin:0}
+@media(max-width:860px){.books{grid-template-columns:1fr}}
+@media(max-width:560px){.founder{grid-template-columns:1fr;justify-items:center;text-align:center}}
+
+/* карта */
+.map-address{text-align:center;margin:0 0 1.2em;font-size:1.15rem}
+.map-address .ico{color:var(--saffron-text)}
+.map-frame{border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.map-frame iframe{display:block;width:100%}
+.map-cta{text-align:center;margin:1.6em 0 0}
+.map-cta .btn{margin:0}
+.map-cta .ico{margin-right:.5em}
+
+/* отзывы */
+.sec--reviews{background:#F4EBDA}
+.rating{text-align:center;margin-bottom:2em}
+.rating__num{font-family:Spectral,Georgia,serif;font-size:4rem;font-weight:600;line-height:1;color:var(--saffron-text)}
+.rating__stars{font-size:1.5rem;letter-spacing:3px;color:#B77A12;margin:6px 0}
+.rating__stars .dim{opacity:.35}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.review{margin:0;padding:24px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.review__stars{color:#B77A12;letter-spacing:2px;margin-bottom:8px}
+.review blockquote{margin:0 0 14px;font-family:Spectral,Georgia,serif;font-style:italic;font-size:1.15rem;line-height:1.5}
+.review figcaption{font-weight:600}
+.reviews__actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:2em}
+.reviews__actions .btn{margin:0}
+
+/* FAQ и контакты */
+.page-home .faq-item{border-radius:10px;box-shadow:none;background:var(--card)}
+.page-home .faq-item[open]{box-shadow:none;border-color:var(--saffron-text)}
+.page-home .faq-item[open] summary{background:none;color:var(--saffron-text)}
+.page-home .faq-item summary:hover{background:#F6E9D2}
+.page-home .faq-item summary::after{background:#F4EBDA;color:var(--saffron-text)}
+.page-home .faq-item[open] summary::after{background:var(--saffron-text);color:#fff}
+.page-home .faq-item summary{font-size:1.05rem}
+.page-home .sec--faq .sec__title .ico,.page-home .sec--reviews .sec__title .ico{color:var(--saffron-text);width:1em;height:1em}
+.contact-list>div{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 6px}
+.contact-list .ico{color:var(--saffron-text);align-self:center;margin-right:.2em}
+.page-home .contact-list a{font-weight:600}
+.page-home footer .wrap{max-width:1200px}
+
+@media(prefers-reduced-motion:reduce){
+  .page-home .path,.page-home .gallery img,.page-home .btn{transition:none}
+  .page-home .path:hover,.page-home .gallery a:hover img{transform:none}
+}
