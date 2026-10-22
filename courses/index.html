@@ -2,18 +2,32 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-  <base href="/iskcon-mockup-v2-preview/">
+  <base href="/iskcon-cv-ua/">
   
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Навчання — ІСККОН Чернівці</title>
 <meta name="description" content="Курси ведичної філософії, ведичної кулінарії та гри на традиційних інструментах у Чернівцях.">
 <meta name="theme-color" content="#D9820B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/onest-normal-400-700-cyrillic.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/spectral-normal-600-cyrillic.woff2">
+<style>
+@font-face{font-family:'Onest';font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/onest-normal-400-700-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Onest';font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/onest-normal-400-700-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Onest';font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/onest-normal-400-700-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/spectral-italic-400-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/spectral-italic-400-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/spectral-italic-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/spectral-normal-600-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/spectral-normal-600-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/spectral-normal-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+</style>
+<link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesrcset="assets/courses-philosophy-480.webp 480w, assets/courses-philosophy-800.webp 800w, assets/courses-philosophy-1200.webp 1200w" imagesizes="(max-width:860px) calc(100vw - 36px), 380px">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/avatar.css">
-<link rel="icon" href="assets/logo.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/favicon.ico" sizes="48x48 32x32 16x16">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="canonical" href="https://iskcon.cv.ua/courses">
 <meta property="og:title" content="Курси — ІСККОН Чернівці">
 <meta property="og:description" content="Курси ведичної філософії, кулінарії та кіртану в Чернівцях.">
@@ -22,13 +36,13 @@
 <meta property="og:locale" content="uk_UA">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-<body>
+<body class="ds page-courses">
 <a class="skip-link" href="#main">Перейти до вмісту</a>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./"><img src="assets/logo.jpg" alt="ІСККОН Чернівці"><b>ІСККОН ЧЕРНІВЦІ</b></a>
-    <button class="nav-toggle" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a class="brand" href="./"><img src="assets/logo-88.webp" alt="ІСККОН Чернівці" width="44" height="44"><b>ІСККОН ЧЕРНІВЦІ</b></a>
+    <button class="nav-toggle" aria-label="Меню" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
     <nav class="nav" id="mainNav">
       <a href="./">Головна</a>
       <a href="courses" class="active">Навчання</a>
@@ -39,59 +53,82 @@
   </div>
 </header>
 
-<div class="hero">
-  <h1>Навчання та розвиток</h1>
-  <p class="lede">Обирайте курс та записуйтесь — будемо раді бачити вас на заняттях!</p>
-</div>
+<main>
+<section class="page-hero">
+  <div class="container">
+    <h1>Навчання та розвиток</h1>
+    <p class="lede">Обирайте курс та записуйтесь — будемо раді бачити вас на заняттях!</p>
+  </div>
+</section>
 
-<div class="wrap">
-  <section class="block" id="main">
-    <div class="grid2">
-      <div class="card course-card">
-        <img src="assets/courses-philosophy.jpeg" alt="Ведична філософія">
-        <h3>📚 Ведична філософія</h3>
-        <p>Глибоке занурення у ведичну мудрість — для тих, хто хоче розібратися
-          в духовній науці та знайти відповіді на головні питання життя:</p>
-        <ul class="tick">
-          <li><b>Хто Я?</b> — краще зрозуміти себе</li>
-          <li><b>Основи ведичної філософії</b> — Бгаґавад-ґіта, карма, реінкарнація</li>
-          <li><b>Бгакті-шастри</b> — поглиблене вивчення священних текстів</li>
-        </ul>
-      </div>
-      <div class="card course-card">
-        <img src="assets/courses-cooking.jpeg" alt="Ведична кулінарія">
-        <h3>🥗 Ведична кулінарія</h3>
-        <p>Мистецтво приготування смачної та корисної їжі. На практичних заняттях дізнаєтесь:</p>
-        <ul class="tick">
-          <li>Як готувати корисні та надзвичайно смачні вегетаріанські страви</li>
-          <li>Секрети використання спецій у кулінарії</li>
-          <li>Як перетворити готування на духовну практику</li>
-        </ul>
-      </div>
+<section class="sec sec--courses" id="main">
+  <div class="container">
+    <div class="courses">
+      <article class="card course-card">
+        <img src="assets/courses-philosophy-800.webp" srcset="assets/courses-philosophy-480.webp 480w, assets/courses-philosophy-800.webp 800w, assets/courses-philosophy-1200.webp 1200w" sizes="(max-width:860px) calc(100vw - 36px), 380px" width="1200" height="655" alt="Ведична філософія" fetchpriority="high" decoding="async">
+        <div class="course-card__body">
+          <h2><span class="ico ico-book" aria-hidden="true"></span>Ведична філософія</h2>
+          <p>Глибоке занурення у ведичну мудрість — для тих, хто хоче розібратися
+            в духовній науці та знайти відповіді на головні питання життя:</p>
+          <ul class="tick">
+            <li><b>Хто Я?</b> — краще зрозуміти себе</li>
+            <li><b>Основи ведичної філософії</b> — Бгаґавад-ґіта, карма, реінкарнація</li>
+            <li><b>Бгакті-шастри</b> — поглиблене вивчення священних текстів</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card course-card">
+        <img src="assets/courses-cooking-800.webp" srcset="assets/courses-cooking-480.webp 480w, assets/courses-cooking-800.webp 800w, assets/courses-cooking-1200.webp 1200w" sizes="(max-width:860px) calc(100vw - 36px), 380px" width="1200" height="655" alt="Ведична кулінарія" loading="lazy" decoding="async">
+        <div class="course-card__body">
+          <h2><span class="ico ico-bowl" aria-hidden="true"></span>Ведична кулінарія</h2>
+          <p>Мистецтво приготування смачної та корисної їжі. На практичних заняттях дізнаєтесь:</p>
+          <ul class="tick">
+            <li>Як готувати корисні та надзвичайно смачні вегетаріанські страви</li>
+            <li>Секрети використання спецій у кулінарії</li>
+            <li>Як перетворити готування на духовну практику</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card course-card">
+        <img src="assets/courses-kirtan-800.webp" srcset="assets/courses-kirtan-480.webp 480w, assets/courses-kirtan-800.webp 800w, assets/courses-kirtan-1200.webp 1200w" sizes="(max-width:860px) calc(100vw - 36px), 380px" width="1200" height="655" alt="Музичні інструменти" loading="lazy" decoding="async">
+        <div class="course-card__body">
+          <h2><span class="ico ico-music" aria-hidden="true"></span>Музичні інструменти</h2>
+          <p>Кіртан — серце нашої духовної практики. Уроки гри на традиційних інструментах:</p>
+          <ul class="tick">
+            <li><b>Каратали</b> — ручні цимбали, тримання ритму</li>
+            <li><b>Мріданг</b> — традиційний бенгальський барабан</li>
+            <li><b>Фісгармонія</b> — вивчення мелодій</li>
+          </ul>
+        </div>
+      </article>
     </div>
-    <div class="grid2" style="margin-top:16px">
-      <div class="card course-card">
-        <img src="assets/courses-kirtan.jpeg" alt="Музичні інструменти">
-        <h3>🎵 Музичні інструменти</h3>
-        <p>Кіртан — серце нашої духовної практики. Уроки гри на традиційних інструментах:</p>
-        <ul class="tick">
-          <li><b>Каратали</b> — ручні цимбали, тримання ритму</li>
-          <li><b>Мріданг</b> — традиційний бенгальський барабан</li>
-          <li><b>Фісгармонія</b> — вивчення мелодій</li>
-        </ul>
-      </div>
-      <div class="card" style="display:flex;flex-direction:column;justify-content:center;text-align:center">
-        <h3>Запис на курси</h3>
+
+    <div class="signup">
+      <div class="signup__text">
+        <h2>Запис на курси</h2>
         <p>За деталями звертайтесь за телефонами храму:</p>
-        <p><a href="tel:+380633117500" style="font-size:1.2rem;font-weight:700">063-311-7500</a><br>
-        <a href="tel:+380951440568" style="font-size:1.2rem;font-weight:700">095-144-0568</a></p>
-        <p style="color:var(--muted);font-size:.9rem">Telegram, Viber, WhatsApp</p>
+        <p class="signup__phones"><a href="tel:+380633117500">063-311-7500</a><br>
+        <a href="tel:+380951440568">095-144-0568</a></p>
+        <p class="note">Telegram, Viber, WhatsApp</p>
+      </div>
+      <div class="signup__actions">
+        <!-- TODO(owner): коли надійде URL Google-форми Анади Кришни, поставити його в href кнопки data-form="courses".
+             До того кнопка веде на дзвінок, друга — у Telegram-спільноту храму (посилання з реєстру сайту). -->
+        <a class="btn btn-primary" href="tel:+380633117500" data-form="courses">Записатися на курс</a>
+        <a class="btn btn-ghost" href="https://t.me/+bGy8LgS8jTQ0YzNi" target="_blank" rel="noopener">Написати в Telegram</a>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 
-<section class="bookshelf"> <h2>📚 Ведична бібліотека</h2> <p class="lead">Священні тексти українською — читайте онлайн на Vedabase. Натисніть на книгу, щоб відкрити.</p> <div class="shelf-row"> <div> <a href="https://vedabase.io/uk/library/bg/" target="_blank" rel="noopener" style="text-decoration:none"> <div class="book3d"><div class="bshadow"></div><div class="spine" data-title="БГАҐАВАД-ҐІТА"></div><img class="cover" src="assets/book-bg.jpg" alt="Бгаґавад-ґіта"><div class="pages"></div></div> </a> <div class="book-meta"><b>Бгаґавад-ґіта</b><span>Діалог Крішни та Арджуни</span><br><a href="https://vedabase.io/uk/library/bg/" target="_blank" rel="noopener">Читати →</a></div> </div> <div> <a href="https://vedabase.io/uk/library/sb/" target="_blank" rel="noopener" style="text-decoration:none"> <div class="book3d"><div class="bshadow"></div><div class="spine" data-title="ШРІМАД БГАГАВАТАМ"></div><img class="cover" src="assets/book-sb.jpg" alt="Шрімад-Бгаґаватам"><div class="pages"></div></div> </a> <div class="book-meta"><b>Шрімад-Бгаґаватам</b><span>«Зрілий плід ведичного знання»</span><br><a href="https://vedabase.io/uk/library/sb/" target="_blank" rel="noopener">Читати →</a></div> </div> <div> <a href="https://vedabase.io/uk/library/cc/" target="_blank" rel="noopener" style="text-decoration:none"> <div class="book3d"><div class="bshadow"></div><div class="spine" data-title="ЧАЙТАНЬЯ-ЧАРІТАМРІТА"></div><img class="cover" src="assets/book-cc.jpg" alt="Чайтанья-чарітамріта"><div class="pages"></div></div> </a> <div class="book-meta"><b>Чайтанья-чарітамріта</b><span>Життя Шрі Чайтаньї Махапрабгу</span><br><a href="https://vedabase.io/uk/library/cc/" target="_blank" rel="noopener">Читати →</a></div> </div> </div> <div class="shelf-plank"></div> </section>  <p class="note" style="text-align:center;margin-top:32px">📚 Хочете глибше? Читайте <a href="https://vedabase.io/uk/library/" target="_blank" rel="noopener">ведичні тексти українською</a> у нашій бібліотеці.</p> <footer>
+<section class="bookshelf sec--dark"><h2><span class="ico ico-book" aria-hidden="true"></span>Ведична бібліотека</h2><p class="lead">Священні тексти українською — читайте онлайн на Vedabase. Натисніть на книгу, щоб відкрити.</p><div class="shelf-row"><div><a href="https://vedabase.io/uk/library/bg/" target="_blank" rel="noopener"><div class="book3d"><div class="bshadow"></div><div class="spine" data-title="БГАҐАВАД-ҐІТА"></div><img class="cover" src="assets/book-bg-380.webp" width="190" height="302" loading="lazy" decoding="async" alt="Бгаґавад-ґіта"><div class="pages"></div></div></a><div class="book-meta"><b>Бгаґавад-ґіта</b><span>Діалог Крішни та Арджуни</span><br><a href="https://vedabase.io/uk/library/bg/" target="_blank" rel="noopener">Читати →</a></div></div><div><a href="https://vedabase.io/uk/library/sb/" target="_blank" rel="noopener"><div class="book3d"><div class="bshadow"></div><div class="spine" data-title="ШРІМАД БГАГАВАТАМ"></div><img class="cover" src="assets/book-sb-380.webp" width="190" height="302" loading="lazy" decoding="async" alt="Шрімад-Бгаґаватам"><div class="pages"></div></div></a><div class="book-meta"><b>Шрімад-Бгаґаватам</b><span>«Зрілий плід ведичного знання»</span><br><a href="https://vedabase.io/uk/library/sb/" target="_blank" rel="noopener">Читати →</a></div></div><div><a href="https://vedabase.io/en/library/cc/" target="_blank" rel="noopener"><div class="book3d"><div class="bshadow"></div><div class="spine" data-title="ЧАЙТАНЬЯ-ЧАРІТАМРІТА"></div><img class="cover" src="assets/book-cc-380.webp" width="190" height="302" loading="lazy" decoding="async" alt="Чайтанья-чарітамріта"><div class="pages"></div></div></a><div class="book-meta"><b>Чайтанья-чарітамріта</b><span>Життя Шрі Чайтаньї Махапрабгу</span><br><a href="https://vedabase.io/en/library/cc/" target="_blank" rel="noopener">Читати →</a></div></div></div><div class="shelf-plank"></div></section>
+
+<section class="sec sec--more">
+  <div class="container"><p class="note more-note"><span class="ico ico-book" aria-hidden="true"></span>Хочете глибше? Читайте <a href="https://vedabase.io/uk/library/" target="_blank" rel="noopener">ведичні тексти українською</a> у нашій бібліотеці.</p></div>
+</section>
+</main>
+
+<footer>
   <div class="wrap">
     <nav>
       <a href="./">Головна</a>

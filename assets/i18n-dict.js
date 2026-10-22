@@ -498,6 +498,11 @@ ro: {
 "Відгуки відвідувачів": "Recenziile vizitatorilor",
 "Часті питання": "Întrebări frecvente",
 "Підтримати храм": "Susțineți templul",
+/* ---- slice 3: /courses ---- */
+"Ведична бібліотека": "Biblioteca vedică",
+"Хочете глибше? Читайте": "Vrei să aprofundezi? Citește",
+"Записатися на курс": "Înscrie-te la un curs",
+"Написати в Telegram": "Scrie-ne pe Telegram",
 },
 en: {
 /* ---- nav / header ---- */
@@ -992,5 +997,10 @@ en: {
 "Відгуки відвідувачів": "Visitor reviews",
 "Часті питання": "Frequently asked questions",
 "Підтримати храм": "Support the temple",
+/* ---- slice 3: /courses ---- */
+"Ведична бібліотека": "Vedic library",
+"Хочете глибше? Читайте": "Want to dive deeper? Read",
+"Записатися на курс": "Sign up for a course",
+"Написати в Telegram": "Message us on Telegram",
 }
 };

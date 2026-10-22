@@ -115,16 +115,24 @@ function restartSleepTimer(){
   }, 60000); /* засинає за хвилину бездіяльності */
 }
 
-/* Старт відео: після load і короткої паузи; не при reduced-motion / Save-Data */
+/* Старт відео: не при reduced-motion / Save-Data; лише після load і першої взаємодії
+   (скрол, дотик, клавіша), а без взаємодії — через 8 с після load. Так важке webm
+   не конкурує з першим екраном і не вантажиться «в нікуди». */
+var videoStarted = false;
 function startVideo(){
-  if(!videoEl) return;
-  videoOk = true;
+  if(!videoEl || videoStarted) return;
+  videoStarted = true; videoOk = true;
+  ["scroll","pointerdown","keydown","touchstart"].forEach(function(evt){ window.removeEventListener(evt, startVideo); });
   if(charEl.classList.contains("sleeping")) return;
   var pr = videoEl.play(); if(pr && pr.catch) pr.catch(function(){});
 }
+function armVideo(){
+  ["scroll","pointerdown","keydown","touchstart"].forEach(function(evt){ window.addEventListener(evt, startVideo, {passive:true, once:true}); });
+  setTimeout(startVideo, 8000);
+}
 if(videoEl){
-  if(document.readyState === "complete") setTimeout(startVideo, 1200);
-  else window.addEventListener("load", function(){ setTimeout(startVideo, 1200); });
+  if(document.readyState === "complete") armVideo();
+  else window.addEventListener("load", armVideo);
 }
 
 /* Мантра в хмарці (при reduced-motion текст не змінюється) */
