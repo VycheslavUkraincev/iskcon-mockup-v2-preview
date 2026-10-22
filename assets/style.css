@@ -390,7 +390,7 @@ body.ds{--cream:#FBF6ED;--card:#FFFCF5;--ink:#2B2117;--line:#E8DCC4;--muted:#645
 .ico-bowl{--i:url(icons/ui/bowl.svg)}.ico-pin{--i:url(icons/ui/pin.svg)}.ico-phone{--i:url(icons/ui/phone.svg)}
 .ico-star{--i:url(icons/ui/star.svg)}.ico-help{--i:url(icons/ui/help.svg)}.ico-lotus{--i:url(icons/ui/lotus.svg)}
 .ico-route{--i:url(icons/ui/route.svg)}.ico-music{--i:url(icons/ui/music.svg)}
-.ico-basket{--i:url(icons/ui/basket.svg)}.ico-knife{--i:url(icons/ui/knife.svg)}.ico-broom{--i:url(icons/ui/broom.svg)}.ico-truck{--i:url(icons/ui/truck.svg)}.ico-card{--i:url(icons/ui/card.svg)}.ico-heart{--i:url(icons/ui/heart.svg)}.ico-clock{--i:url(icons/ui/clock.svg)}.ico-copy{--i:url(icons/ui/copy.svg)}.ico-play{--i:url(icons/ui/play.svg)}
+.ico-basket{--i:url(icons/ui/basket.svg)}.ico-knife{--i:url(icons/ui/knife.svg)}.ico-broom{--i:url(icons/ui/broom.svg)}.ico-truck{--i:url(icons/ui/truck.svg)}.ico-card{--i:url(icons/ui/card.svg)}.ico-heart{--i:url(icons/ui/heart.svg)}.ico-clock{--i:url(icons/ui/clock.svg)}.ico-copy{--i:url(icons/ui/copy.svg)}.ico-play{--i:url(icons/ui/play.svg)}.ico-home{--i:url(icons/ui/home.svg)}.ico-bulb{--i:url(icons/ui/bulb.svg)}.ico-wrench{--i:url(icons/ui/wrench.svg)}.ico-lock{--i:url(icons/ui/lock.svg)}.ico-external{--i:url(icons/ui/external.svg)}
 
 /* сетка и ритм */
 .container{max-width:1200px;margin:0 auto;padding:0 18px}
@@ -707,3 +707,61 @@ body.ds{--cream:#FBF6ED;--card:#FFFCF5;--ink:#2B2117;--line:#E8DCC4;--muted:#645
 @media(prefers-reduced-motion:reduce){
   .video-facade__play,.widget__amounts button{transition:none}
 }
+
+/* ============ Срез 5: /donation (scope: body.ds, .page-donation) ============ */
+.page-donation .page-hero h1 .ico{color:var(--gold);width:.8em;height:.8em;margin-right:.3em}
+.sec--use{padding-bottom:clamp(40px,6vw,72px)}
+.use{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.use__item{display:flex;gap:14px;align-items:flex-start;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.use__item .ico{width:1.7rem;height:1.7rem;margin:0;color:var(--saffron-text);flex:0 0 auto}
+.use__item span:not(.ico){min-width:0;overflow-wrap:anywhere;font-weight:600;line-height:1.45}
+.use__item em{display:block;font-weight:400;font-style:normal;color:var(--muted);font-size:.92rem;margin-top:2px}
+.use__more{max-width:720px;margin:2em auto 0;text-align:center;font-family:Spectral,Georgia,serif;font-size:clamp(1.15rem,2.2vw,1.45rem);line-height:1.5}
+@media(max-width:860px){.use{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.use{grid-template-columns:minmax(0,1fr)}}
+
+.sec--impact{background:#F4EBDA}
+.sec--impact[hidden],.impact__card[hidden]{display:none}
+.impact{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.impact__card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px;text-align:center}
+.impact__amount{font-family:Spectral,Georgia,serif;font-size:2.2rem;font-weight:600;color:var(--saffron-text);line-height:1.1}
+.impact__result{margin:.6em 0 0}
+
+.sec--give{background:#F4EBDA}
+.give{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;align-items:stretch}
+.give__card{margin:0;padding:clamp(24px,3.5vw,40px);display:flex;flex-direction:column;align-items:flex-start}
+.give__card--circle{border:2px solid var(--saffron-text);background:#FFFDF8}
+.give__card h3{margin:0 0 .4em;font-size:1.7rem;line-height:1.2}
+.give__card--circle h3{color:var(--saffron-text)}
+.give__why{margin:0 0 1.2em;max-width:44ch}
+.give__card .btn{margin:0}
+.give__card .qr{width:auto;max-width:100%;margin:1.6em 0 0;padding:14px;border:1px solid var(--line);border-radius:10px;background:#fff;display:block;text-align:center;align-self:stretch}
+.give__card .qr a{display:inline-block;border:0;border-radius:6px}
+.give__card .qr img{width:180px;height:180px;display:block;margin:0 auto;border-radius:6px}
+.give__card .qr p{margin:10px 0 0;font-size:.9rem;color:var(--muted)}
+@media(max-width:860px){.give{grid-template-columns:minmax(0,1fr)}}
+.give__trust{max-width:720px;margin:2em auto 0;text-align:center;font-size:1.05rem}
+.give__trust .ico{color:var(--saffron-text);margin-right:.5em}
+.ds .donate-hint{margin:1em auto 0;max-width:720px;color:var(--muted);text-align:center;font-size:.95rem}
+.page-donation .sec--give .note{margin-top:.6em}
+
+.req--page{max-width:720px;margin:0 auto}
+.req--page .req__body{padding:clamp(20px,3vw,32px)}
+.req--page .req__row+.req__row{padding-top:16px;border-top:1px dashed var(--line)}
+.req__fail{max-width:720px;margin:14px auto 0;padding:12px 16px;border-radius:10px;background:#FBE9E2;color:#7A2E14;font-size:.95rem}
+.req__fail[hidden]{display:none}
+.page-donation .sec--req .note{margin-top:1.4em}
+
+/* модальное окно WayForPay в дизайн-системе */
+.ds .donate-modal{background:rgba(29,21,14,.8);backdrop-filter:none}
+.ds .donate-modal.open{animation:none}
+.ds .donate-modal-box{border-radius:10px;box-shadow:none;border:1px solid var(--line)}
+.ds .donate-modal-head{background:var(--scene);border-bottom:0;color:var(--paper)}
+.ds .donate-modal-head b{font-family:Spectral,Georgia,serif;font-size:1.2rem;color:var(--paper)}
+.ds .donate-modal-close{color:var(--paper);min-width:44px;min-height:44px;font-size:1.8rem}
+.ds .donate-modal-close:hover{background:rgba(251,246,237,.15);color:#fff}
+.ds .donate-modal-close:focus-visible,.ds .donate-modal-foot a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.ds .donate-modal-foot{background:#FFFBF2;color:var(--muted);font-size:.88rem;padding:12px 18px}
+.ds .donate-modal-foot a{color:var(--saffron-text);font-weight:600}
+.ds .donate-modal-loader .spin{animation:donSpin 1s linear infinite}
+@media(prefers-reduced-motion:reduce){.ds .donate-modal-loader .spin{animation-duration:2.5s}}
