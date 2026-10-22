@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+  <base href="/iskcon-cv-ua/">
+  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Пожертви — ІСККОН Чернівці</title>
+<meta name="description" content="Підтримайте храм ІСККОН у Чернівцях: разова чи регулярна пожертва через WayForPay або банківські реквізити.">
+<meta name="theme-color" content="#D9820B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/avatar.css">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="canonical" href="https://iskcon.cv.ua/donation">
+<meta property="og:title" content="Пожертви — ІСККОН Чернівці">
+<meta property="og:description" content="Підтримати храм і програму «Їжа життя»: разова або регулярна пожертва, реквізити, QR-коди.">
+<meta property="og:url" content="https://iskcon.cv.ua/donation">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти до вмісту</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/logo.jpg" alt="ІСККОН Чернівці"><b>ІСККОН ЧЕРНІВЦІ</b></a>
+    <button class="nav-toggle" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" id="mainNav">
+      <a href="./">Головна</a>
+      <a href="courses">Навчання</a>
+      <a href="food">Їжа життя</a>
+      <a href="donation" class="active">Пожертви</a>
+    </nav><div class="lang-switcher"><button class="lang-btn" data-lang="uk">UK</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="ro">RO</button></div>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>🙏 Меценати храму</h1>
+  <p class="lede">Наш храм живе та розвивається виключно завдяки вашій підтримці.
+    Ми безмежно вдячні кожному за щедрість та відкрите серце!</p>
+</div>
+
+<div class="wrap">
+  <section class="block" id="main">
+    <h2>Зробити пожертву</h2>
+    <div class="donate-btns">
+      <button class="btn btn-primary" data-donate="onetime">Разова пожертва</button>
+      <button class="btn btn-ghost" data-donate="regular">Регулярна пожертва</button>
+    </div>
+    <p class="donate-hint">Разова — на поточні потреби храму · Регулярна — стабільна підтримка щомісяця</p>
+    <div class="qr-row">
+      <div class="qr">
+        <a href="assets/qr-onetime.png" data-qr><img src="assets/qr-onetime.png" alt="QR-код: разова пожертва" loading="lazy"></a>
+        <p>Разова пожертва — наведіть камеру</p>
+      </div>
+      <div class="qr">
+        <a href="assets/qr-regular.png" data-qr><img src="assets/qr-regular.png" alt="QR-код: регулярна пожертва" loading="lazy"></a>
+        <p>Регулярна пожертва — наведіть камеру</p>
+      </div>
+    </div>
+    <p class="note">Натисніть кнопку — форма оплати відкриється прямо тут, без переходу на інший сайт 🔒</p>
+  </section>
+
+  <section class="block">
+    <h2>На що спрямовуються ваші пожертви</h2>
+    <div class="card">
+      <ul class="tick">
+        <li>🏡 Оренда приміщення</li>
+        <li>💡 Комунальні послуги</li>
+        <li>🍎 Продукти <em>(для приготування прасаду)</em></li>
+        <li>🌸 Квіти <em>(для прикрашання вівтаря та божеств)</em></li>
+        <li>📚 Проповідницькі проєкти та розповсюдження книг</li>
+        <li>🛠️ Господарські та інші поточні витрати</li>
+      </ul>
+      <p>Налаштуйте <b>регулярні щомісячні внески</b> — це допоможе храму стабільно
+        планувати витрати. Або зробіть одноразовий переказ.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Банківські реквізити</h2>
+    <div class="card bank">
+      <div class="row">
+        <span class="label">IBAN</span>
+        <span class="val" id="iban-val">UA563077700000026007111264936</span>
+        <button class="copy" data-copy="iban-val">Копіювати</button>
+      </div>
+      <div class="row">
+        <span class="label">ЄДРПОУ</span>
+        <span class="val" id="edrpou-val">46285356</span>
+        <button class="copy" data-copy="edrpou-val">Копіювати</button>
+      </div>
+      <div class="row">
+        <span class="label">Одержувач</span>
+        <span class="val" id="recv-val">РО «РЕЛІГІЙНА ГРОМАДА СВІДОМОСТІ КРІШНИ В МІСТІ ЧЕРНІВЦІ»</span>
+        <button class="copy" data-copy="recv-val">Копіювати</button>
+      </div>
+      <div class="row">
+        <span class="label">Призначення</span>
+        <span class="val" id="purp-val">Добровільна пожертва</span>
+        <button class="copy" data-copy="purp-val">Копіювати</button>
+      </div>
+    </div>
+    <p class="note">Прозорість: дані організації —
+      <a href="https://opendatabot.ua/c/46285356" target="_blank" rel="noopener">opendatabot.ua</a></p>
+  </section>
+
+  <section class="block">
+    <h2>Контакти</h2>
+    <div class="card" style="text-align:center">
+      <p>📞 <b>Ануґатья д.д.:</b> <a href="tel:+380633203940" style="font-size:1.2rem;font-weight:700">063-320-3940</a><br>
+      <span style="color:var(--muted)">Telegram, Viber, WhatsApp</span></p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="./">Головна</a>
+      <a href="courses">Навчання</a>
+      <a href="food">Їжа життя</a>
+      <a href="donation">Пожертви</a>
+    </nav>
+    <p>РО «Релігійна громада свідомості Крішни в місті Чернівці» · ЄДРПОУ 46285356</p>
+    <p>вул. Скальда (Комарова), 40А, Чернівці · 063-311-7500</p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+
+<!-- Модальне вікно пожертви: WayForPay в айфреймі -->
+<div class="donate-modal" id="donateModal" role="dialog" aria-modal="true" aria-label="Форма пожертви">
+  <div class="donate-modal-box">
+    <div class="donate-modal-head">
+      <b id="donateModalTitle">Пожертва</b>
+      <button class="donate-modal-close" id="donateModalClose" aria-label="Закрити">×</button>
+    </div>
+    <div class="donate-modal-frame">
+      <div class="donate-modal-loader" id="donateLoader">
+        <div class="spin"></div>
+        <div>Завантажуємо безпечну форму оплати…</div>
+      </div>
+      <iframe id="donateFrame" title="Форма оплати WayForPay" allow="payment"></iframe>
+    </div>
+    <div class="donate-modal-foot">🔒 Безпечна оплата через WayForPay · картка, Apple Pay, Google Pay</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var URLS = {
+    onetime: "https://secure.wayforpay.com/donate/d645a94f6a237",
+    regular: "https://secure.wayforpay.com/donate/db52afa6592ea"
+  };
+  var TITLES = { onetime: "Разова пожертва", regular: "Регулярна пожертва" };
+  var modal = document.getElementById("donateModal"),
+      frame = document.getElementById("donateFrame"),
+      loader = document.getElementById("donateLoader"),
+      titleEl = document.getElementById("donateModalTitle");
+
+  function openModal(kind){
+    titleEl.textContent = TITLES[kind] || "Пожертва";
+    loader.style.display = "flex";
+    frame.removeAttribute("src");
+    /* невелика затримка, щоб лоадер встиг показатись */
+    setTimeout(function(){ frame.src = URLS[kind]; }, 60);
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeModal(){
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+    frame.removeAttribute("src");
+  }
+  frame.addEventListener("load", function(){ loader.style.display = "none"; });
+  document.querySelectorAll("[data-donate]").forEach(function(btn){
+    btn.addEventListener("click", function(){ openModal(btn.getAttribute("data-donate")); });
+  });
+  document.getElementById("donateModalClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && modal.classList.contains("open")) closeModal();
+  });
+
+  /* QR-коди: відкрити крупніше в лайтбоксі */
+  document.querySelectorAll("[data-qr]").forEach(function(a){
+    a.addEventListener("click", function(e){
+      e.preventDefault();
+      /* перевикористовуємо лайтбокс з site.js, якщо є */
+      var lb = document.querySelector(".lightbox");
+      if(lb){
+        var img = lb.querySelector("img"), cap = lb.querySelector(".lb-cap");
+        img.src = a.href; img.alt = a.querySelector("img").alt || "";
+        if(cap) cap.textContent = img.alt;
+        lb.classList.add("open"); document.body.style.overflow = "hidden";
+      }else{ window.open(a.href, "_blank", "noopener"); }
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = document.getElementById(btn.getAttribute('data-copy')).textContent;
+      function done(){ btn.textContent = 'Скопійовано ✓'; setTimeout(function(){ btn.textContent = 'Копіювати'; }, 1500); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(fallback);
+      } else { fallback(); }
+      function fallback(){
+        var ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); } catch(e){}
+        document.body.removeChild(ta); done();
+      }
+    });
+  });
+})();
+</script>
+
+<script src="assets/avatar.js"></script><script src="assets/i18n-dict.js"></script><script src="assets/i18n.js"></script>
+</body>
+</html>

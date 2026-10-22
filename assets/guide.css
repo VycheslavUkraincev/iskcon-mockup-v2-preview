@@ -1,0 +1,32 @@
+/* Вайшнав-помічник — плаваючий віджет */
+.guide-fab{position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;
+  flex-direction:column;align-items:center;gap:6px}
+.guide-mantra{background:#fff;border:1px solid var(--line);border-radius:999px;
+  padding:5px 14px;font-size:.82rem;color:var(--saffron-dark);font-weight:600;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);white-space:nowrap;transition:opacity .4s}
+.guide-btn{width:62px;height:62px;border-radius:50%;border:none;cursor:pointer;
+  background:var(--saffron);font-size:30px;display:flex;align-items:center;
+  justify-content:center;box-shadow:0 4px 16px rgba(217,130,11,.4);transition:transform .15s}
+.guide-btn:hover{transform:scale(1.07)}
+.guide-btn:active{transform:scale(.95)}
+.guide-card{position:fixed;right:18px;bottom:96px;z-index:1000;width:320px;max-width:calc(100vw - 36px);
+  background:var(--card);border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 12px 40px rgba(0,0,0,.16);overflow:hidden;display:none}
+.guide-card.open{display:block;animation:guideIn .22s ease-out}
+@keyframes guideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.guide-head{background:var(--saffron);color:#fff;padding:12px 16px;font-weight:700;
+  display:flex;align-items:center;gap:10px}
+.guide-head .ava{width:36px;height:36px;border-radius:50%;background:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:22px;flex:0 0 auto}
+.guide-head small{display:block;font-weight:400;opacity:.9;font-size:.78rem}
+.guide-body{padding:14px 14px 16px;max-height:380px;overflow-y:auto}
+.guide-msg{background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:10px 12px;margin-bottom:10px;font-size:.93rem;line-height:1.55}
+.guide-msg.user{background:var(--saffron-soft);border-color:var(--saffron);text-align:right}
+.guide-opts{display:flex;flex-direction:column;gap:8px}
+.guide-opt{border:1px solid var(--saffron);background:#fff;color:var(--saffron-dark);
+  border-radius:10px;padding:9px 12px;font-size:.9rem;cursor:pointer;text-align:left}
+.guide-opt:hover{background:var(--saffron-soft)}
+.guide-back{background:none;border:none;color:var(--muted);font-size:.85rem;
+  cursor:pointer;padding:6px 0 0;text-decoration:underline}
+.guide-link{display:inline-block;margin-top:8px;font-weight:700;color:var(--saffron-dark)}
