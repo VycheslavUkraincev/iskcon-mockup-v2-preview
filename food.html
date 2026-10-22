@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-  <base href="/iskcon-mockup-v2-preview/">
+  <base href="/iskcon-cv-ua/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Їжа життя — ІСККОН Чернівці</title>
 <link rel="canonical" href="https://iskcon.cv.ua/food">
@@ -15,9 +15,20 @@
 <meta property="og:url" content="https://iskcon.cv.ua/food">
 <meta name="description" content="Благодійна місія «Їжа життя Чернівці»: гарячі вегетаріанські обіди щосуботи. Долучайтесь як волонтер!">
 <meta name="theme-color" content="#D9820B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/onest-normal-400-700-cyrillic.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/spectral-normal-600-cyrillic.woff2">
+<style>
+@font-face{font-family:'Onest';font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/onest-normal-400-700-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Onest';font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/onest-normal-400-700-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Onest';font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/onest-normal-400-700-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/spectral-italic-400-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/spectral-italic-400-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/spectral-italic-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/spectral-normal-600-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/spectral-normal-600-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/spectral-normal-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+</style>
+<link rel="preload" as="image" type="image/webp" fetchpriority="high" href="assets/food/ffl-carousel-02-563.webp">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/avatar.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -26,14 +37,13 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-<body>
-<a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:0;background:#D9820B;color:#fff;padding:12px 20px;z-index:9999;border-radius:0 0 8px 0" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Перейти до вмісту</a>
-
+<body class="ds page-food">
+<a class="skip-link" href="#main">Перейти до вмісту</a>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./"><img src="assets/logo.jpg" alt="ІСККОН Чернівці"><b>ІСККОН ЧЕРНІВЦІ</b></a>
-    <button class="nav-toggle" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a class="brand" href="./"><img src="assets/logo-88.webp" alt="ІСККОН Чернівці" width="44" height="44"><b>ІСККОН ЧЕРНІВЦІ</b></a>
+    <button class="nav-toggle" aria-label="Меню" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
     <nav class="nav" id="mainNav">
       <a href="./">Головна</a>
       <a href="courses">Навчання</a>
@@ -44,319 +54,201 @@
 </header>
 <main id="main">
 
-<div class="hero-food-wrap" style="max-width:1160px;margin:0 auto;padding:40px 24px">
-  <!-- Верхній ряд: заголовок зліва, фото справа -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-bottom:32px">
-    <div>
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
-        <img src="assets/ffl-logo.svg" alt="Їжа життя" style="width:56px;height:56px">
-        <span class="badge">Благодійна місія</span>
+<section class="food-hero">
+  <div class="container food-hero__grid">
+    <div class="food-hero__text">
+      <div class="ffl-brand">
+        <img class="ffl-brand__sun" src="assets/ffl-sun.svg" alt="" width="64" height="51">
+        <span class="ffl-brand__name">Їжа життя</span>
       </div>
-      <h1 style="font-size:clamp(2rem,4.5vw,2.8rem);margin:0 0 12px;line-height:1.25"><span class="hl" data-i18n-h1>Ми годуємо людей</span></h1>
-      <p style="font-size:1.08rem;color:var(--muted);margin-bottom:22px;line-height:1.6">Гарячі вегетаріанські обіди щосуботи о 14:00 на Соборній площі.<br>Готуємо і годуємо — із любов'ю до людей 💛</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a class="btn btn-gradient" href="https://send.monobank.ua/jar/8cZpfkd4Xh" target="_blank" rel="noopener">💳 Підтримати</a>
-        <a class="btn btn-ghost" href="#" onclick="openVolunteerChat(event)">🙋 Стати волонтером</a>
+      <span class="pill">Благодійна місія</span>
+      <h1><span class="hl" data-i18n-h1>Ми годуємо людей</span></h1>
+      <p class="food-hero__lede">Гарячі вегетаріанські обіди щосуботи о 14:00 на Соборній площі.<br>Готуємо і годуємо — із любов'ю до людей</p>
+      <div class="food-hero__cta">
+        <a class="btn btn-primary" href="#support"><span class="ico ico-card" aria-hidden="true"></span>Підтримати</a>
+        <a class="btn btn-ghost" href="#volunteer" data-form="ffl-volunteer"><span class="ico ico-heart" aria-hidden="true"></span>Стати волонтером</a>
       </div>
+      <p class="food-hero__help"><a href="#when-where">Потрібна допомога? Дивіться, де і коли →</a></p>
     </div>
-    <div>
-      <div class="hero-slider" style="position:relative;border-radius:18px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.12);width:100%;aspect-ratio:4/3">
-  <img src="assets/food/ffl-carousel-02.jpg" alt="Роздача гарячих обідів" loading="lazy" class="hero-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1.2s ease">
-  <img src="assets/food/ffl-carousel-08.jpg" alt="Волонтери Їжі життя" loading="lazy" class="hero-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease">
-  <img src="assets/food/ffl-carousel-09.jpg" alt="Волонтери годують людей" loading="lazy" class="hero-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease">
-  <img src="assets/food/ffl-carousel-01.jpg" alt="Їжа життя Чернівці" loading="lazy" class="hero-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease">
-  <img src="assets/food/ffl-carousel-03.jpg" alt="Команда Їжі життя" loading="lazy" class="hero-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease">
-  <div class="hero-dots" style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:2">
-    <span class="hero-dot" style="width:8px;height:8px;border-radius:50%;background:#fff;opacity:1;cursor:pointer;transition:opacity .3s"></span>
-    <span class="hero-dot" style="width:8px;height:8px;border-radius:50%;background:#fff;opacity:.5;cursor:pointer;transition:opacity .3s"></span>
-    <span class="hero-dot" style="width:8px;height:8px;border-radius:50%;background:#fff;opacity:.5;cursor:pointer;transition:opacity .3s"></span>
-    <span class="hero-dot" style="width:8px;height:8px;border-radius:50%;background:#fff;opacity:.5;cursor:pointer;transition:opacity .3s"></span>
-    <span class="hero-dot" style="width:8px;height:8px;border-radius:50%;background:#fff;opacity:.5;cursor:pointer;transition:opacity .3s"></span>
-  </div>
-</div>
-<script>
-(function(){
-  const slides = document.querySelectorAll('.hero-slide');
-  const dots = document.querySelectorAll('.hero-dot');
-  if(!slides.length) return;
-  let cur = 0, timer;
-  function show(i){
-    slides[cur].style.opacity = '0';
-    dots[cur].style.opacity = '.5';
-    cur = (i + slides.length) % slides.length;
-    slides[cur].style.opacity = '1';
-    dots[cur].style.opacity = '1';
-  }
-  function next(){ show(cur + 1); }
-  function start(){ timer = setInterval(next, 4000); }
-  function stop(){ clearInterval(timer); }
-  dots.forEach((d,i)=>{ d.addEventListener('click', ()=>{ stop(); show(i); start(); }); });
-  const slider = document.querySelector('.hero-slider');
-  slider.addEventListener('mouseenter', stop);
-  slider.addEventListener('mouseleave', start);
-  let tx = 0;
-  slider.addEventListener('touchstart', e=>{ tx = e.touches[0].clientX; stop(); }, {passive:true});
-  slider.addEventListener('touchend', e=>{
-    const dx = e.changedTouches[0].clientX - tx;
-    if(Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1));
-    start();
-  }, {passive:true});
-  start();
-})();
-</script>
+    <div class="food-hero__photo">
+      <img src="assets/food/ffl-carousel-02-563.webp" width="564" height="1000" alt="Роздача гарячих обідів" fetchpriority="high" decoding="async">
     </div>
   </div>
-  <!-- Нижній ряд: дві картки однакової висоти -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch">
-    <div class="card" style="padding:28px;display:flex;flex-direction:column;justify-content:center">
-      <h3 style="margin-bottom:14px;color:var(--saffron-dark);font-size:1.35rem;font-family:Georgia,serif">Із рук у руки. Із серця в серце.</h3>
-      <p style="font-size:1rem;color:var(--muted);margin-bottom:20px;line-height:1.6">Ми натхненні творити й віддавати тим, у кого є потреба в любові, теплій їжі та турботі.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <div style="background:linear-gradient(135deg,#FFF8F0,#FFF3E0);border:1px solid #F0E0C8;border-radius:14px;padding:16px;text-align:center">
-          <div style="font-size:1.6rem;margin-bottom:6px">📍</div>
-          <div style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#B08D4A;font-weight:600;margin-bottom:4px">Де</div>
-          <div style="font-weight:700;font-size:.95rem;line-height:1.4">Соборна площа,<br>м. Чернівці</div>
-        </div>
-        <div style="background:linear-gradient(135deg,#FFF8F0,#FFF3E0);border:1px solid #F0E0C8;border-radius:14px;padding:16px;text-align:center">
-          <div style="font-size:1.6rem;margin-bottom:6px">🕒</div>
-          <div style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#B08D4A;font-weight:600;margin-bottom:4px">Коли</div>
-          <div style="font-weight:700;font-size:.95rem;line-height:1.4">щосуботи<br>о <span style="color:#D9820B;font-size:1.1rem">14:00</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="card" style="padding:28px;background:linear-gradient(135deg,#FFF9F0,#FFF3E0);border:1px solid #F0E0C8;display:flex;flex-direction:column;justify-content:center">
-      <div style="font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#8A6D3B;margin-bottom:10px;text-align:center">🍲 Гарячих обідів роздано в Україні</div>
-      <div class="flip-counter" id="mealCounter" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;justify-content:center"></div>
-      <div style="font-size:.92rem;color:#8A6D3B;margin-bottom:14px;text-align:center"><strong style="color:#D9820B">5 000 000+</strong> з 1994 року</div>
-      <div style="text-align:center;padding-top:16px;border-top:1px solid #F0E0C8">
-        <div style="font-weight:700;font-size:1.15rem;margin-bottom:12px">🍲 100 грн = 1 обід</div>
-        <a href="https://send.monobank.ua/jar/8cZpfkd4Xh" target="_blank" rel="noopener" class="btn btn-gradient" style="padding:12px 40px;font-size:1rem;display:inline-block">Нагодувати</a>
-      </div>
-    </div>
-  </div>
-</div>
-<style>
-.flip-digit{background:linear-gradient(180deg,#E8A838,#D9820B);border-radius:8px;min-width:44px;height:60px;display:flex;align-items:center;justify-content:center;font-size:1.9rem;font-weight:700;color:#fff;font-family:Georgia,serif;box-shadow:0 3px 10px rgba(217,130,11,.2),inset 0 1px 0 rgba(255,255,255,.3);position:relative;overflow:hidden}
-.flip-digit::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(255,255,255,.25)}
-@media(max-width:768px){.hero-food-wrap>div{grid-template-columns:1fr!important}.flip-digit{min-width:36px;height:52px;font-size:1.5rem}}
-</style>
-<script>
-(function(){
-  const target=5000000, counter=document.getElementById('mealCounter');
-  if(!counter) return;
-  function render(v){const s=String(v).padStart(7,'0');counter.innerHTML='';s.split('').forEach(d=>{const el=document.createElement('div');el.className='flip-digit';el.textContent=d;counter.appendChild(el);});}
-  let cur=4980000; render(cur);
-  setInterval(()=>{cur+=Math.floor(Math.random()*3)+1;if(cur>=target)cur=target;render(cur);},150);
-})();
-</script>
-
-<div class="wrap">
-  <section class="block" id="volunteer">
-    <h2>🙋 Як ви можете допомогти?</h2>
-    <div class="card">
-      <p>Приготування обідів розпочинається <b>щосуботи о 08:00 ранку</b>
-        за адресою: вул. Скальда (Комарова), 40А.</p>
-      <ul class="tick">
-        <li>🥕 <b>Продукти:</b> гречка, горох, рис, цукор, борошно, олія, овочі, спеції</li>
-        <li>🔪 <b>Чистка овочів:</b> допомога з підготовкою та нарізкою зранку</li>
-        <li>🍲 <b>Приготування:</b> допомога безпосередньо на кухні</li>
-        <li>🧽 <b>Прибирання:</b> миття баків та прибирання кухні після роздачі</li>
-        <li>🚗 <b>Транспорт:</b> автомобіль або допомога з перевезенням їжі</li>
-        <li>💳 <b>Фінансова підтримка:</b> <a href="donation">зробити внесок</a></li>
-      </ul>
-      <p><em>Кожна, навіть найменша допомога, має величезне значення!</em></p>
-    </div>
-  
-  <div style="margin-top:36px">
-    <h3 style="text-align:center;font-size:1.3rem;margin-bottom:8px;font-family:Georgia,serif">Куди йдуть ваші пожертви</h3>
-    <p style="text-align:center;color:#8A7A6A;font-size:.92rem;margin-bottom:28px">Прозорий розподіл коштів місії</p>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px" class="progress-grid">
-      <div style="text-align:center">
-        <div style="position:relative;width:120px;height:120px;margin:0 auto 12px">
-          <svg width="120" height="120" viewBox="0 0 120 120">
-            <circle cx="60" cy="60" r="52" fill="none" stroke="#F0E0C8" stroke-width="10"/>
-            <circle cx="60" cy="60" r="52" fill="none" stroke="#D9820B" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="124.1" transform="rotate(-90 60 60)"/>
-          </svg>
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:#D9820B">62%</div>
-        </div>
-        <div style="font-weight:700;margin-bottom:6px">Продукти</div>
-        <div style="font-size:.85rem;color:#8A7A6A;line-height:1.5">закупівля круп, борошна, овочів, спецій, вершкового масла тощо</div>
-      </div>
-      <div style="text-align:center">
-        <div style="position:relative;width:120px;height:120px;margin:0 auto 12px">
-          <svg width="120" height="120" viewBox="0 0 120 120">
-            <circle cx="60" cy="60" r="52" fill="none" stroke="#F0E0C8" stroke-width="10"/>
-            <circle cx="60" cy="60" r="52" fill="none" stroke="#D9820B" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="248.3" transform="rotate(-90 60 60)"/>
-          </svg>
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:#D9820B">24%</div>
-        </div>
-        <div style="font-weight:700;margin-bottom:6px">Паливо</div>
-        <div style="font-size:.85rem;color:#8A7A6A;line-height:1.5">для автівок доставки та генератора</div>
-      </div>
-      <div style="text-align:center">
-        <div style="position:relative;width:120px;height:120px;margin:0 auto 12px">
-          <svg width="120" height="120" viewBox="0 0 120 120">
-            <circle cx="60" cy="60" r="52" fill="none" stroke="#F0E0C8" stroke-width="10"/>
-            <circle cx="60" cy="60" r="52" fill="none" stroke="#D9820B" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="303.8" transform="rotate(-90 60 60)"/>
-          </svg>
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:#D9820B">7%</div>
-        </div>
-        <div style="font-weight:700;margin-bottom:6px">Матеріали</div>
-        <div style="font-size:.85rem;color:#8A7A6A;line-height:1.5">кухонний інвентар, одноразовий посуд, пакування, засоби гігієни</div>
-      </div>
-      <div style="text-align:center">
-        <div style="position:relative;width:120px;height:120px;margin:0 auto 12px">
-          <svg width="120" height="120" viewBox="0 0 120 120">
-            <circle cx="60" cy="60" r="52" fill="none" stroke="#F0E0C8" stroke-width="10"/>
-            <circle cx="60" cy="60" r="52" fill="none" stroke="#D9820B" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="303.8" transform="rotate(-90 60 60)"/>
-          </svg>
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:#D9820B">7%</div>
-        </div>
-        <div style="font-weight:700;margin-bottom:6px">Комунальні платежі</div>
-        <div style="font-size:.85rem;color:#8A7A6A;line-height:1.5">електроенергія та газ для кухні</div>
-      </div>
-    </div>
-  </div>
-  <style>
-  @media(max-width:768px){ .progress-grid{grid-template-columns:repeat(2,1fr)!important} }
-  @media(max-width:480px){ .progress-grid{grid-template-columns:1fr!important} }
-  </style>
 </section>
 
-  <section class="block"><style>.volunteer-carousel{overflow:hidden}.volunteer-carousel .gallery{display:flex;gap:16px;animation:scroll-left 30s linear infinite;width:max-content}.volunteer-carousel .gallery a{flex:0 0 280px}.volunteer-carousel .gallery img{width:280px;height:190px;object-fit:cover;border-radius:12px}@keyframes scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.volunteer-carousel:hover .gallery{animation-play-state:paused}</style><h2>Наші волонтери в дії</h2><p style="text-align:center;color:var(--muted);margin:-10px 0 20px">Кожної суботи готуємо та роздаємо теплі обіди</p><div class="volunteer-carousel"><div class="gallery"><a href="assets/food/ffl-carousel-01.jpg"><img src="assets/food/ffl-carousel-01.jpg" alt="Волонтери роздають їжу" loading="lazy"></a><a href="assets/food/ffl-carousel-02.jpg"><img src="assets/food/ffl-carousel-02.jpg" alt="Роздача гарячих обідів" loading="lazy"></a><a href="assets/food/ffl-carousel-03.jpg"><img src="assets/food/ffl-carousel-03.jpg" alt="Волонтер з їжею" loading="lazy"></a><a href="assets/food/ffl-carousel-04.jpg"><img src="assets/food/ffl-carousel-04.jpg" alt="Приготування їжі" loading="lazy"></a><a href="assets/food/ffl-carousel-05.jpg"><img src="assets/food/ffl-carousel-05.jpg" alt="Волонтери на кухні" loading="lazy"></a><a href="assets/food/ffl-carousel-06.jpg"><img src="assets/food/ffl-carousel-06.jpg" alt="Готуємо разом" loading="lazy"></a><a href="assets/food/ffl-carousel-07.jpg"><img src="assets/food/ffl-carousel-07.jpg" alt="Усміхнений волонтер" loading="lazy"></a><a href="assets/food/ffl-carousel-08.jpg"><img src="assets/food/ffl-carousel-08.jpg" alt="Волонтери в парку" loading="lazy"></a><a href="assets/food/ffl-carousel-09.jpg"><img src="assets/food/ffl-carousel-09.jpg" alt="Роздача супу" loading="lazy"></a><a href="assets/food/ffl-carousel-01.jpg"><img src="assets/food/ffl-carousel-01.jpg" alt="Волонтери" loading="lazy"></a><a href="assets/food/ffl-carousel-02.jpg"><img src="assets/food/ffl-carousel-02.jpg" alt="Волонтери" loading="lazy"></a><a href="assets/food/ffl-carousel-03.jpg"><img src="assets/food/ffl-carousel-03.jpg" alt="Волонтери" loading="lazy"></a><a href="assets/food/ffl-carousel-04.jpg"><img src="assets/food/ffl-carousel-04.jpg" alt="Волонтери" loading="lazy"></a><a href="assets/food/ffl-carousel-05.jpg"><img src="assets/food/ffl-carousel-05.jpg" alt="Волонтери" loading="lazy"></a><a href="assets/food/ffl-carousel-06.jpg"><img src="assets/food/ffl-carousel-06.jpg" alt="Волонтери" loading="lazy"></a><a href="assets/food/ffl-carousel-07.jpg"><img src="assets/food/ffl-carousel-07.jpg" alt="Волонтери" loading="lazy"></a><a href="assets/food/ffl-carousel-08.jpg"><img src="assets/food/ffl-carousel-08.jpg" alt="Волонтери" loading="lazy"></a><a href="assets/food/ffl-carousel-09.jpg"><img src="assets/food/ffl-carousel-09.jpg" alt="Волонтери" loading="lazy"></a></div></div><div class="media-video"><style>.media-video{max-width:820px;margin:28px auto 0}.media-video .frame{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000}.media-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}</style><h3 style="text-align:center;margin:0 0 14px">Репортаж про наших волонтерів</h3><div class="frame"><iframe src="https://www.youtube.com/embed/0ZNyLSHUgpc" title="«Шпальта Медіа»: волонтери Чернівців годують сотні переселенців власним коштом" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div><p style="text-align:center;color:var(--muted);margin:12px 0 0;font-size:.95em">«Шпальта Медіа», квітень 2026</p></div></section>
-
-  <section class="block">
-    <h2>Підтримати «Їжу життя»</h2>
-    <div class="card" style="text-align:center">
-      <p>Кожна гривня стає гарячим обідом для того, хто потребує цього сьогодні.</p>
-      <div class="donate-btns">
-        <a class="btn btn-gradient" href="https://send.monobank.ua/jar/8cZpfkd4Xh"
-           target="_blank" rel="noopener">💳 Monobank-банка</a>
-        <a class="btn btn-ghost" href="donation">🙏 Інші способи</a>
+<section class="sec sec--facts" id="when-where">
+  <div class="container">
+    <div class="facts">
+      <div class="card facts__where">
+        <h2>Із рук у руки. Із серця в серце.</h2>
+        <p>Ми натхненні творити й віддавати тим, у кого є потреба в любові, теплій їжі та турботі.</p>
+        <div class="facts__cards">
+          <div class="fact"><span class="ico ico-pin" aria-hidden="true"></span><div class="fact__k">Де</div><div class="fact__v">Соборна площа,<br>м. Чернівці</div></div>
+          <div class="fact"><span class="ico ico-clock" aria-hidden="true"></span><div class="fact__k">Коли</div><div class="fact__v">щосуботи<br>о <span class="accent">14:00</span></div></div>
+        </div>
+      </div>
+      <div class="card facts__counter">
+        <div class="counter__k">Гарячих обідів роздано в Україні</div>
+        <div class="counter__num" id="mealCounter" role="img" aria-label="5 000 000+">5 000 000+</div>
+        <div class="counter__since">з 1994 року</div>
+        <div class="counter__cta">
+          <div class="counter__rate"><span class="ico ico-bowl" aria-hidden="true"></span>100 грн = 1 обід</div>
+          <a href="#support" class="btn btn-primary">Нагодувати</a>
+        </div>
       </div>
     </div>
-  </section>
-
-  
-</div>
-
-
-<div style="width:100%;padding:56px 5vw;box-sizing:border-box;background:linear-gradient(180deg,transparent 0%,rgba(217,130,11,.03) 50%,transparent 100%)">
-  <div style="text-align:center;margin-bottom:36px">
-    <div style="font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:#B08D4A;margin-bottom:8px">💛 Підтримайте місію</div>
-    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);margin:0;font-family:Georgia,serif;color:#3A2E1F">Кожна гривня — це теплий обід</h2>
   </div>
-  <div class="donate-requisites-grid" style="display:grid;grid-template-columns:7fr 5fr;gap:36px;align-items:stretch;max-width:1280px;margin:0 auto">
-    <div style="min-width:0">
-<!-- Віджет "Подаруй тарілку тепла" в стилі сайту -->
-<div class="donate-widget" style="max-width:520px;margin:0 auto;background:#fff;border-radius:20px;padding:36px;box-shadow:0 8px 32px rgba(0,0,0,.08);border:2px solid #F0E0C8">
-  <h3 style="font-size:1.6rem;text-align:center;margin-bottom:6px;font-family:Georgia,serif">Подаруй тарілку тепла й любові</h3>
-  <p style="text-align:center;color:#8A7A6A;margin-bottom:20px">Обери суму — і подивись на свій вплив</p>
-  
-  <div style="display:flex;gap:8px;justify-content:center;margin-bottom:18px;flex-wrap:wrap" id="amountBtns">
-    <button data-amount="100" style="padding:10px 20px;border-radius:10px;border:2px solid #E8D5B5;background:#fff;cursor:pointer;font-family:inherit;font-size:1rem">100 ₴</button>
-    <button data-amount="300" style="padding:10px 20px;border-radius:10px;border:2px solid #E8D5B5;background:#fff;cursor:pointer;font-family:inherit;font-size:1rem">300 ₴</button>
-    <button data-amount="500" style="padding:10px 20px;border-radius:10px;border:2px solid #E8D5B5;background:#fff;cursor:pointer;font-family:inherit;font-size:1rem">500 ₴</button>
-    <button data-amount="1000" class="active" style="padding:10px 20px;border-radius:10px;border:2px solid #D9820B;background:linear-gradient(135deg,#D9820B,#B96F0A);color:#fff;cursor:pointer;font-family:inherit;font-size:1rem;font-weight:700">1000 ₴</button>
-  </div>
-  
-  <div style="background:#FFF8F0;border-radius:14px;padding:24px;text-align:center;margin-bottom:20px">
-    <div style="font-size:3rem;font-weight:700;color:#D9820B;font-family:Georgia,serif"><span id="mealCount">10</span> <span style="font-size:1.2rem;color:#8A6D3B">гарячих обідів</span></div>
-    <div id="bowls" style="font-size:2.2rem;margin:16px 0;line-height:1.4;min-height:60px"></div>
-    <p style="color:#8A7A6A;font-size:.95rem">Гарячий обід для <strong style="color:#D9820B">дружньої компанії</strong> голодних людей.</p>
-  </div>
-  
-  <a href="https://send.monobank.ua/jar/8cZpfkd4Xh" target="_blank" rel="noopener" id="donateBtn" style="display:block;text-align:center;background:linear-gradient(135deg,#D9820B,#B96F0A);color:#fff;font-weight:700;font-size:1.15rem;padding:16px;border-radius:12px;text-decoration:none">Підтримати · 1000 ₴</a>
-  <p style="text-align:center;color:#8A7A6A;font-size:.85rem;margin-top:10px">Оплата карткою · Monobank</p>
-</div>
-<script>
-(function(){
-  const btns = document.querySelectorAll('#amountBtns button');
-  const mealCount = document.getElementById('mealCount');
-  const bowls = document.getElementById('bowls');
-  const donateBtn = document.getElementById('donateBtn');
-  function update(amount){
-    const meals = Math.floor(amount / 100);
-    mealCount.textContent = meals;
-    // Показуємо до 20 тарілок
-    const show = Math.min(meals, 20);
-    bowls.textContent = '🍲'.repeat(show);
-    if(meals > 20) bowls.textContent += ' + ще ' + (meals - 20);
-    donateBtn.textContent = 'Підтримати · ' + amount.toLocaleString('uk-UA') + ' ₴';
-    btns.forEach(b => {
-      if(+b.dataset.amount === amount){
-        b.style.cssText = 'padding:10px 20px;border-radius:10px;border:2px solid #D9820B;background:linear-gradient(135deg,#D9820B,#B96F0A);color:#fff;cursor:pointer;font-family:inherit;font-size:1rem;font-weight:700';
-      } else {
-        b.style.cssText = 'padding:10px 20px;border-radius:10px;border:2px solid #E8D5B5;background:#fff;cursor:pointer;font-family:inherit;font-size:1rem';
-      }
-    });
-  }
-  btns.forEach(b => b.addEventListener('click', () => update(+b.dataset.amount)));
-  update(1000);
-})();
-</script>
+</section>
 
-    </div>
-    <div class="card" style="padding:0;min-width:0;box-sizing:border-box;overflow:hidden;display:flex;flex-direction:column">
-      <div style="background:linear-gradient(135deg,#D9820B,#B96F0A);padding:28px 32px;color:#fff">
-        <h3 style="font-size:1.25rem;margin:0;display:flex;align-items:center;gap:10px">🏦 Банківські реквізити</h3>
-        <p style="margin:8px 0 0;font-size:.88rem;opacity:.9">Для переказу з картки будь-якого банку</p>
+<section class="sec sec--help" id="volunteer">
+  <div class="container">
+    <h2 class="sec__title"><span class="ico ico-heart" aria-hidden="true"></span>Як ви можете допомогти?</h2>
+    <div class="help card">
+      <p>Приготування обідів розпочинається <b>щосуботи о 08:00 ранку</b>
+        за адресою: вул. Скальда (Комарова), 40А.</p>
+      <ul class="help__list">
+        <li><span class="ico ico-basket" aria-hidden="true"></span><span><b>Продукти:</b> гречка, горох, рис, цукор, борошно, олія, овочі, спеції</span></li>
+        <li><span class="ico ico-knife" aria-hidden="true"></span><span><b>Чистка овочів:</b> допомога з підготовкою та нарізкою зранку</span></li>
+        <li><span class="ico ico-bowl" aria-hidden="true"></span><span><b>Приготування:</b> допомога безпосередньо на кухні</span></li>
+        <li><span class="ico ico-broom" aria-hidden="true"></span><span><b>Прибирання:</b> миття баків та прибирання кухні після роздачі</span></li>
+        <li><span class="ico ico-truck" aria-hidden="true"></span><span><b>Транспорт:</b> автомобіль або допомога з перевезенням їжі</span></li>
+        <li><span class="ico ico-card" aria-hidden="true"></span><span><b>Фінансова підтримка:</b> <a href="donation">зробити внесок</a></span></li>
+      </ul>
+      <p><em>Кожна, навіть найменша допомога, має величезне значення!</em></p>
+      <!-- TODO(owner): коли надійде URL Google-форми волонтерів (Анади Кришни), поставити його в href кнопки data-form="ffl-volunteer" у hero.
+           До того hero-кнопка веде сюди, а тут — телефон відповідального і Telegram. -->
+      <div class="help__cta">
+        <a class="btn btn-primary" href="tel:+380503740334"><span class="ico ico-phone" aria-hidden="true"></span>050-374-0334</a>
+        <a class="btn btn-ghost" href="https://t.me/+bGy8LgS8jTQ0YzNi" target="_blank" rel="noopener">Написати в Telegram</a>
       </div>
-      <div style="padding:28px 32px;flex:1;display:flex;flex-direction:column;justify-content:center;gap:18px">
-        <div>
-          <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#B08D4A;margin-bottom:6px;font-weight:600">IBAN</div>
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-            <code style="background:#FFF8F0;padding:10px 14px;border-radius:10px;font-size:.82rem;word-break:break-all;border:1px solid #F0E0C8;flex:1;min-width:0">UA563077700000026007111264936</code>
-            <button onclick="navigator.clipboard.writeText('UA563077700000026007111264936');this.textContent='✓ Скопійовано'" style="padding:10px 18px;border-radius:10px;border:1px solid #E8D5B5;background:#fff;cursor:pointer;font-size:.85rem;white-space:nowrap;transition:all .2s" onmouseover="this.style.background='#FFF8F0'" onmouseout="this.style.background='#fff'">Копіювати</button>
+    </div>
+
+    <div class="funds">
+      <h3>Куди йдуть ваші пожертви</h3>
+      <p class="sec__sub">Прозорий розподіл коштів місії</p>
+      <div class="funds__grid">
+      <div class="fund"><svg class="fund__ring" width="120" height="120" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="fund__track"/><circle cx="60" cy="60" r="52" class="fund__arc" stroke-dasharray="326.7" stroke-dashoffset="124.1" transform="rotate(-90 60 60)"/></svg><div class="fund__pct">62%</div><h4>Продукти</h4><p>закупівля круп, борошна, овочів, спецій, вершкового масла тощо</p></div>
+      <div class="fund"><svg class="fund__ring" width="120" height="120" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="fund__track"/><circle cx="60" cy="60" r="52" class="fund__arc" stroke-dasharray="326.7" stroke-dashoffset="248.3" transform="rotate(-90 60 60)"/></svg><div class="fund__pct">24%</div><h4>Паливо</h4><p>для автівок доставки та генератора</p></div>
+      <div class="fund"><svg class="fund__ring" width="120" height="120" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="fund__track"/><circle cx="60" cy="60" r="52" class="fund__arc" stroke-dasharray="326.7" stroke-dashoffset="303.8" transform="rotate(-90 60 60)"/></svg><div class="fund__pct">7%</div><h4>Матеріали</h4><p>кухонний інвентар, одноразовий посуд, пакування, засоби гігієни</p></div>
+      <div class="fund"><svg class="fund__ring" width="120" height="120" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="fund__track"/><circle cx="60" cy="60" r="52" class="fund__arc" stroke-dasharray="326.7" stroke-dashoffset="303.8" transform="rotate(-90 60 60)"/></svg><div class="fund__pct">7%</div><h4>Комунальні платежі</h4><p>електроенергія та газ для кухні</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--proof">
+  <div class="container">
+    <h2 class="sec__title">Наші волонтери в дії</h2>
+    <p class="sec__sub">Кожної суботи готуємо та роздаємо теплі обіди</p>
+    <div class="gallery proof-strip" tabindex="0" role="region" aria-label="Фото волонтерів">
+        <a href="assets/food/ffl-carousel-01.jpg"><img src="assets/food/ffl-carousel-01-360.webp" width="360" height="640" alt="Волонтери роздають їжу" loading="lazy" decoding="async"></a>
+        <a href="assets/food/ffl-carousel-02.jpg"><img src="assets/food/ffl-carousel-02-360.webp" width="360" height="640" alt="Роздача гарячих обідів" loading="lazy" decoding="async"></a>
+        <a href="assets/food/ffl-carousel-03.jpg"><img src="assets/food/ffl-carousel-03-360.webp" width="360" height="640" alt="Волонтер з їжею" loading="lazy" decoding="async"></a>
+        <a href="assets/food/ffl-carousel-04.jpg"><img src="assets/food/ffl-carousel-04-360.webp" width="360" height="640" alt="Приготування їжі" loading="lazy" decoding="async"></a>
+        <a href="assets/food/ffl-carousel-05.jpg"><img src="assets/food/ffl-carousel-05-360.webp" width="360" height="640" alt="Волонтери на кухні" loading="lazy" decoding="async"></a>
+        <a href="assets/food/ffl-carousel-06.jpg"><img src="assets/food/ffl-carousel-06-360.webp" width="360" height="640" alt="Готуємо разом" loading="lazy" decoding="async"></a>
+        <a href="assets/food/ffl-carousel-07.jpg"><img src="assets/food/ffl-carousel-07-360.webp" width="360" height="640" alt="Усміхнений волонтер" loading="lazy" decoding="async"></a>
+        <a href="assets/food/ffl-carousel-08.jpg"><img src="assets/food/ffl-carousel-08-360.webp" width="360" height="640" alt="Волонтери в парку" loading="lazy" decoding="async"></a>
+        <a href="assets/food/ffl-carousel-09.jpg"><img src="assets/food/ffl-carousel-09-360.webp" width="360" height="640" alt="Роздача супу" loading="lazy" decoding="async"></a>
+        </div>
+
+    <div class="report card">
+      <h3>Звіт закупок фонду «Їжа життя»</h3>
+      <ol class="report__list">
+          <li><span>Гречка</span><b>100 кг</b></li>
+          <li><span>Борошно вс</span><b>50 кг</b></li>
+          <li><span>Рис</span><b>100 кг</b></li>
+          <li><span>Сіль</span><b>40 кг</b></li>
+          <li><span>Олія рафінована</span><b>60 л</b></li>
+          <li><span>Цукор</span><b>150 кг</b></li>
+          <li><span>Сода</span><b>7.5 кг</b></li>
+          <li><span>Ванільний цукор</span><b>5 кг</b></li>
+          <li><span>Лимонна кислота</span><b>10 кг</b></li>
+          <li><span>Томатна паста</span><b>25 л</b></li>
+          </ol>
+    </div>
+
+    <div class="media-video">
+      <h3>Репортаж про наших волонтерів</h3>
+      <div class="frame">
+        <a class="video-facade" href="https://www.youtube.com/watch?v=0ZNyLSHUgpc" data-video-id="0ZNyLSHUgpc" title="«Шпальта Медіа»: волонтери Чернівців годують сотні переселенців власним коштом" target="_blank" rel="noopener" aria-label="Дивитися відео">
+          <img src="assets/food/shpalta-poster.webp" width="480" height="360" alt="" loading="lazy" decoding="async">
+          <span class="video-facade__play"><span class="ico ico-play" aria-hidden="true"></span></span>
+        </a>
+      </div>
+      <p class="media-video__cap">«Шпальта Медіа», квітень 2026</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--support" id="support">
+  <div class="container">
+    <h2 class="sec__title">Підтримати «Їжу життя»</h2>
+    <p class="sec__sub">Кожна гривня стає гарячим обідом для того, хто потребує цього сьогодні.</p>
+    <p class="support__kicker"><span class="ico ico-heart" aria-hidden="true"></span>Підтримайте місію</p>
+    <p class="support__tag">Кожна гривня — це теплий обід</p>
+    <div class="support__grid">
+      <div class="card widget">
+        <h3>Подаруй тарілку тепла й любові</h3>
+        <p class="widget__sub">Обери суму — і подивись на свій вплив</p>
+        <div class="widget__amounts" id="amountBtns" role="group">
+          <button type="button" data-amount="100">100 ₴</button>
+          <button type="button" data-amount="300">300 ₴</button>
+          <button type="button" data-amount="500">500 ₴</button>
+          <button type="button" data-amount="1000" class="active">1000 ₴</button>
+        </div>
+        <div class="widget__out">
+          <div class="widget__count"><span id="mealCount">10</span> <span class="widget__unit">гарячих обідів</span></div>
+          <div class="widget__bowls" id="bowls" aria-hidden="true"></div>
+          <p>Гарячий обід для <strong>дружньої компанії</strong> голодних людей.</p>
+        </div>
+        <a href="https://send.monobank.ua/jar/8cZpfkd4Xh" target="_blank" rel="noopener" id="donateBtn" class="btn btn-primary widget__btn"><span>Підтримати</span> · <span id="donateAmt">1 000</span> ₴</a>
+        <p class="widget__note">Оплата карткою · Monobank</p>
+        <p class="widget__more"><a href="https://send.monobank.ua/jar/8cZpfkd4Xh" target="_blank" rel="noopener">Monobank-банка</a> · <a href="donation">Інші способи</a></p>
+      </div>
+      <div class="card req">
+        <div class="req__head">
+          <h3><span class="ico ico-card" aria-hidden="true"></span>Банківські реквізити</h3>
+          <p>Для переказу з картки будь-якого банку</p>
+        </div>
+        <div class="req__body">
+          <div class="req__row">
+            <div class="req__k">IBAN</div>
+            <div class="req__line"><code>UA563077700000026007111264936</code><button type="button" class="copy" data-copy="UA563077700000026007111264936">Копіювати</button></div>
+          </div>
+          <div class="req__row">
+            <div class="req__k">ЄДРПОУ</div>
+            <div class="req__line"><code>46285356</code><button type="button" class="copy" data-copy="46285356">Копіювати</button></div>
+          </div>
+          <div class="req__row req__row--text">
+            <div class="req__k">Одержувач</div>
+            <div class="req__v">РО «РЕЛІГІЙНА ГРОМАДА СВІДОМОСТІ КРІШНИ В МІСТІ ЧЕРНІВЦІ»</div>
+          </div>
+          <div class="req__row req__row--text">
+            <div class="req__k">Призначення</div>
+            <div class="req__v">Добровільна пожертва</div>
           </div>
         </div>
-        <div>
-          <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#B08D4A;margin-bottom:6px;font-weight:600">ЄДРПОУ</div>
-          <div style="display:flex;align-items:center;gap:10px">
-            <code style="background:#FFF8F0;padding:10px 14px;border-radius:10px;font-size:.82rem;border:1px solid #F0E0C8">46285356</code>
-            <button onclick="navigator.clipboard.writeText('46285356');this.textContent='✓'" style="padding:10px 18px;border-radius:10px;border:1px solid #E8D5B5;background:#fff;cursor:pointer;font-size:.85rem;white-space:nowrap">Копіювати</button>
-          </div>
-        </div>
-        <div style="padding-top:4px;border-top:1px dashed #F0E0C8">
-          <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#B08D4A;margin-bottom:6px;font-weight:600">Одержувач</div>
-          <div style="font-size:.85rem;line-height:1.6;color:#5A4A3A">РО «РЕЛІГІЙНА ГРОМАДА СВІДОМОСТІ КРІШНИ В МІСТІ ЧЕРНІВЦІ»</div>
-        </div>
-        <div>
-          <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#B08D4A;margin-bottom:6px;font-weight:600">Призначення</div>
-          <div style="font-size:.85rem;color:#5A4A3A">Добровільна пожертва</div>
-        </div>
-      </div>
-      <div style="padding:20px 32px;background:#FFFBF5;border-top:1px solid #F5E8D0;text-align:center">
-        <img src="assets/goduy-molys.png" alt="Годуй · Молись · Люби" style="max-width:200px;width:80%;margin:0 auto;display:block" loading="lazy">
+        <div class="req__slogan">Годуй · Молись · Люби</div>
       </div>
     </div>
   </div>
-</div>
-<style>
-@media(max-width:860px){
-  .donate-requisites-grid{grid-template-columns:1fr!important}
-}
-.donate-requisites-grid .card{transition:transform .3s ease,box-shadow .3s ease}
-.donate-requisites-grid .card:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.1)}
-</style>
+</section>
 
-
-
-
-<section class="block">
-    <h2>Контакти</h2>
-    <div class="card" style="text-align:center">
-      <p>📞 <b>Роман Гунчак:</b> <a href="tel:+380503740334" style="font-size:1.2rem;font-weight:700">050-374-0334</a><br>
-      <span style="color:var(--muted)">Telegram, Viber, WhatsApp</span></p>
-      <div class="socials"><a href="https://www.facebook.com/food.for.life.chernivtsi" target="_blank" rel="noopener">🌐 Facebook «Їжі життя»</a>
-        
-        <a href="https://www.instagram.com/ffl.cv.ua/" target="_blank" rel="noopener">📸 Instagram @ffl.cv.ua</a>
-        
+<section class="sec sec--contacts-food" id="contacts">
+  <div class="container container--narrow">
+    <h2 class="sec__title">Контакти</h2>
+    <div class="card contacts">
+      <p><span class="ico ico-phone" aria-hidden="true"></span><b>Роман Гунчак:</b> <a class="contacts__tel" href="tel:+380503740334">050-374-0334</a><br>
+      <span class="contacts__note">Telegram, Viber, WhatsApp</span></p>
+      <div class="socials socials--ffl">
+        <a class="btn btn-ghost" href="https://www.facebook.com/food.for.life.chernivtsi" target="_blank" rel="noopener"><img src="assets/icons/facebook.svg" alt="" width="20" height="20">Facebook «Їжі життя»</a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/ffl.cv.ua/" target="_blank" rel="noopener"><img src="assets/icons/instagram.svg" alt="" width="20" height="20">Instagram @ffl.cv.ua</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 </main>
-
 
 <footer>
   <div class="wrap">
@@ -373,5 +265,6 @@
 
 <script src="assets/site.js"></script>
 <script src="assets/avatar.js"></script><script src="assets/i18n-dict.js"></script><script src="assets/i18n.js"></script>
-<script> function openVolunteerChat(e){e.preventDefault();var avatar=document.querySelector('.avatar-widget .avatar-char')||document.querySelector('[class*=avatar]');if(avatar){avatar.click();setTimeout(function(){var btns=document.querySelectorAll('.avatar-chat button, .avatar-card button');for(var i=0;i<btns.length;i++){if(btns[i].textContent.indexOf('волонтер')>-1){btns[i].click();break;}}},500);}else{document.getElementById('volunteer').scrollIntoView({behavior:'smooth'});}} </script> </body>
+<script src="assets/food.js"></script>
+</body>
 </html>
