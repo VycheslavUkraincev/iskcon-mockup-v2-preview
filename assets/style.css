@@ -852,3 +852,4 @@ body.ds{--cream:#FBF6ED;--card:#FFFCF5;--ink:#2B2117;--line:#E8DCC4;--muted:#645
 .path__where{display:flex;align-items:center;gap:.4em;margin:-.2em 0 1em;font-weight:600;color:var(--ink)}
 .path__where .ico{color:var(--saffron-text)}
 .page-home .path h3{line-height:1.25;text-wrap:balance}
+.path__kicker{margin:0 0 .35em;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron-text)}
