@@ -4,7 +4,9 @@
    ============================================================ */
 
 .avatar-widget{
-  position:fixed;right:18px;bottom:18px;z-index:150;
+  --av-right:18px;
+  position:fixed;right:var(--av-right);bottom:18px;z-index:150;
+  transition:transform 450ms cubic-bezier(.16,1,.3,1);
   display:flex;flex-direction:column;align-items:center;
   user-select:none;-webkit-user-select:none;
 }
@@ -134,7 +136,7 @@
 
 /* Мобільна адаптація */
 @media(max-width:640px){
-  .avatar-widget{right:12px;bottom:12px}
+  .avatar-widget{--av-right:12px;bottom:12px}
   .avatar-char{width:116px;height:auto}
   .avatar-card{right:12px;bottom:164px}
   .avatar-bubble{font-size:.75rem;padding:5px 11px}
@@ -148,3 +150,9 @@
   .avatar-char{transition:none}
   .avatar-char,.avatar-char *,.avatar-bubble,.avatar-zzz,.avatar-card,.avatar-msg.typing::after{animation:none!important;transition:none!important}
 }
+
+/* Безпечна зона: сховано за правий край, лишається ручка в полі сторінки */
+.avatar-widget.avatar-tuck{transform:translateX(calc(100% + var(--av-right) - 14px));pointer-events:none}
+.avatar-widget.avatar-tuck::before{content:"";position:absolute;left:0;top:50%;width:14px;height:64px;margin-top:-32px;
+  background:#96570C;border-radius:8px 0 0 8px;box-shadow:0 0 0 2px rgba(255,255,255,.85);pointer-events:auto;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.avatar-widget{transition:none}}

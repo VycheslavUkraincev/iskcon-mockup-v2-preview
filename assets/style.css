@@ -765,3 +765,16 @@ body.ds{--cream:#FBF6ED;--card:#FFFCF5;--ink:#2B2117;--line:#E8DCC4;--muted:#645
 .ds .donate-modal-foot a{color:var(--saffron-text);font-weight:600}
 .ds .donate-modal-loader .spin{animation:donSpin 1s linear infinite}
 @media(prefers-reduced-motion:reduce){.ds .donate-modal-loader .spin{animation-duration:2.5s}}
+
+/* ============ Срез 6: 404, безопасная зона аватара, «Дыхание алтаря» ============ */
+.not-found{padding-bottom:clamp(72px,10vw,140px)}
+.not-found__cta{margin:28px 0 0}
+.not-found__cta .btn{margin:0}
+
+/* «Дыхание алтаря»: едва заметный тёплый свет поверх фото (под скримом, чтобы контраст текста не менялся) */
+.hero-home__glow{position:absolute;inset:0;background:#FFD89A;opacity:0;mix-blend-mode:soft-light;pointer-events:none}
+@media(max-width:700px){
+  .hero-home__glow{inset:0 0 auto 0;height:240px;
+    -webkit-mask-image:linear-gradient(180deg,#000 35%,transparent);mask-image:linear-gradient(180deg,#000 35%,transparent)}
+}
+@media(prefers-reduced-motion:reduce){.hero-home__glow{display:none}}

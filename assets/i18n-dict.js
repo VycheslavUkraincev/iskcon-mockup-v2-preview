@@ -553,6 +553,12 @@ ro: {
 "Не вдалося скопіювати автоматично. Текст виділено — скопіюйте його вручну.": "Nu s-a putut copia automat. Textul este selectat — copiați-l manual.",
 "Скопіюйте вручну": "Copiați manual",
 "Відкрити в новій вкладці": "Deschide într-o filă nouă",
+/* ---- slice 6 ---- */
+"Відгуки відданих і учасників громади": "Recenzii de la devoți și membri ai comunității",
+"Сторінку не знайдено": "Pagina nu a fost găsită",
+"Сторінку не знайдено — ІСККОН Чернівці": "Pagina nu a fost găsită — ISKCON Cernăuți",
+"Можливо, адресу введено з помилкою або сторінку було переміщено.": "Poate adresa a fost introdusă greșit sau pagina a fost mutată.",
+"Повернутися на головну": "Înapoi la pagina principală",
 },
 en: {
 /* ---- nav / header ---- */
@@ -1102,5 +1108,11 @@ en: {
 "Не вдалося скопіювати автоматично. Текст виділено — скопіюйте його вручну.": "Automatic copying failed. The text is selected — please copy it manually.",
 "Скопіюйте вручну": "Copy manually",
 "Відкрити в новій вкладці": "Open in a new tab",
+/* ---- slice 6 ---- */
+"Відгуки відданих і учасників громади": "Reviews from devotees and community members",
+"Сторінку не знайдено": "Page not found",
+"Сторінку не знайдено — ІСККОН Чернівці": "Page not found — ISKCON Chernivtsi",
+"Можливо, адресу введено з помилкою або сторінку було переміщено.": "The address may have been mistyped, or the page may have been moved.",
+"Повернутися на головну": "Back to the home page",
 }
 };

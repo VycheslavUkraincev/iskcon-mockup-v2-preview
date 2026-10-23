@@ -147,6 +147,7 @@ if(!REDUCED) setInterval(function(){
 function toggleChat(){
   wake();
   open = !open;
+  setTimeout(function(){ if(typeof safeSchedule === "function") safeSchedule(); }, 350);
   card.classList.toggle("open", open);
   if(open){
     bubbleEl.classList.add("hidden");
@@ -223,6 +224,89 @@ function answer(i){
     setTimeout(function(){ if(open) setState("curious"); }, 900);
   }, 900 + Math.min(item.a.length * 8, 1200));
 }
+
+/* ---------- Безпечна зона: аватар не перекриває текст і інтерактивні елементи ----------
+   Якщо розгорнутий віджет накриває текст/кнопки/посилання, він ховається за правий край
+   (залишається ручка 14 px у полі сторінки). Дотик по ручці розгортає його на кілька секунд.
+   Відкритий чат і фокус усередині віджета ніколи не ховаються. Сцени й логіку чату не змінює. */
+var SAFE_SEL = "a[href], button, summary, input, select, textarea, iframe, label, [role=button], p, h1, h2, h3, h4, li, blockquote, figcaption, code, dt, dd";
+var safeCand = [], safeTimer = null, peekUntil = 0, lastY = window.scrollY;
+function safeCollect(){
+  safeCand = Array.prototype.filter.call(document.querySelectorAll(SAFE_SEL), function(el){
+    return !el.closest(".avatar-widget, .avatar-card, .lightbox, .donate-modal, .skip-link");
+  });
+}
+function expandedRect(){
+  var cs = getComputedStyle(widget);
+  var w = widget.offsetWidth, h = widget.offsetHeight;
+  var r = parseFloat(cs.right) || 0, b = parseFloat(cs.bottom) || 0;
+  return {left: window.innerWidth - r - w, right: window.innerWidth - r, top: window.innerHeight - b - h, bottom: window.innerHeight - b};
+}
+/* Правило мінімальної дистанції: розгорнутий аватар тримається не ближче SAFE_GAP px
+   до будь-якого видимого тексту чи інтерактивного елемента. */
+var SAFE_GAP = 12;
+function hit(a, b, gap){
+  gap = gap || 0;
+  return !(b.right <= a.left - gap || b.left >= a.right + gap || b.bottom <= a.top - gap || b.top >= a.bottom + gap);
+}
+/* прямокутник, обрізаний контейнерами з overflow (стрічки, що прокручуються, не рахуються поза видимою частиною) */
+function clipRect(el, r){
+  var q = {left:r.left, right:r.right, top:r.top, bottom:r.bottom}, cur = el.parentElement;
+  while(cur && cur !== document.documentElement){
+    var cs = getComputedStyle(cur);
+    if(cs.overflowX !== "visible" || cs.overflowY !== "visible"){
+      var cr = cur.getBoundingClientRect();
+      q.left = Math.max(q.left, cr.left); q.right = Math.min(q.right, cr.right);
+      q.top = Math.max(q.top, cr.top); q.bottom = Math.min(q.bottom, cr.bottom);
+    }
+    cur = cur.parentElement;
+  }
+  return (q.right > q.left && q.bottom > q.top) ? q : null;
+}
+var INTERACTIVE = /^(A|BUTTON|SUMMARY|INPUT|SELECT|TEXTAREA|IFRAME|LABEL)$/;
+function overlapsContent(){
+  var wr = expandedRect(), rng = document.createRange();
+  for(var i = 0; i < safeCand.length; i++){
+    var el = safeCand[i], r = el.getBoundingClientRect();
+    if(r.width === 0 || r.height === 0 || !hit(wr, r, SAFE_GAP)) continue;
+    var cs = getComputedStyle(el);
+    if(cs.visibility === "hidden" || +cs.opacity === 0) continue;
+    if(INTERACTIVE.test(el.tagName) || el.getAttribute("role") === "button"){
+      var c = clipRect(el, r);
+      if(c && hit(wr, c, SAFE_GAP)) return true;
+      continue;
+    }
+    rng.selectNodeContents(el);
+    var rs = rng.getClientRects();
+    for(var k = 0; k < rs.length; k++){
+      if(!hit(wr, rs[k], SAFE_GAP)) continue;
+      var c2 = clipRect(el, rs[k]);
+      if(c2 && hit(wr, c2, SAFE_GAP)) return true;
+    }
+  }
+  return false;
+}
+function safeCheck(){
+  safeTimer = null;
+  var keep = open || widget.contains(document.activeElement) || Date.now() < peekUntil;
+  widget.classList.toggle("avatar-tuck", !keep && overlapsContent());
+}
+function safeSchedule(){ if(!safeTimer) safeTimer = setTimeout(safeCheck, 120); }
+window.addEventListener("scroll", function(){
+  if(Math.abs(window.scrollY - lastY) > 60) peekUntil = 0;   /* прокрутка скасовує «підгляд» */
+  lastY = window.scrollY; safeSchedule();
+}, {passive:true});
+window.addEventListener("resize", function(){ safeCollect(); safeSchedule(); }, {passive:true});
+widget.addEventListener("click", function(e){
+  if(widget.classList.contains("avatar-tuck")){
+    e.stopPropagation(); peekUntil = Date.now() + 6000;
+    widget.classList.remove("avatar-tuck"); setTimeout(safeSchedule, 6100);
+  }
+}, true);
+widget.addEventListener("focusin", safeSchedule);
+widget.addEventListener("focusout", safeSchedule);
+window.addEventListener("load", function(){ safeCollect(); safeSchedule(); });
+safeCollect(); safeSchedule();
 
 /* Привітальне махання при першому завантаженні */
 if(!REDUCED) setTimeout(function(){
