@@ -778,3 +778,16 @@ body.ds{--cream:#FBF6ED;--card:#FFFCF5;--ink:#2B2117;--line:#E8DCC4;--muted:#645
     -webkit-mask-image:linear-gradient(180deg,#000 35%,transparent);mask-image:linear-gradient(180deg,#000 35%,transparent)}
 }
 @media(prefers-reduced-motion:reduce){.hero-home__glow{display:none}}
+
+/* ============ Срез 7: копирайтинг главной (scope: body.page-home) ============ */
+.page-home .sec__title{text-wrap:balance;max-width:900px;margin-left:auto;margin-right:auto}
+.hero-home__when{margin:-8px 0 26px;font-weight:600;font-size:1.02rem;line-height:1.5;color:var(--paper)}
+.sec--visit{background:#F4EBDA}
+.visit__lead{max-width:720px;margin:-.2em auto 2em;text-align:center;font-family:Spectral,Georgia,serif;font-size:clamp(1.15rem,2.2vw,1.45rem);line-height:1.5}
+.visit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.visit__card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:clamp(20px,3vw,28px)}
+.visit__card h3{margin:0 0 .5em;font-size:1.25rem;line-height:1.25}
+.visit__card p{margin:0 0 .7em}
+.visit__card p:last-child{margin-bottom:0}
+.visit__all{text-align:center;margin:1.8em 0 0;font-weight:600}
+@media(max-width:700px){.visit{grid-template-columns:minmax(0,1fr)}}

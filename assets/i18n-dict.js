@@ -559,6 +559,17 @@ ro: {
 "Сторінку не знайдено — ІСККОН Чернівці": "Pagina nu a fost găsită — ISKCON Cernăuți",
 "Можливо, адресу введено з помилкою або сторінку було переміщено.": "Poate adresa a fost introdusă greșit sau pagina a fost mutată.",
 "Повернутися на головну": "Înapoi la pagina principală",
+/* ---- slice 7: копірайтинг головної ---- */
+"Щонеділі о 13:30 · вул. Скальда (Комарова), 40А · вхід вільний": "În fiecare duminică la 13:30 · str. Skalda (Komarova), 40A · intrare liberă",
+"Прийти в неділю": "Vino duminica aceasta",
+"Усі питання →": "Toate întrebările →",
+"Чи можна просто прийти в неділю — якщо я тут уперше?": "Pot să vin pur și simplu duminică — dacă sunt aici pentru prima dată?",
+"Це тільки для вірян — чи можна і мені, хто просто цікавиться?": "Este doar pentru credincioși — sau pot veni și eu, dacă mă interesează pur și simplu?",
+"Що буде, коли я зайду всередину?": "Ce se va întâmpla când voi intra înăuntru?",
+"Що вдягнути — і чи треба щось брати із собою?": "Ce să port — și trebuie să aduc ceva cu mine?",
+"О котрій усе починається — і скільки це триває?": "La ce oră începe totul — și cât durează?",
+"У що ви вірите — і чи обов'язково в це вірити, щоб прийти?": "În ce credeți — și trebuie să cred și eu ca să vin?",
+"Чим тут можна займатися, крім недільного свята?": "Ce se mai poate face aici, în afară de sărbătoarea de duminică?",
 },
 en: {
 /* ---- nav / header ---- */
@@ -1114,5 +1125,16 @@ en: {
 "Сторінку не знайдено — ІСККОН Чернівці": "Page not found — ISKCON Chernivtsi",
 "Можливо, адресу введено з помилкою або сторінку було переміщено.": "The address may have been mistyped, or the page may have been moved.",
 "Повернутися на головну": "Back to the home page",
+/* ---- slice 7: копірайтинг головної ---- */
+"Щонеділі о 13:30 · вул. Скальда (Комарова), 40А · вхід вільний": "Every Sunday at 13:30 · 40A Skalda (Komarova) St · free entry",
+"Прийти в неділю": "Come this Sunday",
+"Усі питання →": "All questions →",
+"Чи можна просто прийти в неділю — якщо я тут уперше?": "Can I just come on Sunday — if it's my first time here?",
+"Це тільки для вірян — чи можна і мені, хто просто цікавиться?": "Is this only for believers — or can I come too, if I'm just curious?",
+"Що буде, коли я зайду всередину?": "What will happen when I step inside?",
+"Що вдягнути — і чи треба щось брати із собою?": "What should I wear — and do I need to bring anything?",
+"О котрій усе починається — і скільки це триває?": "What time does it all start — and how long does it last?",
+"У що ви вірите — і чи обов'язково в це вірити, щоб прийти?": "What do you believe — and do I have to believe it to come?",
+"Чим тут можна займатися, крім недільного свята?": "What else can I do here besides the Sunday festival?",
 }
 };
