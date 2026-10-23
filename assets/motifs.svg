@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<!-- «Золота лінія»: декоративні мотиви сайту. Один вага штриха (vector-effect: non-scaling-stroke),
+     колір — currentColor (#C9A24B на темній сцені, #96570C на папері). Підключення:
+     <svg class="motif" aria-hidden="true" focusable="false"><use href="assets/motifs.svg#m-lotus"/></svg> -->
+<defs>
+<style>
+  symbol *{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+</style>
+</defs>
+
+<symbol id="m-lotus" viewBox="0 0 64 64">
+  <path d="M32 12C38.5 20 38.5 34 32 45C25.5 34 25.5 20 32 12Z"/>
+  <path d="M32 45C24.5 41.5 18.5 33.5 18 24C24.5 26 29.5 33 32 45"/>
+  <path d="M32 45C39.5 41.5 45.5 33.5 46 24C39.5 26 34.5 33 32 45"/>
+  <path d="M32 47C22 47 12.5 41.5 7 33C15.5 31.5 25 36.5 32 47"/>
+  <path d="M32 47C42 47 51.5 41.5 57 33C48.5 31.5 39 36.5 32 47"/>
+  <path d="M14 52H50"/>
+  <path d="M22 56.5H42"/>
+</symbol>
+
+<symbol id="m-arch" viewBox="0 0 64 64">
+  <path d="M32 2V7"/>
+  <circle cx="32" cy="9" r="2"/>
+  <path d="M13 56V31C13 21 21 13.5 32 11C43 13.5 51 21 51 31V56"/>
+  <path d="M21 56V35C21 27.5 25.5 22 32 19.5C38.5 22 43 27.5 43 35V56"/>
+  <path d="M7 56H57"/>
+  <path d="M10 60H54"/>
+</symbol>
+
+<symbol id="m-feather" viewBox="0 0 64 64">
+  <path d="M33 62C32.5 50 31.5 36 30 22"/>
+  <path d="M30 4C38 4 42 11 41.5 18C41 25 36 31 30 31C24 31 19 25 18.5 18C18 11 22 4 30 4Z"/>
+  <path d="M30 10C34 10 36 14 35.6 18C35.3 22 33 25 30 25C27 25 24.7 22 24.4 18C24 14 26 10 30 10Z"/>
+  <path d="M30 15C31.6 15 32.3 16.6 32.2 18.2C32 19.8 31.2 21 30 21C28.8 21 28 19.8 27.8 18.2C27.7 16.6 28.4 15 30 15Z"/>
+  <path d="M31.4 38L22 32.5"/>
+  <path d="M31.4 38L40.5 32"/>
+  <path d="M32 46L22.5 41"/>
+  <path d="M32 46L41.5 40.5"/>
+  <path d="M32.6 54L24 49.5"/>
+  <path d="M32.6 54L41 49"/>
+</symbol>
+
+<symbol id="m-mridanga" viewBox="0 0 64 64">
+  <path d="M10 24C22 18.5 42 18.5 54 24V40C42 45.5 22 45.5 10 40Z"/>
+  <ellipse cx="10" cy="32" rx="3.5" ry="8"/>
+  <ellipse cx="54" cy="32" rx="3.5" ry="8"/>
+  <path d="M15 22.5L20 41.8L26 21.2L32 42.6L38 21.2L44 41.8L49 22.5"/>
+</symbol>
+
+<symbol id="m-tulasi" viewBox="0 0 64 64">
+  <path d="M32 60V41"/>
+  <path d="M32 41C20 35 17.5 18.5 32 5C46.5 18.5 44 35 32 41Z"/>
+  <path d="M32 41V13"/>
+  <path d="M32 31L25 25"/>
+  <path d="M32 31L39 25"/>
+  <path d="M32 22.5L27 18"/>
+  <path d="M32 22.5L37 18"/>
+  <path d="M32 52C27 52 22.5 48.5 21 44C26 44 30 47.5 32 52"/>
+  <path d="M32 52C37 52 41.5 48.5 43 44C38 44 34 47.5 32 52"/>
+</symbol>
+
+<symbol id="m-sun" viewBox="0 0 64 64">
+  <path d="M10 42A22 22 0 0 1 54 42Z"/>
+  <path d="M11.1 35H52.9"/>
+  <path d="M13.9 29.5H50.1"/>
+  <path d="M19.4 24H44.6"/>
+  <path d="M4 48H60"/>
+  <path d="M14 53.5H50"/>
+</symbol>
+</svg>

@@ -867,3 +867,62 @@ body.ds{--cream:#FBF6ED;--card:#FFFCF5;--ink:#2B2117;--line:#E8DCC4;--muted:#645
 @media(max-width:860px){.place__grid{grid-template-columns:1fr;gap:16px}
   .place__badge{justify-content:flex-start;width:100%;border-radius:14px;padding:12px 16px;font-size:.95rem;text-align:left;text-wrap:pretty}
   .place__card--map img{aspect-ratio:4/3}}
+
+/* ============ MASTER B: розділ Шріли Прабгупади, «золота лінія», темні смуги ============ */
+/* мотиви «золотої лінії» (assets/motifs.svg) */
+.motif{display:block;width:64px;height:64px;color:var(--saffron-text);flex:0 0 auto}
+.sec--dark .motif,.scene-band .motif,.hero-home .motif,.page-hero .motif{color:var(--gold)}
+
+/* B1: Засновник */
+.sec--founder .founder{max-width:980px;grid-template-columns:auto minmax(0,1fr);align-items:center}
+.founder__photo{position:relative;margin:0;width:clamp(200px,28vw,320px);justify-self:center}
+.founder__arch{position:relative;display:block}
+.founder__arch::before{content:"";position:absolute;inset:-12px;border:1.5px solid var(--saffron-text);
+  border-radius:999px 999px 12px 12px;opacity:.55;pointer-events:none}
+.founder__photo .founder__img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:50% 15%;border-radius:999px 999px 6px 6px}
+.founder__cap{margin-top:22px;text-align:center;font-size:.85rem;letter-spacing:.04em;color:var(--muted)}
+.founder__sign{display:block;width:clamp(170px,22vw,240px);height:auto;margin:1.2em 0 0;opacity:.9}
+.founder-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.5vw,28px);max-width:980px;margin:clamp(40px,6vw,64px) auto 0}
+.founder-strip:focus-visible{outline:2px solid var(--saffron-text);outline-offset:6px;border-radius:10px}
+.founder-strip__item{margin:0}
+.founder-strip__item img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--line)}
+.founder-strip__item figcaption{margin-top:10px;font-size:.88rem;color:var(--muted);text-align:center}
+.founder__credits{max-width:980px;margin:clamp(32px,5vw,48px) auto 0;padding-top:14px;border-top:1px solid var(--line);font-size:.78rem;line-height:1.6;color:var(--muted);text-align:center}
+.founder__credits a{color:inherit}
+@media(max-width:640px){
+  .founder-strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-left:-16px;margin-right:-16px;padding:0 16px 8px;scrollbar-width:thin}
+  .founder-strip__item{flex:0 0 66%;scroll-snap-align:center}
+}
+@media(max-width:560px){
+  .sec--founder .founder{grid-template-columns:1fr}
+  .founder__sign{margin:1.2em auto 0}
+}
+/* B3: темна смуга з мотивами по краях і одним рядком наявного тексту */
+.scene-band{background:var(--scene);color:var(--paper);padding:clamp(40px,6vw,72px) 0;overflow:hidden}
+.scene-band__inner{display:flex;align-items:center;justify-content:center;gap:clamp(16px,4vw,48px)}
+.scene-band__line{margin:0;max-width:34ch;font-family:Spectral,Georgia,serif;font-weight:600;letter-spacing:.01em;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.4;text-align:center;color:var(--paper);text-wrap:balance}
+.scene-band .scene-band__m{width:clamp(44px,6vw,72px);height:clamp(44px,6vw,72px);opacity:.9}
+.scene-band__m--r{transform:scaleX(-1)}
+@media(max-width:560px){.scene-band__inner{gap:10px}.scene-band .scene-band__m{width:36px;height:36px}}
+/* B3: /food — сонце «Їжі життя» сходить над точкою на контурі площі */
+.sobor__sun{color:var(--terracotta);opacity:0;animation:soborSun .9s ease-out 1.5s both}
+@keyframes soborSun{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.sobor__sun{animation:none;opacity:1}}
+/* B4: порожні зони — мотиви замість порожнечі (без нових текстів) */
+.path__motif{position:absolute;right:clamp(16px,3vw,32px);bottom:clamp(14px,2.5vw,28px);width:clamp(64px,8vw,104px);height:clamp(64px,8vw,104px);opacity:.22;pointer-events:none}
+.card--side{position:relative}
+.card__motif{position:absolute;right:clamp(16px,2.5vw,28px);bottom:clamp(14px,2.5vw,24px);width:72px;height:72px;opacity:.28;pointer-events:none}
+.reviews{grid-template-columns:repeat(3,minmax(0,1fr))}
+.review--motif{display:flex;align-items:center;justify-content:center;background:transparent;border-style:dashed}
+.review--motif .motif{width:clamp(72px,9vw,112px);height:clamp(72px,9vw,112px);opacity:.45}
+@media(max-width:960px){.reviews{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.reviews{grid-template-columns:minmax(0,1fr)}.review--motif{display:none}}
+.contacts__motif{margin:clamp(28px,4vw,44px) auto 0;width:56px;height:56px;opacity:.5}
+.page-hero .container{position:relative}
+.page-hero__motifs{position:absolute;right:clamp(16px,3vw,40px);top:50%;transform:translateY(-50%);display:flex;align-items:flex-end;gap:clamp(18px,2.5vw,36px);opacity:.75;pointer-events:none}
+.page-hero__motifs .motif{width:clamp(56px,6vw,84px);height:clamp(56px,6vw,84px)}
+.page-hero__motifs .motif:nth-child(2){width:clamp(76px,8vw,116px);height:clamp(76px,8vw,116px)}
+@media(max-width:900px){.page-hero__motifs{display:none}}
+.schedule-grid>.card--side{align-self:stretch}
+@media(max-width:860px){.card__motif{display:none}}
+@media(max-width:640px){.ds .gallery a:last-child:nth-child(even){grid-column:span 2}}

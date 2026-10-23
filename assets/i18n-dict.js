@@ -603,6 +603,21 @@ ro: {
 "© учасники OpenStreetMap": "© contribuitorii OpenStreetMap",
 "Соборна площа в Чернівцях: бруківка, сквер і обеліск": "Piața Soborna din Cernăuți: pavaj, scuar și obelisc",
 "Карта центру Чернівців: Соборна площа обведена, точка — місце роздачі їжі": "Harta centrului Cernăuțiului: Piața Soborna este conturată, punctul marchează locul unde se împarte mâncarea",
+/* ---- master B1: розділ Шріли Прабгупади ---- */
+"Ранкова прогулянка · Німеччина, 1974": "Plimbare de dimineață · Germania, 1974",
+"Підпис Шріли Прабгупади": "Semnătura lui Srila Prabhupada",
+"Фотографії Шріли Прабгупади": "Fotografii cu Srila Prabhupada",
+"Шріла Прабгупада на Червоній площі в Москві, 1971": "Srila Prabhupada în Piața Roșie din Moscova, 1971",
+"Москва, Червона площа · 1971": "Moscova, Piața Roșie · 1971",
+"Шріла Прабгупада співає кіртан, Німеччина, 1974": "Srila Prabhupada cântând kirtan, Germania, 1974",
+"Кіртан · Німеччина, 1974": "Kirtan · Germania, 1974",
+"Скульптурна композиція: Шріла Прабгупада з мрідангою серед учнів": "Compoziție sculpturală: Srila Prabhupada cu mridanga printre discipoli",
+"Скульптурна композиція · фото 2026 р.": "Compoziție sculpturală · fotografie din 2026",
+"Фото й підпис — Wikimedia Commons.": "Fotografii și semnătură: Wikimedia Commons. ",
+"(підпис; колір змінено).": " (semnătură; culoare modificată).",
+/* ---- master B3: темні смуги ---- */
+"Ми безмежно вдячні кожному за щедрість та відкрите серце!": "Vă suntem infinit recunoscători fiecăruia pentru generozitate și inima deschisă!",
+"Кіртан — серце нашої духовної практики.": "Kirtan — inima practicii noastre spirituale.",
 },
 en: {
 /* ---- nav / header ---- */
@@ -1202,5 +1217,20 @@ en: {
 "© учасники OpenStreetMap": "© OpenStreetMap contributors",
 "Соборна площа в Чернівцях: бруківка, сквер і обеліск": "Soborna Square in Chernivtsi: paving stones, park and obelisk",
 "Карта центру Чернівців: Соборна площа обведена, точка — місце роздачі їжі": "Map of central Chernivtsi: Soborna Square is outlined, the dot marks where food is handed out",
+/* ---- master B1: розділ Шріли Прабгупади ---- */
+"Ранкова прогулянка · Німеччина, 1974": "Morning walk · Germany, 1974",
+"Підпис Шріли Прабгупади": "Srila Prabhupada's signature",
+"Фотографії Шріли Прабгупади": "Photos of Srila Prabhupada",
+"Шріла Прабгупада на Червоній площі в Москві, 1971": "Srila Prabhupada on Red Square in Moscow, 1971",
+"Москва, Червона площа · 1971": "Moscow, Red Square · 1971",
+"Шріла Прабгупада співає кіртан, Німеччина, 1974": "Srila Prabhupada singing kirtan, Germany, 1974",
+"Кіртан · Німеччина, 1974": "Kirtan · Germany, 1974",
+"Скульптурна композиція: Шріла Прабгупада з мрідангою серед учнів": "Sculptural composition: Srila Prabhupada with a mridanga among his followers",
+"Скульптурна композиція · фото 2026 р.": "Sculptural composition · photo taken in 2026",
+"Фото й підпис — Wikimedia Commons.": "Photos and signature: Wikimedia Commons. ",
+"(підпис; колір змінено).": " (signature; colour changed).",
+/* ---- master B3: темні смуги ---- */
+"Ми безмежно вдячні кожному за щедрість та відкрите серце!": "We are infinitely grateful to everyone for generosity and an open heart!",
+"Кіртан — серце нашої духовної практики.": "Kirtan — the heart of our spiritual practice.",
 }
 };
