@@ -592,6 +592,10 @@ ro: {
 "Запрошення скопійовано — надішліть його другу.": "Invitația a fost copiată — trimite-o unui prieten.",
 "Безкоштовні гарячі обіди в Чернівцях щосуботи — «Їжа життя»": "Prânzuri calde gratuite în Cernăuți în fiecare sâmbătă — „Hrana pentru Viață”",
 "Безкоштовні гарячі вегетаріанські обіди в Чернівцях: щосуботи о 14:00 на Соборній площі. Благодійна місія «Їжа життя» — приходьте, а також долучайтесь як волонтер.": "Prânzuri vegetariene calde gratuite în Cernăuți: în fiecare sâmbătă la 14:00 în Piața Soborna. Misiunea caritabilă „Hrana pentru Viață” — veniți și alăturați-vă ca voluntar.",
+/* ---- slice 8.1: Соборна площа, плитка «Їжа життя» ---- */
+"Соборна площа — тут ми роздаємо їжу щосуботи о 14:00": "Piața Soborna — aici împărțim mâncare în fiecare sâmbătă la 14:00",
+"Потрібна їжа просто зараз — куди мені звернутися?": "Am nevoie de mâncare chiar acum — unde să mă adresez?",
+"Соборна площа, щосуботи о 14:00": "Piața Soborna, în fiecare sâmbătă la 14:00",
 },
 en: {
 /* ---- nav / header ---- */
@@ -1180,5 +1184,9 @@ en: {
 "Запрошення скопійовано — надішліть його другу.": "Invitation copied — send it to a friend.",
 "Безкоштовні гарячі обіди в Чернівцях щосуботи — «Їжа життя»": "Free hot meals in Chernivtsi every Saturday — Food for Life",
 "Безкоштовні гарячі вегетаріанські обіди в Чернівцях: щосуботи о 14:00 на Соборній площі. Благодійна місія «Їжа життя» — приходьте, а також долучайтесь як волонтер.": "Free hot vegetarian meals in Chernivtsi: every Saturday at 2 PM on Soborna Square. The 'Food for Life' charity — come along, and join us as a volunteer.",
+/* ---- slice 8.1: Соборна площа, плитка «Їжа життя» ---- */
+"Соборна площа — тут ми роздаємо їжу щосуботи о 14:00": "Soborna Square — this is where we hand out food every Saturday at 2 PM",
+"Потрібна їжа просто зараз — куди мені звернутися?": "Need food right now — where can I go?",
+"Соборна площа, щосуботи о 14:00": "Soborna Square, every Saturday at 2 PM",
 }
 };

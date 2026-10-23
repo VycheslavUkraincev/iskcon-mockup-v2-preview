@@ -838,3 +838,17 @@ body.ds{--cream:#FBF6ED;--card:#FFFCF5;--ink:#2B2117;--line:#E8DCC4;--muted:#645
 .ds .next-sunday__status{flex-basis:100%;margin:0;font-size:.95rem;color:var(--muted);overflow-wrap:anywhere}
 .next-sunday__status:empty{display:none}
 @media(max-width:700px){.next-sunday__actions,.ds .next-sunday__actions .btn{flex:1 1 100%;text-align:center}}
+
+/* ============ Срез 8.1: контур Соборної площі (/food), плитка «Їжа життя» (главная) ============ */
+.sobor{margin:0 0 clamp(20px,3vw,32px);display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap}
+.sobor__map{display:block;flex:0 0 auto;width:clamp(150px,18vw,220px);height:auto;overflow:visible}
+.sobor__line{fill:none;stroke:#96570C;stroke-width:.75;stroke-linejoin:round;
+  stroke-dasharray:1;stroke-dashoffset:0;animation:soborDraw 1.6s cubic-bezier(.65,0,.35,1) .2s both}
+.sobor__dot{fill:#B0512F}
+.sobor__halo{fill:none;stroke:#B0512F;stroke-width:.5;opacity:.45}
+.sobor__cap{flex:1 1 180px;margin:0;max-width:30ch;font-size:.95rem;line-height:1.45;color:var(--muted)}
+@keyframes soborDraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.sobor__line{animation:none}}
+.path__where{display:flex;align-items:center;gap:.4em;margin:-.2em 0 1em;font-weight:600;color:var(--ink)}
+.path__where .ico{color:var(--saffron-text)}
+.page-home .path h3{line-height:1.25;text-wrap:balance}
