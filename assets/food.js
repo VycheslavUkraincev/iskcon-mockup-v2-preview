@@ -78,4 +78,22 @@
       f.focus();
     });
   }
+
+  /* Фото й карта Соборної площі: адреси підставляємо після load, коли блок поруч,
+     щоб ці картинки не змагалися з першим екраном (lazy у Chrome вантажить їх завчасно). */
+  var placeImgs = document.querySelectorAll("img[data-srcset]");
+  if(placeImgs.length){
+    var showImg = function(img){
+      img.srcset = img.getAttribute("data-srcset"); img.src = img.getAttribute("data-src");
+      img.removeAttribute("data-srcset"); img.removeAttribute("data-src");
+    };
+    var armImgs = function(){
+      if(!("IntersectionObserver" in window)){ Array.prototype.forEach.call(placeImgs, showImg); return; }
+      var pio = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ pio.unobserve(e.target); showImg(e.target); } });
+      }, {rootMargin:"600px 0px"});
+      Array.prototype.forEach.call(placeImgs, function(img){ pio.observe(img); });
+    };
+    if(document.readyState === "complete") armImgs(); else window.addEventListener("load", armImgs);
+  }
 })();

@@ -596,6 +596,13 @@ ro: {
 "Соборна площа — тут ми роздаємо їжу щосуботи о 14:00": "Piața Soborna — aici împărțim mâncare în fiecare sâmbătă la 14:00",
 "Потрібна їжа просто зараз — куди мені звернутися?": "Am nevoie de mâncare chiar acum — unde să mă adresez?",
 "Соборна площа, щосуботи о 14:00": "Piața Soborna, în fiecare sâmbătă la 14:00",
+/* ---- slice 8.4: Соборна площа — фото і карта ---- */
+"Так виглядає площа": "Așa arată piața",
+"Фото:": "Foto: ",
+"Антоніна Вишневська": "Antonina Vyshnevska",
+"© учасники OpenStreetMap": "© contribuitorii OpenStreetMap",
+"Соборна площа в Чернівцях: бруківка, сквер і обеліск": "Piața Soborna din Cernăuți: pavaj, scuar și obelisc",
+"Карта центру Чернівців: Соборна площа обведена, точка — місце роздачі їжі": "Harta centrului Cernăuțiului: Piața Soborna este conturată, punctul marchează locul unde se împarte mâncarea",
 },
 en: {
 /* ---- nav / header ---- */
@@ -1188,5 +1195,12 @@ en: {
 "Соборна площа — тут ми роздаємо їжу щосуботи о 14:00": "Soborna Square — this is where we hand out food every Saturday at 2 PM",
 "Потрібна їжа просто зараз — куди мені звернутися?": "Need food right now — where can I go?",
 "Соборна площа, щосуботи о 14:00": "Soborna Square, every Saturday at 2 PM",
+/* ---- slice 8.4: Соборна площа — фото і карта ---- */
+"Так виглядає площа": "This is what the square looks like",
+"Фото:": "Photo: ",
+"Антоніна Вишневська": "Antonina Vyshnevska",
+"© учасники OpenStreetMap": "© OpenStreetMap contributors",
+"Соборна площа в Чернівцях: бруківка, сквер і обеліск": "Soborna Square in Chernivtsi: paving stones, park and obelisk",
+"Карта центру Чернівців: Соборна площа обведена, точка — місце роздачі їжі": "Map of central Chernivtsi: Soborna Square is outlined, the dot marks where food is handed out",
 }
 };

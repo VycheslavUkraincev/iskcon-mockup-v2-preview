@@ -853,3 +853,17 @@ body.ds{--cream:#FBF6ED;--card:#FFFCF5;--ink:#2B2117;--line:#E8DCC4;--muted:#645
 .path__where .ico{color:var(--saffron-text)}
 .page-home .path h3{line-height:1.25;text-wrap:balance}
 .path__kicker{margin:0 0 .35em;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron-text)}
+/* slice 8.4: Соборна площа — фото + карта в блоці роздачі */
+.place{margin-top:clamp(28px,4vw,48px)}
+.place__badge{display:flex;align-items:center;justify-content:center;gap:.45em;width:fit-content;max-width:100%;margin:0 auto 20px;padding:10px 20px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--ink);text-align:center;text-wrap:balance}
+.place__badge .ico{flex:0 0 auto;color:var(--terracotta)}
+.place__grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ds .place__card{margin:0;padding:0;overflow:hidden;display:flex;flex-direction:column}
+.place__card img{display:block;width:100%;height:auto;aspect-ratio:1200/760;object-fit:cover;background:var(--line)}
+.place__cap{display:flex;flex-direction:column;gap:4px;padding:12px 16px 14px}
+.place__title{font-weight:600;color:var(--ink)}
+.place__attr{font-size:.8rem;color:var(--muted)}
+.place__attr a{color:inherit}
+@media(max-width:860px){.place__grid{grid-template-columns:1fr;gap:16px}
+  .place__badge{justify-content:flex-start;width:100%;border-radius:14px;padding:12px 16px;font-size:.95rem;text-align:left;text-wrap:pretty}
+  .place__card--map img{aspect-ratio:4/3}}
