@@ -791,3 +791,50 @@ body.ds{--cream:#FBF6ED;--card:#FFFCF5;--ink:#2B2117;--line:#E8DCC4;--muted:#645
 .visit__card p:last-child{margin-bottom:0}
 .visit__all{text-align:center;margin:1.8em 0 0;font-weight:600}
 @media(max-width:700px){.visit{grid-template-columns:minmax(0,1fr)}}
+
+/* ============ Срез 8: подвал, запись в мессенджерах, два входа пожертв, «Найближча неділя» ============ */
+/* единый подвал (все страницы) */
+.ds .site-footer{padding:clamp(32px,5vw,48px) 0 34px}
+.site-footer__contact{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 28px;
+  padding-bottom:22px;margin-bottom:14px;border-bottom:1px solid var(--line);color:var(--ink);font-size:.98rem}
+.ds .site-footer__line{margin:0;display:flex;align-items:center;gap:.45em}
+.site-footer__line .ico{color:var(--saffron-text)}
+.ds .site-footer__line a{font-weight:600}
+.ds .socials--footer{margin:0;gap:10px}
+.socials--footer .social-btn{width:44px;height:44px;border-radius:12px}
+.socials--footer .social-btn img{width:22px;height:22px}
+@media(max-width:700px){.site-footer__contact{flex-direction:column;gap:12px}}
+
+/* /courses: запись через WhatsApp / Viber в каждой карточке */
+.page-courses .course-card__body{display:flex;flex-direction:column}
+.course-join{margin-top:auto;padding-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+.ds .course-join__btn{margin:0;flex:1 1 180px;display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  padding:10px 16px;font-size:.95rem;border-width:1.5px}
+.ds .course-card .course-join__btn img{width:20px;height:20px;flex:none;aspect-ratio:auto;margin:0;border-radius:0;background:none}
+
+/* /donation: два входа «На храм» / «На «Їжу життя»» */
+.sec--ways{padding-bottom:0}
+.ways__lead{max-width:720px;margin:-.2em auto 1.6em;text-align:center}
+.ways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.ways__card{margin:0;padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;align-items:flex-start;gap:.2em}
+.ways__card>.ico{color:var(--saffron-text);width:28px;height:28px}
+.ways__card h3{margin:.3em 0 .2em;font-size:1.5rem;line-height:1.2}
+.ways__card p{margin:0 0 1.1em;max-width:44ch}
+.ds .ways__card .btn{margin:auto 0 0}
+.ds .ways__more{margin-top:.9em;font-weight:600}
+@media(max-width:700px){.ways{grid-template-columns:minmax(0,1fr)}}
+
+/* главная: «Найближча неділя» */
+.next-sunday{margin:24px auto 0;max-width:1000px;padding:clamp(18px,2.6vw,26px) clamp(20px,3vw,32px);
+  background:var(--card);border:1px solid var(--line);border-radius:10px;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px}
+.next-sunday[hidden]{display:none}
+.next-sunday__when{margin:0;font-family:Spectral,Georgia,serif;font-size:clamp(1.2rem,2.2vw,1.45rem);line-height:1.3;
+  display:flex;align-items:center;flex-wrap:wrap;gap:0 .3em}
+.next-sunday__when .ico{color:var(--saffron-text);margin-right:.25em}
+.next-sunday__when b{font-weight:600;color:var(--saffron-text)}
+.next-sunday__actions{display:flex;flex-wrap:wrap;gap:10px}
+.ds .next-sunday__actions .btn{margin:0;padding:10px 20px;font-size:.95rem;border-width:1.5px}
+.ds .next-sunday__status{flex-basis:100%;margin:0;font-size:.95rem;color:var(--muted);overflow-wrap:anywhere}
+.next-sunday__status:empty{display:none}
+@media(max-width:700px){.next-sunday__actions,.ds .next-sunday__actions .btn{flex:1 1 100%;text-align:center}}

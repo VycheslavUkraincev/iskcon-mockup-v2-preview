@@ -7,6 +7,22 @@
   function onScroll(){ if(header) header.classList.toggle("scrolled", window.scrollY > 8); }
   window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
 
+  /* Якорі «#id» на поточній сторінці. Через <base href> браузер інакше відкриває «#id» на головній. */
+  document.addEventListener("click", function(ev){
+    var a = ev.target.closest && ev.target.closest('a[href^="#"]');
+    if(!a || ev.defaultPrevented || ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+    var id = decodeURIComponent(a.getAttribute("href").slice(1));
+    var target = id && document.getElementById(id);
+    if(!target) return;
+    ev.preventDefault();
+    if(location.hash.slice(1) === id) target.scrollIntoView();
+    else location.hash = id;
+    if(a.classList.contains("skip-link")){
+      if(!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+      target.focus({preventScroll:true});
+    }
+  });
+
   /* Мобільне меню */
   var navToggle = document.querySelector(".nav-toggle"),
       mainNav = document.getElementById("mainNav");
