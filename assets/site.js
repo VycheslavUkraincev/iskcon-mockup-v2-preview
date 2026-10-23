@@ -46,6 +46,27 @@
     });
   }
 
+  /* Видимий фокус карти Google з клавіатури: фокус iframe іншого домену CSS не бачить, тож коли
+     Tab переводить фокус у карту, рамка .map-frame отримує клас .kbd-focus (знімається при поверненні) */
+  var mapFrames = document.querySelectorAll(".map-frame"), viaTab = false;
+  if(mapFrames.length){
+    document.addEventListener("keydown", function(ev){ viaTab = ev.key === "Tab"; }, true);
+    /* клік мишею всередині карти до сторінки не доходить — скидаємо прапорець уже під час руху миші сторінкою */
+    ["pointerdown","pointermove"].forEach(function(evt){ document.addEventListener(evt, function(){ viaTab = false; }, {capture:true, passive:true}); });
+    window.addEventListener("blur", function(){
+      setTimeout(function(){
+        var a = document.activeElement;
+        mapFrames.forEach(function(f){ f.classList.toggle("kbd-focus", viaTab && f.contains(a)); });
+      }, 0);
+    });
+    window.addEventListener("focus", function(){ mapFrames.forEach(function(f){ f.classList.remove("kbd-focus"); }); });
+    /* карта ще не завантажилась (loading="lazy"): фокус лишається на самому iframe у сторінці — blur не буде */
+    mapFrames.forEach(function(f){
+      f.addEventListener("focusin", function(){ if(viaTab) f.classList.add("kbd-focus"); });
+      f.addEventListener("focusout", function(){ if(document.hasFocus()) f.classList.remove("kbd-focus"); });
+    });
+  }
+
   /* Мобільне меню */
   var navToggle = document.querySelector(".nav-toggle"),
       mainNav = document.getElementById("mainNav");

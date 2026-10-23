@@ -74,7 +74,7 @@
 .avatar-zzz-wrap{position:relative}
 
 /* Тінь під персонажем */
-.av-shadow{transform-box:fill-box;transform-origin:center;transition:all .3s}
+.av-shadow{transform-box:fill-box;transform-origin:center;transition:transform .3s,opacity .3s}
 .avatar-char.idle .av-shadow{animation:avShadow 3.4s ease-in-out infinite}
 @keyframes avShadow{0%,100%{transform:scaleX(1);opacity:.14}50%{transform:scaleX(.86);opacity:.09}}
 
@@ -100,7 +100,7 @@
   display:flex;align-items:center;justify-content:center;overflow:hidden}
 .avatar-head .mini svg{width:30px;height:38px}
 .avatar-head small{display:block;font-weight:400;opacity:.92;font-size:.78rem}
-.avatar-body{padding:14px 14px 16px;max-height:380px;max-height:min(380px,calc(100vh - 250px));max-height:min(380px,calc(100dvh - 250px));overflow-y:auto}
+.avatar-body{padding:14px 14px 16px;max-height:380px;max-height:min(380px,calc(100vh - 250px));max-height:min(380px,calc(100dvh - 250px));overflow-y:auto;overscroll-behavior:contain}
 .avatar-msg{
   background:#fff;border:1px solid var(--line);border-radius:12px;
   padding:10px 12px;margin-bottom:10px;font-size:.93rem;line-height:1.55;

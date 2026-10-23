@@ -55,7 +55,7 @@ function el(html){ var d=document.createElement("div"); d.innerHTML=html; return
 
 var widget = el(
   '<div class="avatar-widget" id="avatarWidget">'+
-    '<div class="avatar-bubble" id="avatarBubble">Харе Крішна</div>'+
+    '<div class="avatar-bubble" id="avatarBubble" translate="no">Харе Крішна</div>'+
     '<div class="avatar-zzz-wrap">'+
       '<div class="avatar-char idle" id="avatarChar" role="button" tabindex="0" aria-label="Помічник храму — натисніть, щоб поговорити">'+SVG+'</div>'+
       '<div class="avatar-zzz">z z z</div>'+
