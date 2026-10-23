@@ -967,3 +967,4 @@ footer .wrap>p{text-wrap:balance}
 /* 21. 404: мотиви як на інших темних hero */
 /* 23. якорі не ховаються під липкою шапкою */
 [id]{scroll-margin-top:84px}
+@media(max-width:420px){.ds .lang-btn{min-width:34px;height:40px;padding:0 4px}.ds .lang-switcher{gap:2px}.ds .site-header .wrap{gap:6px;padding-left:12px;padding-right:12px}.ds .brand b{letter-spacing:.2px}}
