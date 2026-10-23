@@ -129,11 +129,17 @@
   .avatar-bubble{font-size:.75rem;padding:5px 11px}
 }
 
+/* Мобільний (<768): хмарка з мантрою не показується поверх контенту (відгук громади 23.10);
+   аватар на місці гасне, поки під ним розклад або кнопка (.av-yield, avatar.js) */
+.avatar-widget{transition:opacity .3s cubic-bezier(.16,1,.3,1),visibility 0s}
+.avatar-widget.av-yield{opacity:0;visibility:hidden;transition:none}
+@media(max-width:767.98px){.avatar-bubble{display:none}}
+
 /* Повага до reduced motion */
 @media(prefers-reduced-motion:reduce){
   .avatar-char.idle .av-float,
   .avatar-char.idle .av-eyes,
   .avatar-char.idle .av-shadow{animation:none}
   .avatar-char{transition:none}
-  .avatar-char,.avatar-char *,.avatar-bubble,.avatar-zzz,.avatar-card,.avatar-msg.typing::after{animation:none!important;transition:none!important}
+  .avatar-char,.avatar-char *,.avatar-bubble,.avatar-zzz,.avatar-card,.avatar-msg.typing::after,.avatar-widget{animation:none!important;transition:none!important}
 }

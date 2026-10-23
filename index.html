@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-  <base href="/iskcon-mockup-v2-preview/">
+  <base href="/iskcon-cv-ua/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ІСККОН Чернівці — Центр ведичної культури</title>
 <meta name="description" content="Центр ведичної культури ІСККОН у Чернівцях: недільні програми, лекції з філософії, курси, благодійність «Їжа життя», підтримка храму.">
@@ -143,9 +143,10 @@
       <div class="next-sunday" id="next-sunday" hidden>
         <p class="next-sunday__when"><span class="ico ico-calendar" aria-hidden="true"></span><span class="next-sunday__k">Найближча неділя:</span> <b class="next-sunday__date"><span data-next-sunday></span>, 13:30</b></p>
         <div class="next-sunday__actions">
-          <button type="button" class="btn btn-ghost" data-ics>Додати в календар</button>
+          <a class="btn btn-ghost" data-gcal href="https://calendar.google.com/calendar/render?action=TEMPLATE" target="_blank" rel="noopener">Додати в календар</a>
           <button type="button" class="btn btn-ghost" data-invite>Запросити друга</button>
         </div>
+        <p class="next-sunday__alt"><button type="button" class="next-sunday__ics" data-ics>або завантажте файл .ics</button></p>
         <p class="next-sunday__status" role="status" data-invite-status></p>
       </div>
       <p class="note">Святкові програми за вайшнавським календарем та дні посту Екадаші —
@@ -242,7 +243,7 @@
         <div class="phil-col">
           <h3><span class="ico ico-book" aria-hidden="true"></span>Лекції з філософії</h3>
           <p>Знайомство з Бгаґавад-Ґітою, законами карми та реінкарнації.
-          Глибше занурення — на курсах «Хто Я?», «Основи ведичної філософії», «Бгакті-шастри».</p> <p>В основі вчення — <a href="https://vedabase.io/uk/library/bg/" target="_blank" rel="noopener">Бгагавад-гіта</a>: душа вічна, а матеріальне тіло тимчасове. Через віддане служіння (бгакті-йогу) душа відновлює свій зв'язок з Крішною — Верховною Особою Бога.</p>
+          Глибше занурення — на курсах «Хто Я?», «Основи ведичної філософії», «Бгакті-шастри».</p> <p>В основі вчення — <a href="https://vedabase.io/uk/library/bg/" target="_blank" rel="noopener">Бгагавад-гіта</a>: душа вічна, а матеріальне тіло тимчасове. Через віддане служіння (бгакті-йогу) душа відновлює свій зв'язок з Крішною — Верховним Богом-Особою.</p>
           <a class="more" href="courses">До курсів →</a>
         </div>
         <div class="phil-col phil-col--mantra">
@@ -253,7 +254,7 @@
     </div>
   </section>
 
-  <section class="sec sec--paths">
+  <section class="sec sec--paths" id="paths">
     <div class="container">
       <h2 class="sec__title">Чим тут можна займатися, крім недільного свята?</h2>
       <div class="paths">
@@ -359,7 +360,7 @@
     </div>
   </section>
 
-  <section class="sec sec--map">
+  <section class="sec sec--map" id="map">
     <div class="container">
       <h2 class="sec__title">Як нас знайти</h2>
       <p class="map-address"><span class="ico ico-pin" aria-hidden="true"></span><b>вул. Скальда (Комарова), 40А, Чернівці</b></p>

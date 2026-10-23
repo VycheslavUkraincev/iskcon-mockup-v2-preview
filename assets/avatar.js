@@ -148,6 +148,7 @@ function toggleChat(){
   wake();
   open = !open;
   card.classList.toggle("open", open);
+  queueYield();
   if(open){
     bubbleEl.classList.add("hidden");
     setState("waving");
@@ -226,6 +227,44 @@ function answer(i){
 
 /* Аватар нерухомий у правому нижньому куті (MASTER C1): механіку «безпечної зони»
    (сховати за край, ручка, перерахунок при скролі) прибрано. Рухається лише відео. */
+
+/* Мобільний (<768): хмарку не показуємо (avatar.css), а сам аватар на місці гасне,
+   поки під ним текст розкладу (#schedule) або кнопка, і повертається, щойно місце вільне.
+   Позиція не змінюється; відкритий чат і фокус на аватарі не ховаємо. */
+var MOBILE = window.matchMedia ? matchMedia("(max-width: 767.98px)") : null;
+var YIELD_SEL = ".btn, button, a.more, [role=button]";
+var yieldRaf = 0;
+function hits(a, b){ return a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom; }
+function underAvatar(r){
+  var sched = document.getElementById("schedule");
+  if (sched && hits(r, sched.getBoundingClientRect())){
+    var tw = document.createTreeWalker(sched, NodeFilter.SHOW_TEXT), rg = document.createRange();
+    while (tw.nextNode()){
+      if (!tw.currentNode.nodeValue.trim()) continue;
+      rg.selectNodeContents(tw.currentNode);
+      var rs = rg.getClientRects();
+      for (var i = 0; i < rs.length; i++) if (hits(r, rs[i])) return true;
+    }
+  }
+  var els = document.querySelectorAll(YIELD_SEL);
+  for (var j = 0; j < els.length; j++){
+    if (widget.contains(els[j]) || card.contains(els[j])) continue;
+    var b = els[j].getBoundingClientRect();
+    if (b.width && hits(r, b)) return true;
+  }
+  return false;
+}
+function checkYield(){
+  yieldRaf = 0;
+  var on = !!(MOBILE && MOBILE.matches) && !open && !widget.contains(document.activeElement)
+    && underAvatar(charEl.getBoundingClientRect());
+  widget.classList.toggle("av-yield", on);
+}
+function queueYield(){ if (!yieldRaf) yieldRaf = requestAnimationFrame(checkYield); }
+["scroll", "resize", "load"].forEach(function(evt){ window.addEventListener(evt, queueYield, { passive: true }); });
+if (MOBILE && MOBILE.addEventListener) MOBILE.addEventListener("change", queueYield);
+document.addEventListener("click", queueYield);
+queueYield();
 
 /* Привітальне махання при першому завантаженні */
 if(!REDUCED) setTimeout(function(){

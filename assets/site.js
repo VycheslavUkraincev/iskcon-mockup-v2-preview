@@ -23,6 +23,29 @@
     }
   });
 
+  /* Зовнішній перехід на «сторінка#id» (соцмережі): плавний скрол браузера стартує до кінця
+     розкладки і може зупинитися не там. Після load чекаємо, поки скрол зупиниться, і лише тоді,
+     якщо ціль не під хедером, а людина ще не гортала сама, один раз доводимо її на місце. */
+  if(location.hash.length > 1){
+    var userMoved = false, stop = function(){ userMoved = true; };
+    ["wheel","touchstart","keydown","pointerdown"].forEach(function(evt){ window.addEventListener(evt, stop, {passive:true, once:true}); });
+    window.addEventListener("load", function(){
+      var t = null, lastY = -1, still = 0, tries = 0;
+      try { t = document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch(e){}
+      if(!t) return;
+      (function settle(){
+        if(userMoved) return;
+        still = (window.scrollY === lastY) ? still + 1 : 0;
+        lastY = window.scrollY;
+        if(still < 2 && ++tries < 40){ setTimeout(settle, 100); return; }
+        var want = parseFloat(getComputedStyle(t).scrollMarginTop) || 0,
+            top = t.getBoundingClientRect().top,
+            atEnd = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+        if(Math.abs(top - want) > 8 && !(atEnd && top > want)) t.scrollIntoView({block:"start", behavior:"instant"});
+      })();
+    });
+  }
+
   /* Мобільне меню */
   var navToggle = document.querySelector(".nav-toggle"),
       mainNav = document.getElementById("mainNav");

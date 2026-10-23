@@ -970,3 +970,8 @@ footer .wrap>p{text-wrap:balance}
 @media(max-width:420px){.ds .lang-btn{min-width:34px;height:40px;padding:0 4px}.ds .lang-switcher{gap:2px}.ds .site-header .wrap{gap:6px;padding-left:12px;padding-right:12px}.ds .brand b{letter-spacing:.2px}}
 @media(min-width:641px) and (max-width:900px){.founder-strip{grid-template-columns:repeat(2,minmax(0,1fr));max-width:620px}}
 .founder-strip__item figcaption{text-wrap:balance}
+/* ---- feedback 23.10: тихе посилання на .ics під «Додати в календар» ---- */
+.next-sunday__alt{flex-basis:100%;margin:-6px 0 0;text-align:right}
+.ds .next-sunday__ics{background:none;border:0;padding:6px 0;font:inherit;font-size:.88rem;color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:24px}
+.ds .next-sunday__ics:hover{color:var(--saffron-text)}
+@media(max-width:700px){.next-sunday__alt{text-align:center;margin-top:-4px}}

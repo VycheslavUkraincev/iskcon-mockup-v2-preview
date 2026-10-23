@@ -59,7 +59,7 @@ ro: {
 "Знайомство з Бгаґавад-Ґітою, законами карми та реінкарнації. Глибше занурення — на курсах «Хто Я?», «Основи ведичної філософії», «Бгакті-шастри».": "Introducere în Bhagavad-gita, legile karmei și reîncarnării. Aprofundare — la cursurile „Cine sunt eu?”, „Bazele filosofiei vedice”, „Bhakti-shastri”.",
 "В основі вчення —": "La baza învățăturii se află",
 "Бгагавад-гіта": "Bhagavad-gita",
-": душа вічна, а матеріальне тіло тимчасове. Через віддане служіння (бгакті-йогу) душа відновлює свій зв'язок з Крішною — Верховною Особою Бога.": ": sufletul este etern, iar corpul material este temporar. Prin serviciul devoțional (bhakti-yoga), sufletul își restabilește legătura cu Krishna — Personalitatea Supremă a Divinității.",
+": душа вічна, а матеріальне тіло тимчасове. Через віддане служіння (бгакті-йогу) душа відновлює свій зв'язок з Крішною — Верховним Богом-Особою.": ": sufletul este etern, iar corpul material este temporar. Prin serviciul devoțional (bhakti-yoga), sufletul își restabilește legătura cu Krishna — Personalitatea Supremă a Divinității.",
 "До курсів →": "Către cursuri →",
 "📿 Мантра-йога": "📿 Mantra-yoga",
 "Практика повторення святих імен — серце бгакті-йоги:": "Practica repetării numelor sfinte — inima bhakti-yogăi:",
@@ -516,7 +516,7 @@ ro: {
 "Звіт закупок фонду «Їжа життя»": "Raportul de achiziții al fondului „Hrana pentru Viață”",
 "Гречка": "Hrișcă",
 "100 кг": "100 kg",
-"Борошно вс": "Făină, calitate superioară",
+"Борошно вищого ґатунку": "Făină, calitate superioară",
 "50 кг": "50 kg",
 "Рис": "Orez",
 "Сіль": "Sare",
@@ -622,6 +622,8 @@ ro: {
 /* ---- master B3: темні смуги ---- */
 "Ми безмежно вдячні кожному за щедрість та відкрите серце!": "Vă suntem infinit recunoscători fiecăruia pentru generozitate și inima deschisă!",
 "Кіртан — серце нашої духовної практики.": "Kirtan — inima practicii noastre spirituale.",
+/* ---- feedback 23.10: календар ---- */
+"або завантажте файл .ics": "sau descărcați fișierul .ics",
 },
 en: {
 /* ---- nav / header ---- */
@@ -680,7 +682,7 @@ en: {
 "Знайомство з Бгаґавад-Ґітою, законами карми та реінкарнації. Глибше занурення — на курсах «Хто Я?», «Основи ведичної філософії», «Бгакті-шастри».": "Introduction to Bhagavad-gita, the laws of karma and reincarnation. Deeper study — in the courses 'Who am I?', 'Foundations of Vedic philosophy', 'Bhakti-shastri'.",
 "В основі вчення —": "At the heart of the teaching is",
 "Бгагавад-гіта": "Bhagavad-gita",
-": душа вічна, а матеріальне тіло тимчасове. Через віддане служіння (бгакті-йогу) душа відновлює свій зв'язок з Крішною — Верховною Особою Бога.": ": the soul is eternal, and the material body is temporary. Through devotional service (bhakti-yoga), the soul restores its connection with Krishna — the Supreme Personality of Godhead.",
+": душа вічна, а матеріальне тіло тимчасове. Через віддане служіння (бгакті-йогу) душа відновлює свій зв'язок з Крішною — Верховним Богом-Особою.": ": the soul is eternal, and the material body is temporary. Through devotional service (bhakti-yoga), the soul restores its connection with Krishna — the Supreme Personality of Godhead.",
 "До курсів →": "To courses →",
 "📿 Мантра-йога": "📿 Mantra-yoga",
 "Практика повторення святих імен — серце бгакті-йоги:": "The practice of chanting the holy names — the heart of bhakti-yoga:",
@@ -1134,7 +1136,7 @@ en: {
 "Звіт закупок фонду «Їжа життя»": "Food for Life fund procurement report",
 "Гречка": "Buckwheat",
 "100 кг": "100 kg",
-"Борошно вс": "Flour, premium grade",
+"Борошно вищого ґатунку": "Flour, premium grade",
 "50 кг": "50 kg",
 "Рис": "Rice",
 "Сіль": "Salt",
@@ -1240,5 +1242,7 @@ en: {
 /* ---- master B3: темні смуги ---- */
 "Ми безмежно вдячні кожному за щедрість та відкрите серце!": "We are infinitely grateful to everyone for generosity and an open heart!",
 "Кіртан — серце нашої духовної практики.": "Kirtan — the heart of our spiritual practice.",
+/* ---- feedback 23.10: календар ---- */
+"або завантажте файл .ics": "or download the .ics file",
 }
 };

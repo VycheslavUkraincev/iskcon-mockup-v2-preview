@@ -1,5 +1,5 @@
 /* Головна: «Найближча неділя» — дата найближчої недільної програми (13:30–17:30, Europe/Kyiv),
-   .ics на 5 найближчих неділь і «Запросити друга» (Web Share, інакше — копіювання тексту з посиланням).
+   «Додати в календар» — шаблон Google Calendar (щотижня), тихе посилання на .ics на 5 найближчих неділь і «Запросити друга» (Web Share, інакше — копіювання тексту з посиланням).
    Тексти — ключі словника (assets/i18n-dict.js). Свята не враховуються: під блоком стоїть примітка про Telegram. */
 (function(){
 "use strict";
@@ -67,9 +67,28 @@ var status = box.querySelector("[data-invite-status]");
 function render(){
   slot.textContent = dateLabel(nextSundays()[0]);
   status.textContent = "";
+  if (gcal) gcal.href = gcalUrl();
 }
 
-/* ---- .ics ---- */
+/* ---- Google Calendar: основна дія — шаблон події, що повторюється щонеділі (файл не завантажується) ---- */
+function gcalLocal(s, hm){
+  return s.y + String(s.m).padStart(2, "0") + String(s.d).padStart(2, "0") + "T" + String(hm[0]).padStart(2, "0") + String(hm[1]).padStart(2, "0") + "00";
+}
+function gcalUrl(){
+  var s = nextSundays()[0], q = [
+    ["action", "TEMPLATE"],
+    ["text", tr("Недільна програма — ІСККОН Чернівці")],
+    ["dates", gcalLocal(s, START) + "/" + gcalLocal(s, END)],
+    ["ctz", TZ],
+    ["recur", "RRULE:FREQ=WEEKLY;BYDAY=SU"],
+    ["location", tr("вул. Скальда (Комарова), 40А, Чернівці")],
+    ["details", tr("Святкові програми за вайшнавським календарем та дні посту Екадаші — слідкуйте за оголошеннями в Telegram.") + "\n" + pageUrl()]
+  ];
+  return "https://calendar.google.com/calendar/render?" + q.map(function(p){ return p[0] + "=" + encodeURIComponent(p[1]); }).join("&");
+}
+var gcal = box.querySelector("[data-gcal]");
+
+/* ---- .ics (тихе посилання поруч) ---- */
 function icsStamp(t){ return new Date(t).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, ""); }
 function icsText(s){ return String(s).replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n"); }
 function fold(line){
