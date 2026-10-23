@@ -584,8 +584,8 @@ body.ds{--cream:#FBF6ED;--card:#FFFCF5;--ink:#2B2117;--line:#E8DCC4;--muted:#645
 .food-hero__help{margin:18px 0 0}
 .food-hero__help a{font-weight:600}
 .food-hero__photo{position:relative}
-.food-hero__photo img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 40%;border-radius:999px 999px 6px 6px;background:#E8DCC4}
-@media(max-width:860px){.food-hero__grid{grid-template-columns:minmax(0,1fr)}.food-hero__photo img{aspect-ratio:4/3;border-radius:6px}}
+.food-hero__photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 50%;border-radius:999px 999px 6px 6px;background:#E8DCC4}
+@media(max-width:860px){.food-hero__grid{grid-template-columns:minmax(0,1fr)}.food-hero__photo img{border-radius:6px}}
 
 .sec--facts{padding:0 0 var(--sec-gap)}
 .facts{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px;align-items:stretch}
