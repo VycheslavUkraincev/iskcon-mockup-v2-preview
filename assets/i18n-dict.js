@@ -613,6 +613,10 @@ ro: {
 "Кіртан · Німеччина, 1974": "Kirtan · Germania, 1974",
 "Скульптурна композиція: Шріла Прабгупада з мрідангою серед учнів": "Compoziție sculpturală: Srila Prabhupada cu mridanga printre discipoli",
 "Скульптурна композиція · фото 2026 р.": "Compoziție sculpturală · fotografie din 2026",
+"Меморіал на місці першої зустрічі Бгактісіддганти Сарасваті та Абгая Чарана Де, Калькутта": "Memorialul de la locul primei întâlniri dintre Bhaktisiddhanta Sarasvati și Abhay Charan De, Calcutta",
+"Калькутта · 1922 — зустріч, з якої все почалося": "Calcutta · 1922 — întâlnirea cu care a început totul",
+"Самадгі-мандир Шріли Прабгупади в Маяпурі": "Samadhi Mandirul lui Srila Prabhupada din Mayapur",
+"Маяпур · самадгі": "Mayapur · samadhi",
 "Фото й підпис — Wikimedia Commons.": "Fotografii și semnătură: Wikimedia Commons. ",
 "(підпис; колір змінено).": " (semnătură; culoare modificată).",
 /* ---- master B3: темні смуги ---- */
@@ -1227,6 +1231,10 @@ en: {
 "Кіртан · Німеччина, 1974": "Kirtan · Germany, 1974",
 "Скульптурна композиція: Шріла Прабгупада з мрідангою серед учнів": "Sculptural composition: Srila Prabhupada with a mridanga among his followers",
 "Скульптурна композиція · фото 2026 р.": "Sculptural composition · photo taken in 2026",
+"Меморіал на місці першої зустрічі Бгактісіддганти Сарасваті та Абгая Чарана Де, Калькутта": "Memorial at the site of the first meeting of Bhaktisiddhanta Sarasvati and Abhay Charan De, Kolkata",
+"Калькутта · 1922 — зустріч, з якої все почалося": "Kolkata · 1922 — the meeting where it all began",
+"Самадгі-мандир Шріли Прабгупади в Маяпурі": "Samadhi Mandir of Srila Prabhupada in Mayapur",
+"Маяпур · самадгі": "Mayapur · samadhi",
 "Фото й підпис — Wikimedia Commons.": "Photos and signature: Wikimedia Commons. ",
 "(підпис; колір змінено).": " (signature; colour changed).",
 /* ---- master B3: темні смуги ---- */
