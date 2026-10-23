@@ -4,10 +4,8 @@
    ============================================================ */
 
 .avatar-widget{
-  --av-right:18px;
-  position:fixed;right:var(--av-right);bottom:18px;z-index:150;
-  transition:transform 450ms cubic-bezier(.16,1,.3,1);
-  display:flex;flex-direction:column;align-items:center;
+  position:fixed;right:16px;bottom:16px;z-index:150;
+  display:flex;flex-direction:column;align-items:flex-end;
   user-select:none;-webkit-user-select:none;
 }
 
@@ -20,28 +18,23 @@
   overflow:hidden;text-overflow:ellipsis;
 }
 .avatar-bubble::after{
-  content:"";position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);
+  content:"";position:absolute;bottom:-7px;right:41px;
   border:7px solid transparent;border-top-color:#fff;border-bottom:none;
 }
-.avatar-bubble.hidden{opacity:0;pointer-events:none}
+.avatar-bubble.hidden{opacity:0!important;pointer-events:none}
 
 /* Персонаж */
 .avatar-char{
-  width:156px;height:auto;cursor:pointer;
-  transition:transform .18s ease;
+  width:96px;aspect-ratio:1024/950;cursor:pointer;border-radius:12px;
 }
-.avatar-char:hover{transform:scale(1.07)}
-.avatar-char:active{transform:scale(.96)}
+.avatar-char:focus-visible{outline:3px solid var(--saffron-text,#96570C);outline-offset:3px}
 .avatar-svg{width:100%;height:100%;overflow:visible;display:block}
 
 /* Живе відео персонажа: без рамки — фон ролика вирівняно в колір сторінки (#FDF8EE) */
 .avatar-video{
-  width:100%;height:auto;display:block;
-  transition:transform .4s ease, filter .4s ease;
+  width:100%;height:100%;object-fit:contain;display:block;
+  transition:filter .4s ease;
 }
-.avatar-char.curious .avatar-video{transform:rotate(-2.5deg)}
-.avatar-char.talking .avatar-video{animation:avVideoTalk .9s ease-in-out infinite}
-@keyframes avVideoTalk{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
 .avatar-char.sleeping .avatar-video{filter:brightness(.93) saturate(.9)}
 
 /* --- Idle: дихання --- */
@@ -64,13 +57,6 @@
 .avatar-char.talking .av-mouth-open{display:block;animation:avTalk .32s ease-in-out infinite alternate}
 @keyframes avTalk{from{transform:scaleY(.35)}to{transform:scaleY(1)}}
 
-/* --- Радість: підстрибування --- */
-.avatar-char.happy{animation:avHappy .62s ease}
-@keyframes avHappy{
-  0%,100%{transform:translateY(0) scale(1)}
-  35%{transform:translateY(-16px) scale(1.06)}
-  65%{transform:translateY(0) scale(.98)}
-}
 
 /* --- Нахил голови (цікавість) --- */
 .av-head{transform-box:fill-box;transform-origin:center bottom;transition:transform .4s ease}
@@ -84,7 +70,7 @@
   font-size:1.1rem;color:var(--saffron-dark);font-weight:700;
 }
 .avatar-char.sleeping ~ .avatar-zzz{display:block;animation:avZzz 2.6s ease-in-out infinite}
-@keyframes avZzz{0%{opacity:0;transform:translateY(6px) scale(.7)}40%{opacity:1}100%{opacity:0;transform:translateY(-14px) scale(1.15)}}
+@keyframes avZzz{0%,100%{opacity:.25}50%{opacity:1}}
 .avatar-zzz-wrap{position:relative}
 
 /* Тінь під персонажем */
@@ -94,8 +80,8 @@
 
 /* --- Картка чату --- */
 .avatar-card{
-  position:fixed;right:18px;bottom:206px;z-index:150;
-  width:330px;max-width:calc(100vw - 36px);
+  position:fixed;right:16px;bottom:150px;z-index:150;
+  width:330px;max-width:calc(100vw - 32px);
   background:var(--card);border:1px solid var(--line);border-radius:18px;
   box-shadow:0 14px 44px rgba(0,0,0,.18);overflow:hidden;display:none;
 }
@@ -114,7 +100,7 @@
   display:flex;align-items:center;justify-content:center;overflow:hidden}
 .avatar-head .mini svg{width:30px;height:38px}
 .avatar-head small{display:block;font-weight:400;opacity:.92;font-size:.78rem}
-.avatar-body{padding:14px 14px 16px;max-height:380px;overflow-y:auto}
+.avatar-body{padding:14px 14px 16px;max-height:380px;max-height:min(380px,calc(100vh - 250px));max-height:min(380px,calc(100dvh - 250px));overflow-y:auto}
 .avatar-msg{
   background:#fff;border:1px solid var(--line);border-radius:12px;
   padding:10px 12px;margin-bottom:10px;font-size:.93rem;line-height:1.55;
@@ -136,9 +122,10 @@
 
 /* Мобільна адаптація */
 @media(max-width:640px){
-  .avatar-widget{--av-right:12px;bottom:12px}
-  .avatar-char{width:116px;height:auto}
-  .avatar-card{right:12px;bottom:164px}
+  .avatar-widget{right:12px;bottom:12px}
+  .avatar-char{width:76px}
+  .avatar-bubble::after{right:31px}
+  .avatar-card{right:12px;bottom:120px;max-width:calc(100vw - 24px)}
   .avatar-bubble{font-size:.75rem;padding:5px 11px}
 }
 
@@ -150,9 +137,3 @@
   .avatar-char{transition:none}
   .avatar-char,.avatar-char *,.avatar-bubble,.avatar-zzz,.avatar-card,.avatar-msg.typing::after{animation:none!important;transition:none!important}
 }
-
-/* Безпечна зона: сховано за правий край, лишається ручка в полі сторінки */
-.avatar-widget.avatar-tuck{transform:translateX(calc(100% + var(--av-right) - 14px));pointer-events:none}
-.avatar-widget.avatar-tuck::before{content:"";position:absolute;left:0;top:50%;width:14px;height:64px;margin-top:-32px;
-  background:#96570C;border-radius:8px 0 0 8px;box-shadow:0 0 0 2px rgba(255,255,255,.85);pointer-events:auto;cursor:pointer}
-@media(prefers-reduced-motion:reduce){.avatar-widget{transition:none}}

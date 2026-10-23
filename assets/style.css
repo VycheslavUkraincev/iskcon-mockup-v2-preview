@@ -926,3 +926,44 @@ body.ds{--cream:#FBF6ED;--card:#FFFCF5;--ink:#2B2117;--line:#E8DCC4;--muted:#645
 .schedule-grid>.card--side{align-self:stretch}
 @media(max-width:860px){.card__motif{display:none}}
 @media(max-width:640px){.ds .gallery a:last-child:nth-child(even){grid-column:span 2}}
+.site-footer__logo{display:block;width:64px;height:64px;margin:0 auto 4px;opacity:.95}
+
+/* ============ MASTER C3: 33 покращення — частина, що не потребує даних власника ============ */
+/* 1. мобільні цілі дотику: кнопки мов */
+@media(max-width:900px){.ds .lang-btn{min-width:40px;height:40px}}
+/* 2. посилання навігації в підвалі ≥44 px на мобільному */
+@media(max-width:700px){footer nav{gap:0 2px;margin:4px 0}footer nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 5px}}
+/* 3. «Найближча неділя»: кнопки 44 px */
+.ds .next-sunday__actions .btn{min-height:44px}
+/* 4. /donation: кнопки в картках «Куди спрямувати» на одній лінії (subgrid) */
+.ways{grid-template-rows:repeat(5,auto);row-gap:0}
+.ways__card{display:grid;grid-row:span 5;grid-template-rows:subgrid;align-items:start;justify-items:start;gap:0}
+.ds .ways__card .btn{margin:0}
+.ways__card .ways__more{margin-top:12px}
+@media(max-width:700px){.ways{row-gap:20px}}
+/* 5–7. дрібні посилання-дії: зона дотику */
+.phil-col .more,.ds .ways__more{display:inline-flex;align-items:center;min-height:44px}
+@media(max-width:700px){.contact-phones a{display:inline-flex;align-items:center;min-height:44px}}
+/* 8. фокус на темних сценах — золотий */
+.sec--dark a:focus-visible,.sec--dark button:focus-visible,.page-hero a:focus-visible,.scene-band a:focus-visible,.bookshelf a:focus-visible,.ds .sec--dark a:focus-visible,.ds .page-hero a:focus-visible{outline-color:var(--gold)}
+/* 9. карта: фон поки вантажиться + видимий фокус */
+.map-frame{background:var(--card)}
+.map-frame iframe:focus-visible{outline:2px solid var(--saffron-text);outline-offset:3px}
+/* 10. заголовки без «вдів» на всіх сторінках */
+.sec__title,.page-hero h1,.page-hero .lede{text-wrap:balance}
+/* 11. /food: кільця «Куди йдуть пожертви» 2×2 на мобільному */
+@media(max-width:640px){.ds .funds__grid,.funds__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}.fund__ring{width:96px;height:96px}.fund__pct{height:96px;font-size:1.35rem}}
+/* 13. юридичний рядок підвалу */
+footer .wrap>p{text-wrap:balance}
+/* 14. hover для перемикача мов */
+.ds .lang-btn:not(.active):hover{background:var(--saffron-soft,#F6E9D2)}
+/* 15–16, 22. ритм: прибрано 36-px смугу перед підвалом */
+.ds .site-footer{margin-top:0}
+.page-courses .sec--more{padding:clamp(28px,4vw,44px) 0}
+/* 16–17. табличні цифри */
+.ds .day .t,.report__list li b{font-variant-numeric:tabular-nums}
+/* 20. /food: стрілка не відривається від тексту */
+.food-hero__help a{text-wrap:balance}
+/* 21. 404: мотиви як на інших темних hero */
+/* 23. якорі не ховаються під липкою шапкою */
+[id]{scroll-margin-top:84px}
