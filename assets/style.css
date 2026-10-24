@@ -977,3 +977,31 @@ html{touch-action:manipulation;-webkit-tap-highlight-color:rgba(176,81,47,.16)}
 @media(max-width:399.98px){.ds .lang-btn{min-width:34px}}
 /* цифри, що змінюються, на /food */
 .widget__count,#donateAmt{font-variant-numeric:tabular-nums}
+
+/* ============ Тема «Грозовая туча» (Прабху, 24.10.2026) ============
+   Модель: туча — сцена, тёплая бумага — чтение. Просвет = существующий
+   #FBF6ED (не холодный белый). Золото только на тёмном. */
+:root{--cloud:#0F172A;--cloud-2:#1E293B;--cloud-text:#F1F5F9;--cloud-muted:#CBD5E1;--cloud-line:rgba(203,213,225,.18);--cloud-amber:#E9A23B}
+body.ds{--scene:#0F172A}
+::selection{background:#C9A24B;color:#0F172A}
+
+/* тёмная сцена-туча: перепривязка токенов внутри секции */
+.sec--cloud,.page-hero{background:var(--cloud);color:var(--cloud-text);
+  --ink:#F1F5F9;--muted:#CBD5E1;--line:rgba(203,213,225,.18);--card:#1E293B;--saffron-text:#E9A23B;--green:#8FC1A8}
+.sec--cloud .sec__title,.page-hero h1{color:var(--cloud-text)}
+.sec--cloud .btn:not(.btn-primary):not(.btn-ghost),.page-hero .btn:not(.btn-primary):not(.btn-ghost){background:#F1F5F9;color:#0F172A}
+.sec--cloud .btn-ghost{color:#E9A23B;border-color:#E9A23B}
+.sec--cloud .btn-ghost:hover{background:rgba(201,162,75,.14);color:#F1F5F9}
+.sec--cloud .card,.page-hero .card{border-color:var(--cloud-line)}
+.sec--cloud .gallery a{background:#1E293B}
+.sec--cloud ul.tick li::before{border-color:#8FC1A8}
+.sec--cloud .step{background:var(--cloud-2)}
+.sec--cloud .step::before{color:rgba(203,213,225,.25)}
+
+/* подвал — туча */
+.site-footer{background:var(--cloud);color:var(--cloud-text)}
+.site-footer a{color:var(--gold)}
+.site-footer h3,.site-footer h4,.site-footer .brand b{color:var(--cloud-text)}
+
+/* аватар: мягкая тень, чтобы держался и на туче, и на бумаге */
+.avatar-wrap,.avatar,video.avatar-video{filter:drop-shadow(0 8px 22px rgba(15,23,42,.35))}
