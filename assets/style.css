@@ -1005,3 +1005,9 @@ body.ds{--scene:#0F172A}
 
 /* аватар: мягкая тень, чтобы держался и на туче, и на бумаге */
 .avatar-wrap,.avatar,video.avatar-video{filter:drop-shadow(0 8px 22px rgba(15,23,42,.35))}
+
+/* Грозовая туча: точечные исправления контраста внутри тёмных сцен */
+.sec--cloud .widget__amounts button{background:#F1F5F9;color:#0F172A;border-color:var(--cloud-line)}
+.sec--cloud .widget__amounts button.active{background:#E9A23B;border-color:#E9A23B;color:#0F172A}
+.sec--cloud .widget__out{background:#1E293B;color:#F1F5F9}
+.sec--cloud .give__card--circle{--ink:#2B2117;--muted:#645441;--saffron-text:#96570C;--line:#E8DCC4;color:#2B2117}
