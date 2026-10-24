@@ -15,5 +15,10 @@ document.querySelectorAll(".course-join[data-course]").forEach(function(box){
   var a = box.querySelector("[data-course-form]");
   if (!url || !a) return;
   a.href = url; a.target = "_blank"; a.rel = "noopener";
+  /* форми лише українською: для EN/RO під кнопкою — примітка (у UK прихована в style.css) */
+  var note = document.createElement("p");
+  note.className = "form-lang";
+  note.textContent = "Форма відкриється українською мовою";
+  box.appendChild(note);
 });
 })();

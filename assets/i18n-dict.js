@@ -624,6 +624,9 @@ ro: {
 "Кіртан — серце нашої духовної практики.": "Kirtan — inima practicii noastre spirituale.",
 /* ---- feedback 23.10: календар ---- */
 "або завантажте файл .ics": "sau descărcați fișierul .ics",
+/* ---- 24.10: форми Google лише українською ---- */
+"Форма відкриється українською мовою": "Formularul se deschide în limba ucraineană",
+"Форма для волонтерів відкриється українською мовою": "Formularul pentru voluntari se deschide în limba ucraineană",
 },
 en: {
 /* ---- nav / header ---- */
@@ -1244,5 +1247,8 @@ en: {
 "Кіртан — серце нашої духовної практики.": "Kirtan — the heart of our spiritual practice.",
 /* ---- feedback 23.10: календар ---- */
 "або завантажте файл .ics": "or download the .ics file",
+/* ---- 24.10: форми Google лише українською ---- */
+"Форма відкриється українською мовою": "The form opens in Ukrainian",
+"Форма для волонтерів відкриється українською мовою": "The volunteer form opens in Ukrainian",
 }
 };

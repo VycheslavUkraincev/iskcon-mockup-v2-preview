@@ -2,13 +2,15 @@
 (function(){
   "use strict";
   var reduce = !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+  /* групування розрядів за правилами української локалі (нерозривний пробіл), як у сумі віджета */
+  var nf = window.Intl && Intl.NumberFormat ? new Intl.NumberFormat("uk-UA") : null;
+  var fmt = function(n){ return nf ? nf.format(n) : String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0"); };
 
   /* Лічильник: фактичне значення «5 000 000+» стоїть у HTML; один раз при появі плавно
      доходимо до нього. Випадкових чисел немає. */
   var counter = document.getElementById("mealCounter");
   if(counter && !reduce && "IntersectionObserver" in window){
     var FINAL = counter.textContent, TARGET = 5000000, DUR = 1400;
-    var fmt = function(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " "); };
     var io = new IntersectionObserver(function(es){
       if(!es[0].isIntersecting) return;
       io.disconnect();
@@ -31,7 +33,7 @@
   function setAmount(a){
     var meals = Math.floor(a / 100);
     mealCount.textContent = meals;
-    amt.textContent = a.toLocaleString("uk-UA");
+    amt.textContent = fmt(a);
     bowls.innerHTML = "";
     var show = Math.min(meals, 20);
     for(var i = 0; i < show; i++){

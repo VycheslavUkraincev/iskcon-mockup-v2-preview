@@ -7,6 +7,20 @@
   function onScroll(){ if(header) header.classList.toggle("scrolled", window.scrollY > 8); }
   window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
 
+  /* Аналітика GoatCounter (без cookies, без персональних даних; рішення власника 24.10.2026).
+     Вмикається, щойно вписано код сайту з goatcounter.com (напр. "iskcon-cv" для https://iskcon-cv.goatcounter.com).
+     Рахує лише на живому домені — превью та локальні копії не рахуються. Шлях береться з <link rel="canonical">. */
+  var GOATCOUNTER = "";
+  if(GOATCOUNTER && /(^|\.)iskcon\.cv\.ua$/.test(location.hostname)){
+    window.addEventListener("load", function(){
+      var gc = document.createElement("script");
+      gc.async = true;
+      gc.src = "https://gc.zgo.at/count.js";
+      gc.setAttribute("data-goatcounter", "https://" + GOATCOUNTER + ".goatcounter.com/count");
+      document.head.appendChild(gc);
+    });
+  }
+
   /* Якорі «#id» на поточній сторінці. Через <base href> браузер інакше відкриває «#id» на головній. */
   document.addEventListener("click", function(ev){
     var a = ev.target.closest && ev.target.closest('a[href^="#"]');
@@ -64,6 +78,19 @@
     mapFrames.forEach(function(f){
       f.addEventListener("focusin", function(){ if(viaTab) f.classList.add("kbd-focus"); });
       f.addEventListener("focusout", function(){ if(document.hasFocus()) f.classList.remove("kbd-focus"); });
+      /* ледача карта, що вантажиться під фокусом, скидає його на BODY — повертаємо фокус на карту.
+         Фокус в iframe іншого домену видно лише як blur вікна, тож запам'ятовуємо його там. */
+      var ifr = f.querySelector("iframe"), loaded = false, held = false;
+      if(!ifr) return;
+      ifr.addEventListener("load", function(){ loaded = true; restore(); held = false; });
+      window.addEventListener("blur", function(){ setTimeout(function(){ if(!loaded && document.activeElement === ifr) held = true; }, 0); });
+      window.addEventListener("focus", function(){ setTimeout(restore, 0); });
+      function restore(){
+        if(!held || document.activeElement !== document.body) return;
+        held = false;
+        ifr.focus({preventScroll:true});
+        if(viaTab) f.classList.add("kbd-focus");
+      }
     });
   }
 

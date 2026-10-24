@@ -235,9 +235,28 @@ var MOBILE = window.matchMedia ? matchMedia("(max-width: 767.98px)") : null;
 var YIELD_SEL = ".btn, button, a.more, [role=button]";
 var yieldRaf = 0;
 function hits(a, b){ return a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom; }
-function underAvatar(r){
+/* IntersectionObserver з коренем = прямокутник аватара (від'ємний rootMargin) відбирає кандидатів:
+   точна перевірка геометрії йде лише по них, а коли поруч нічого немає — макет на скролі не читаємо */
+var near = null, nearIO = null;
+function watchNear(){
+  if (!("IntersectionObserver" in window)) return;
+  if (nearIO) nearIO.disconnect();
+  nearIO = null; near = new Set();
+  if (!(MOBILE && MOBILE.matches)) return;
+  var r = charEl.getBoundingClientRect(), vw = document.documentElement.clientWidth, vh = window.innerHeight;
+  if (!r.width) return;
+  nearIO = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) near.add(e.target); else near.delete(e.target); });
+    queueYield();
+  }, { rootMargin: -Math.floor(r.top) + "px " + -Math.floor(vw - r.right) + "px " + -Math.floor(vh - r.bottom) + "px " + -Math.floor(r.left) + "px" });
   var sched = document.getElementById("schedule");
-  if (sched && hits(r, sched.getBoundingClientRect())){
+  if (sched) nearIO.observe(sched);
+  document.querySelectorAll(YIELD_SEL).forEach(function(b){ if (!widget.contains(b) && !card.contains(b)) nearIO.observe(b); });
+}
+function underAvatar(r){
+  if (near && !near.size) return false;
+  var sched = document.getElementById("schedule");
+  if (sched && (!near || near.has(sched)) && hits(r, sched.getBoundingClientRect())){
     var tw = document.createTreeWalker(sched, NodeFilter.SHOW_TEXT), rg = document.createRange();
     while (tw.nextNode()){
       if (!tw.currentNode.nodeValue.trim()) continue;
@@ -246,9 +265,9 @@ function underAvatar(r){
       for (var i = 0; i < rs.length; i++) if (hits(r, rs[i])) return true;
     }
   }
-  var els = document.querySelectorAll(YIELD_SEL);
+  var els = near ? Array.from(near) : document.querySelectorAll(YIELD_SEL);
   for (var j = 0; j < els.length; j++){
-    if (widget.contains(els[j]) || card.contains(els[j])) continue;
+    if (els[j].id === "schedule" || widget.contains(els[j]) || card.contains(els[j])) continue;
     var b = els[j].getBoundingClientRect();
     if (b.width && hits(r, b)) return true;
   }
@@ -257,14 +276,16 @@ function underAvatar(r){
 function checkYield(){
   yieldRaf = 0;
   var on = !!(MOBILE && MOBILE.matches) && !open && !widget.contains(document.activeElement)
-    && underAvatar(charEl.getBoundingClientRect());
+    && !(near && !near.size) && underAvatar(charEl.getBoundingClientRect());
   widget.classList.toggle("av-yield", on);
 }
 function queueYield(){ if (!yieldRaf) yieldRaf = requestAnimationFrame(checkYield); }
-["scroll", "resize", "load"].forEach(function(evt){ window.addEventListener(evt, queueYield, { passive: true }); });
-if (MOBILE && MOBILE.addEventListener) MOBILE.addEventListener("change", queueYield);
+function rewatch(){ watchNear(); queueYield(); }
+window.addEventListener("scroll", queueYield, { passive: true });
+["resize", "load"].forEach(function(evt){ window.addEventListener(evt, rewatch, { passive: true }); });
+if (MOBILE && MOBILE.addEventListener) MOBILE.addEventListener("change", rewatch);
 document.addEventListener("click", queueYield);
-queueYield();
+rewatch();
 
 /* Привітальне махання при першому завантаженні */
 if(!REDUCED) setTimeout(function(){
