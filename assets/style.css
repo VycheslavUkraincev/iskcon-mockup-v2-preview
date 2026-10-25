@@ -379,7 +379,7 @@ body.ds{
   --cream:var(--p-paper);--card:var(--p-card);--ink:var(--p-ink);--line:var(--p-line);--muted:var(--p-muted);
   --saffron-dark:var(--p-saffron);--sec-gap:clamp(64px,10vw,128px);
   /* шкала заголовків (DESIGN_FIX_PLAN, зріз 3): H1 сторінки, H2 секції, H3 картки — два розміри */
-  --fs-h1:clamp(2rem,4.6vw,3.4rem);--fs-h2:clamp(1.75rem,3.2vw,2.5rem);--fs-h3:1.25rem;--fs-h3-lg:1.5rem;
+  --sel-bg:var(--p-saffron);--sel-fg:var(--p-white);--fs-h1:clamp(2rem,4.6vw,3.4rem);--fs-h2:clamp(1.75rem,3.2vw,2.5rem);--fs-h3:1.25rem;--fs-h3-lg:1.5rem;
   font-family:Onest,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:1.0625rem;line-height:1.65}
 .ds h1,.ds h2,.ds h3,.ds .brand b{font-family:Spectral,Georgia,"Times New Roman",serif;font-weight:600;letter-spacing:0}
 .ds a{color:var(--saffron-text)}
@@ -1008,6 +1008,24 @@ html{touch-action:manipulation;-webkit-tap-highlight-color:rgba(176,81,47,.16)}
 .ds .bookshelf .more-note a,.ds .bookshelf .more-note .ico{color:var(--gold)}
 .bookshelf+.scene-band{border-top:1px solid rgba(234,223,200,.16)}
 
+/* ============ Полірування (DESIGN_FIX_PLAN, зріз 6) ============ */
+/* телефони в «Запис на курси» — посилання не лише кольором */
+.ds .signup__phones a{text-decoration:underline;text-underline-offset:.15em;text-decoration-thickness:1px}
+/* виділення тексту — у токенах палітри (тема перевизначає --sel-*) */
+::selection{background:var(--sel-bg);color:var(--sel-fg)}
+/* системні елементи: світла сторінка, темний лайтбокс */
+:root{color-scheme:light}
+.lightbox{color-scheme:dark}
+/* однаковий відгук на натискання для всіх кнопок */
+.ds .btn:active,#amountBtns button:active,.ds .copy:active{transform:scale(.97)}
+.ds .btn-ghost:active{background:var(--p-sand-hover)}
+/* міра ліду «Куди спрямувати»: EN інакше 84 знаки в рядку; 58ch (≈656 px) дає ≤ 75 у всіх мовах */
+.ds .ways__lead{max-width:min(720px,58ch)}
+/* дуже вузькі екрани: заголовки-питання H2 на ступінь менші */
+@media(max-width:360px){body.ds{--fs-h2:1.5rem}}
+/* підвал: симетричні відступи кроку стрічок 40/72 */
+.ds .site-footer{padding:clamp(40px,6vw,72px) 0}
+
 /* ============ Друк (DESIGN_FIX_PLAN, зріз 2) ============
    На папері: чорний текст на білому за будь-якої палітри; без шапки-меню, аватара, кнопок, відео й фото
    (лишаються логотип, QR-коди та реквізити); реквізити й QR не розриваються між сторінками. */
@@ -1039,8 +1057,10 @@ html{touch-action:manipulation;-webkit-tap-highlight-color:rgba(176,81,47,.16)}
 /* ============ Тема «Грозовая туча» (Прабху, 24.10.2026) =====   Модель: туча — сцена, тёплая бумага — чтение. Просвет = существующий
    #FBF6ED (не холодный белый). Золото только на тёмном. */
 :root{--cloud:#0F172A;--cloud-2:#1E293B;--cloud-text:#F1F5F9;--cloud-muted:#CBD5E1;--cloud-line:rgba(203,213,225,.18);--cloud-amber:#E9A23B;--cloud-green:#8FC1A8}
-body.ds{--scene:var(--cloud)}
-::selection{background:var(--gold);color:var(--cloud)}
+body.ds{--scene:var(--cloud);--sel-bg:var(--gold);--sel-fg:var(--cloud)}
+/* скрим hero головної — у тоні хмари, а не коричневий (зріз 6) */
+.hero-home::before{background:linear-gradient(90deg,rgba(15,23,42,.9) 0%,rgba(15,23,42,.84) 45%,rgba(15,23,42,.45) 68%,rgba(15,23,42,0) 92%)}
+@media(max-width:1100px){.hero-home::before{background:linear-gradient(90deg,rgba(15,23,42,.9) 0%,rgba(15,23,42,.84) 80%,rgba(15,23,42,.6) 100%)}}
 
 /* тёмная сцена-туча: перепривязка токенов внутри секции */
 .sec--cloud,.page-hero{background:var(--cloud);color:var(--cloud-text);
