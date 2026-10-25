@@ -1016,3 +1016,7 @@ body.ds{--scene:#0F172A}
 .form-lang{flex-basis:100%;margin:8px 0 0;font-size:.85rem;line-height:1.4;color:var(--ink)}
 .course-join .form-lang{margin:0}
 html:lang(uk) .form-lang{display:none}
+
+/* Грозовая туча: подвал — адрес и иконки читаемы на туче (фикс находки аудита) */
+.ds .site-footer__contact{color:var(--cloud-text);border-bottom-color:var(--cloud-line)}
+.ds .site-footer__line .ico{color:var(--gold)}
