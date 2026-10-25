@@ -10,7 +10,9 @@
      доходимо до нього. Випадкових чисел немає. */
   var counter = document.getElementById("mealCounter");
   if(counter && !reduce && "IntersectionObserver" in window){
-    var FINAL = counter.textContent, TARGET = 5000000, DUR = 1400;
+    var FINAL = counter.textContent, TARGET = 5000000, DUR = 1400, printing = false;
+    /* друк: одразу фактичне значення з HTML, без проміжних чисел анімації */
+    window.addEventListener("beforeprint", function(){ printing = true; io.disconnect(); counter.textContent = FINAL; });
     var io = new IntersectionObserver(function(es){
       if(!es[0].isIntersecting) return;
       io.disconnect();
@@ -18,6 +20,7 @@
       (function step(ts){
         if(t0 === null) t0 = ts;
         var p = Math.min(1, (ts - t0) / DUR), e = 1 - Math.pow(1 - p, 3);
+        if(printing) return;
         counter.textContent = p < 1 ? fmt(Math.round(TARGET * e)) : FINAL;
         if(p < 1) requestAnimationFrame(step);
       })(performance.now());

@@ -986,6 +986,34 @@ html{touch-action:manipulation;-webkit-tap-highlight-color:rgba(176,81,47,.16)}
 @media(max-width:399.98px){.ds .lang-btn{min-width:34px}}
 /* цифри, що змінюються, на /food */
 .widget__count,#donateAmt{font-variant-numeric:tabular-nums}
+/* ============ Друк (DESIGN_FIX_PLAN, зріз 2) ============
+   На папері: чорний текст на білому за будь-якої палітри; без шапки-меню, аватара, кнопок, відео й фото
+   (лишаються логотип, QR-коди та реквізити); реквізити й QR не розриваються між сторінками. */
+@media print{
+  @page{margin:14mm 12mm}
+  html,body.ds{background:#fff!important}
+  .ds *,.ds *::before,.ds *::after{color:#000!important;background:transparent!important;
+    box-shadow:none!important;text-shadow:none!important;filter:none!important;-webkit-mask-image:none!important;mask-image:none!important;animation:none!important;transition:none!important}
+  .ds .reveal{opacity:1!important;transform:none!important}
+  .skip-link,.nav-toggle,.ds .nav,.lang-switcher,.avatar-widget,.avatar-card,.donate-modal,.lightbox,
+  .ds button,.ds .btn,.ds .copy,.video-facade,.media-video,.map-frame,.ds iframe,.ds video,
+  .hero-home__img,.hero-home__glow,.ds .ico,.ds svg,.socials,.site-footer nav,.site-footer__logo,
+  .scene-band,.next-sunday__alt,.req__fail,.form-lang{display:none!important}
+  .ds img{display:none!important}
+  .ds .brand img,.ds .qr img{display:block!important}
+  .ds .site-header{position:static!important;border-bottom:1px solid #000}
+  .ds .card,.ds .req,.ds .req code,.ds .give__card,.ds .qr{border:1px solid #999!important}
+  .ds .req code{padding:4px 8px}
+  .ds section,.ds .sec{padding-top:10mm!important;padding-bottom:6mm!important;min-height:0!important}
+  .ds .hero-home{min-height:0!important}
+  .ds h1,.ds h2,.ds h3{break-after:avoid;page-break-after:avoid}
+  .ds .req,.ds .sec--req .container,.ds .give__card,.ds .qr,.ds .card,.ds figure,.ds details{break-inside:avoid;page-break-inside:avoid}
+  .ds .widget,.sec--give .donate-hint,.sec--give .note,.sec--gallery,.founder__photo,.founder-strip,.founder__credits,.place figure,.book3d,.shelf-plank{display:none!important}
+  .ds .fund__pct{position:static;height:auto;display:block}
+  .ds a{text-decoration:underline}
+  .ds .sec--req a[href^="http"]::after,.ds .req a[href^="http"]::after,.ds .ways a[href^="http"]::after{content:" (" attr(href) ")";font-size:.85em;word-break:break-all}
+}
+
 /* ============ Тема «Грозовая туча» (Прабху, 24.10.2026) =====   Модель: туча — сцена, тёплая бумага — чтение. Просвет = существующий
    #FBF6ED (не холодный белый). Золото только на тёмном. */
 :root{--cloud:#0F172A;--cloud-2:#1E293B;--cloud-text:#F1F5F9;--cloud-muted:#CBD5E1;--cloud-line:rgba(203,213,225,.18);--cloud-amber:#E9A23B;--cloud-green:#8FC1A8}
