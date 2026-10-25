@@ -572,8 +572,6 @@ body.ds{
 .ds .book-meta a{color:var(--gold);font-weight:600}
 .more-note{text-align:center}
 .more-note .ico{color:var(--saffron-text)}
-.sec--more{padding:clamp(32px,5vw,64px) 0}
-.sec--more .note{margin:0 auto;font-size:1.05rem}
 @media(prefers-reduced-motion:reduce){
   .ds .book3d{transition:none}
   .ds .book3d:hover{transform:rotateY(-18deg)}
@@ -957,7 +955,6 @@ footer .wrap>p{text-wrap:balance}
 .ds .lang-btn:not(.active):hover{background:var(--saffron-soft,var(--p-sand-hover))}
 /* 15–16, 22. ритм: прибрано 36-px смугу перед підвалом */
 .ds .site-footer{margin-top:0}
-.page-courses .sec--more{padding:clamp(28px,4vw,44px) 0}
 /* 16–17. табличні цифри */
 .ds .day .t,.report__list li b{font-variant-numeric:tabular-nums}
 /* 20. /food: стрілка не відривається від тексту */
@@ -1005,6 +1002,12 @@ html{touch-action:manipulation;-webkit-tap-highlight-color:rgba(176,81,47,.16)}
 /* цифри, що стоять окремо (суми, час), — однакової ширини */
 #amountBtns button,.fact__v,.counter__rate,.next-sunday__date{font-variant-numeric:tabular-nums}
 
+/* ============ Композиція /courses (DESIGN_FIX_PLAN, зріз 4) ============
+   Рядок «Хочете глибше?» тепер усередині темної полиці; темні блоки, що йдуть підряд, розділені тонкою лінією. */
+.ds .bookshelf .more-note{max-width:720px;margin:clamp(32px,4vw,48px) auto 0;padding:0 18px;font-size:1.05rem;color:var(--on-scene-sand)}
+.ds .bookshelf .more-note a,.ds .bookshelf .more-note .ico{color:var(--gold)}
+.bookshelf+.scene-band{border-top:1px solid rgba(234,223,200,.16)}
+
 /* ============ Друк (DESIGN_FIX_PLAN, зріз 2) ============
    На папері: чорний текст на білому за будь-якої палітри; без шапки-меню, аватара, кнопок, відео й фото
    (лишаються логотип, QR-коди та реквізити); реквізити й QR не розриваються між сторінками. */
@@ -1044,8 +1047,8 @@ body.ds{--scene:var(--cloud)}
   --ink:var(--cloud-text);--muted:var(--cloud-muted);--line:var(--cloud-line);--card:var(--cloud-2);--saffron-text:var(--cloud-amber);--saffron-dark:var(--cloud-amber);--green:var(--cloud-green)}
 .sec--cloud .sec__title,.page-hero h1{color:var(--cloud-text)}
 .sec--cloud .btn:not(.btn-primary):not(.btn-ghost),.page-hero .btn:not(.btn-primary):not(.btn-ghost){background:var(--cloud-text);color:var(--cloud)}
-.sec--cloud .btn-ghost{color:var(--cloud-amber);border-color:var(--cloud-amber)}
-.sec--cloud .btn-ghost:hover{background:rgba(201,162,75,.14);color:var(--cloud-text)}
+.sec--cloud .btn-ghost{color:var(--saffron-text);border-color:var(--saffron-text)}
+.sec--cloud .btn-ghost:hover{background:rgba(201,162,75,.14);color:var(--ink)}
 .sec--cloud .card,.page-hero .card{border-color:var(--cloud-line)}
 .sec--cloud .gallery a{background:var(--cloud-2)}
 .sec--cloud ul.tick li::before{border-color:var(--cloud-green)}
@@ -1074,11 +1077,15 @@ html:lang(uk) .form-lang{display:none}
 /* Грозовая туча: подвал — адрес и иконки читаемы на туче (фикс находки аудита) */
 .ds .site-footer__contact{color:var(--cloud-text);border-bottom-color:var(--cloud-line)}
 .ds .site-footer__line .ico{color:var(--gold)}
+/* темна полиця → темна стрічка (зріз 4): межа в тоні хмари. Стрічка → підвал уже розділені рамкою підвалу */
+.bookshelf+.scene-band{border-top-color:var(--cloud-line)}
 
 /* Світлий «острівець» усередині темної сцени (DESIGN_FIX_PLAN, зріз 1): токени повертаються на світлу палітру.
    Замінює точкові правки 9bce4cd і окреме правило .give__card--circle. Новий світлий елемент у хмарі — клас .island-paper. */
-.island-paper,.sec--cloud .give__card--circle,.sec--cloud .give__card .qr,.sec--cloud .req code,.sec--cloud .copy,.sec--cloud .req__slogan{
+.island-paper,.sec--cloud .give__card,.sec--cloud .give__card .qr,.sec--cloud .req code,.sec--cloud .copy,.sec--cloud .req__slogan{
   --ink:var(--p-ink);--muted:var(--p-muted);--saffron-text:var(--p-saffron);--saffron-dark:var(--p-saffron);--line:var(--p-line);--card:var(--p-card);--green:var(--p-green)}
-.island-paper,.sec--cloud .give__card--circle,.sec--cloud .give__card .qr,.sec--cloud .req code{color:var(--ink)}
+.island-paper,.sec--cloud .give__card,.sec--cloud .give__card .qr,.sec--cloud .req code{color:var(--ink)}
+/* обидві картки «Зробити пожертву» світлі (зріз 4): фон картки — світлий */
+.sec--cloud .give__card:not(.give__card--circle){background:var(--p-card)}
 /* обвідка фокуса «острівця» лягає на темний фон хмари — колір хмари, не острівця */
 .sec--cloud .copy:focus-visible{outline-color:var(--cloud-amber)}
