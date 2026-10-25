@@ -688,10 +688,10 @@ body.ds{
 .widget__note{color:var(--muted);font-size:.88rem;margin:10px 0 0}
 .widget__more{margin:8px 0 0;font-size:.95rem}
 .req{padding:0;margin:0;overflow:hidden;display:flex;flex-direction:column}
-.req__head{background:var(--scene);color:var(--paper);padding:26px clamp(20px,3vw,32px)}
-.req__head h3{margin:0;font-size:1.25rem;color:var(--paper)}
-.req__head h3 .ico{color:var(--gold)}
-.req__head p{margin:6px 0 0;font-size:.9rem;color:var(--on-scene-sand)}
+.req__head{background:var(--p-sand);color:var(--ink);border-bottom:1px solid var(--line);padding:26px clamp(20px,3vw,32px)}
+.req__head h3{margin:0;font-size:1.25rem;color:var(--ink)}
+.req__head h3 .ico{color:var(--saffron-text)}
+.req__head p{margin:6px 0 0;font-size:.9rem;color:var(--muted)}
 .req__body{padding:clamp(20px,3vw,28px) clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:18px;flex:1;justify-content:center}
 .req__k{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
 .req__line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
@@ -1082,10 +1082,9 @@ html:lang(uk) .form-lang{display:none}
 
 /* Світлий «острівець» усередині темної сцени (DESIGN_FIX_PLAN, зріз 1): токени повертаються на світлу палітру.
    Замінює точкові правки 9bce4cd і окреме правило .give__card--circle. Новий світлий елемент у хмарі — клас .island-paper. */
-.island-paper,.sec--cloud .give__card,.sec--cloud .give__card .qr,.sec--cloud .req code,.sec--cloud .copy,.sec--cloud .req__slogan{
+.island-paper,.sec--cloud .give__card,.sec--cloud .give__card .qr,.sec--cloud .req{
   --ink:var(--p-ink);--muted:var(--p-muted);--saffron-text:var(--p-saffron);--saffron-dark:var(--p-saffron);--line:var(--p-line);--card:var(--p-card);--green:var(--p-green)}
-.island-paper,.sec--cloud .give__card,.sec--cloud .give__card .qr,.sec--cloud .req code{color:var(--ink)}
+.island-paper,.sec--cloud .give__card,.sec--cloud .give__card .qr,.sec--cloud .req{color:var(--ink)}
+/* картка реквізитів — цілком світлий острівець (зріз 5): шапка, поля, кнопки, слоган */
 /* обидві картки «Зробити пожертву» світлі (зріз 4): фон картки — світлий */
 .sec--cloud .give__card:not(.give__card--circle){background:var(--p-card)}
-/* обвідка фокуса «острівця» лягає на темний фон хмари — колір хмари, не острівця */
-.sec--cloud .copy:focus-visible{outline-color:var(--cloud-amber)}
