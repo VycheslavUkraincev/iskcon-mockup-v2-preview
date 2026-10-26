@@ -1026,6 +1026,22 @@ html{touch-action:manipulation;-webkit-tap-highlight-color:rgba(176,81,47,.16)}
 /* підвал: симетричні відступи кроку стрічок 40/72 */
 .ds .site-footer{padding:clamp(40px,6vw,72px) 0}
 
+/* ============ Цілі дотику ≥ 44 px (DESIGN_FIX_PLAN, зріз 7) ============
+   Де розкладка має лишитися як є — внутрішній відступ + від'ємне поле тієї ж величини:
+   область натискання росте, текст і сусіди не зсуваються. */
+@media(max-width:860px){.ds .nav-toggle{width:44px;height:44px}}
+@media(min-width:900.02px) and (max-width:1279.98px){.ds .lang-btn{min-width:44px;height:44px}}
+@media(min-width:700.02px){.ds .site-footer nav a{display:inline-block;padding:10px 3px;margin:-10px -3px}}
+/* меню й логотип у шапці: планшети 861–1279 px — сенсорні; ≥1280 px лишається як є (мишка, рішення плану 7.2) */
+@media(min-width:860.02px) and (max-width:1279.98px){.ds .nav a{min-height:44px;display:inline-flex;align-items:center}}
+.ds .brand{padding:4px 0;margin:-4px 0}
+.ds .path a,.ds .phil-col .more{padding:8px 0;margin:-6px 0}
+.ds .phil-col .more{margin-top:calc(.6em - 6px)}
+.ds .next-sunday__ics{padding:11px 0;margin:-5px 0}
+/* кнопка меню 44 px забрала 4 px у назви: англійська «ISKCON CHERNIVTSI» на 360–374 px переноситься, як на 320 */
+@media(max-width:374.98px){html:lang(en) .ds .brand b{white-space:normal;min-width:0;font-size:.74rem;line-height:1.15}}
+.ds .book-meta a{display:inline-block;padding:13px 6px;margin:-13px -6px}
+
 /* ============ Друк (DESIGN_FIX_PLAN, зріз 2) ============
    На папері: чорний текст на білому за будь-якої палітри; без шапки-меню, аватара, кнопок, відео й фото
    (лишаються логотип, QR-коди та реквізити); реквізити й QR не розриваються між сторінками. */
