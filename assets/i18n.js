@@ -28,10 +28,21 @@ function t(uk){
   return Object.prototype.hasOwnProperty.call(d, k) ? d[k] : null;
 }
 
+/* dictionary values have no edge whitespace (keys are trimmed), so a text node next to <b>/<a>/<em>
+   would lose the space separating it from the neighbour ("Kirtan— chanting"). Restore the original's
+   edge whitespace unless the translation already provides its own at that edge. */
+function keepEdges(orig, tr){
+  if (!tr) return orig;
+  var lead = orig.match(/^\s+/), trail = orig.match(/\s+$/);
+  if (lead && !/^\s/.test(tr)) tr = lead[0] + tr;
+  if (trail && !/\s$/.test(tr)) tr = tr + trail[0];
+  return tr;
+}
+
 function translateTextNode(node){
   /* source text changed by page scripts since our last pass -> take the new value as the source */
   if (node._i18nOrig === undefined || (node._i18nLast !== undefined && node.nodeValue !== node._i18nLast)) node._i18nOrig = node.nodeValue;
-  var target = currentLang === "uk" ? node._i18nOrig : (t(node._i18nOrig) || node._i18nOrig);
+  var target = currentLang === "uk" ? node._i18nOrig : keepEdges(node._i18nOrig, t(node._i18nOrig));
   if (node.nodeValue !== target) node.nodeValue = target;
   node._i18nLast = node.nodeValue;
 }

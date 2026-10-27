@@ -1042,6 +1042,11 @@ html{touch-action:manipulation;-webkit-tap-highlight-color:rgba(176,81,47,.16)}
 @media(max-width:374.98px){html:lang(en) .ds .brand b{white-space:normal;min-width:0;font-size:.74rem;line-height:1.15}}
 .ds .book-meta a{display:inline-block;padding:13px 6px;margin:-13px -6px}
 
+/* ============ Міра рядка /donation (DESIGN_REAUDIT №47) ============
+   Лід hero (RO 84 знаки) і рядок «Кошти спрямовуються…» (EN 86, RO 93) — до ≤ 65 у всіх мовах */
+.page-donation .page-hero .lede{max-width:min(720px,52ch)}
+.ds .give__trust{max-width:min(720px,50ch);text-wrap:balance}
+
 /* ============ Друк (DESIGN_FIX_PLAN, зріз 2) ============
    На папері: чорний текст на білому за будь-якої палітри; без шапки-меню, аватара, кнопок, відео й фото
    (лишаються логотип, QR-коди та реквізити); реквізити й QR не розриваються між сторінками. */
